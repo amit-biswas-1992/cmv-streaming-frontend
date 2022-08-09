@@ -34,7 +34,7 @@ const CardData = [
         {
             img:image10,
             title: 'Bibaho Ovijan',
-            time:'2h 18min',
+            time:'2h 20min',
             catagory:'Romance',
         },
         {
