@@ -1,0 +1,23 @@
+.item{
+    min-height:10rem;
+    min-width:20rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    margin-left: 12px;
+  
+}
+.item img{
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    pointer-events: none;  
+    
+}
+.inner_carousal{
+    display: flex;
+
+}
+.carousal{
+    cursor:grab;
+    overflow:hidden;
+}
