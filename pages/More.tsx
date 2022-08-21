@@ -6,7 +6,7 @@ const More = () => {
   return (
     <div className='bg-slate-900 min-h-screen font-body text-white'>
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
-            <div className='text-2xl text-white flex space-x-3 items-center'>
+            <div className='text-xl text-white flex space-x-3 items-center'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
                 <h1 className='font-light'>More</h1> 
             </div>
