@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/11.jpg'

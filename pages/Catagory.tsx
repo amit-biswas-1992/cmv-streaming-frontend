@@ -1,11 +1,9 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faSearch} from '@fortawesome/free-solid-svg-icons'
-
 import image from '../components/assets/3.jpg'
-
 import CatagoryCard from '../components/CatagoryCard'
-import CardData from '../components/CardData'
+import CardData from '../components/CardData' 
 
 
 const Catagory = () => {
