@@ -17,7 +17,7 @@ const Phone = () => {
 
           <div className='text-center text-xl'>
             <h1 className='font-bold'>Verification</h1>
-            <p className='font-thin mt-2'>Enter 4 digit number that sent<br/>to the Email on your device</p>
+            <p className='font-light mt-2'>Enter 4 digit number that sent<br/>to the Email on your device</p>
           </div>
 
         <div className='m-4 p-2'>

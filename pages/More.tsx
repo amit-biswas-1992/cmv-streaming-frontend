@@ -1,14 +1,18 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUserTie, faArrowLeft, faPenToSquare, faGift, faStar, faGear, faAngleRight} from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/Link'
 
 const More = () => {
   return (
     <div className='bg-slate-900 min-h-screen font-body text-white'>
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
+                <Link href='/Upcoming'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
+                </Link>
                 <h1 className='font-light'>More</h1> 
+                
             </div>
             <div className=' text-white font-thin mr-4 ml-auto text-2xl relative'>
                 <FontAwesomeIcon icon={faPenToSquare}/>   
@@ -47,10 +51,14 @@ const More = () => {
     <div className='mx-6 my-4'>
         <div className='flex items-center py-8'>
             <div className='flex items-center space-x-3'>
+                
                 <FontAwesomeIcon icon={faStar} className='bg-white text-slate-500 p-2 rounded-xl'/> 
+               
                 <h1>FAQ</h1>
             </div>
+            <Link href='/FAQ'>
             <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto'/>
+            </Link> 
         </div>       
         <div className='flex items-center'>
             <div className='flex items-center space-x-3'>
