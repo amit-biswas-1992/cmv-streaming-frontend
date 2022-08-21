@@ -11,24 +11,28 @@ const CardData = [
            title: 'Poran',
            time:'2h 10min',
            catagory:'Romance',
+           year:'2021',
         },
         {
             img:image6,
             title:'Poran', 
             time:'2h 10min',
             catagory:'Romance',
+            year:'2022',
         },
         {
             img:image7,
             title:'Jaan Baz',
             time:'2h 10min',
             catagory:'Romance',
+            year:'2011',
         },
         {
             img:image8,
             title: 'Din the Day',
             time:'2h 10min',
            catagory:'Romance',
+           year:'2012',
         },
         
         {
@@ -36,12 +40,14 @@ const CardData = [
             title: 'Bibaho Ovijan',
             time:'2h 20min',
             catagory:'Romance',
+            year:'2021',
         },
         {
             img:image8,
             title: 'Din the Day',
             time:'1h 49min',
             catagory:'Romance',
+            year:'2021',
         },
         
         {
@@ -49,12 +55,14 @@ const CardData = [
             title: 'Bibaho Ovijan',
             time:'2h 10min',
             catagory:'Romance',
+            year:'2021',
         },
         {
             img:image8,
             title: 'Din the Day',
             time:'1h 20min',
             catagory:'Romance',
+            year:'2019',
         },
         
         {
@@ -62,6 +70,7 @@ const CardData = [
             title: 'Bibaho Ovijan',
             time:'3h 25min',
             catagory:'Romance',
+            year:'2018',
         }
    
        

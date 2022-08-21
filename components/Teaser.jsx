@@ -1,4 +1,6 @@
 import React from 'react'
+import CardTeaser from './CardTeaser'
+import CardData from './CardData'
 
 const Teaser = () => {
   return (
@@ -8,7 +10,7 @@ const Teaser = () => {
         <p className=' text-white font-thin ml-auto mr-8'>View all</p>
     </div>
     <div>
-        
+    <CardTeaser details={CardData} />
     </div>
 </div>
   )

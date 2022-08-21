@@ -11,7 +11,7 @@ import Corasoul from '../components/Home Corasoul/Corasoul'
 const Home = () => {
   return (
     <div className='bg-slate-900'>
-        <div class='first Segment pt-8'>
+        <div className='first Segment pt-8'>
             <div className='grid grid-cols-2'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
                 <img className='h-12 rounded-full ring-offset-2 ring-2' src="/ash.png" />
@@ -20,10 +20,8 @@ const Home = () => {
                         <p className='whitespace-nowrap'>You have remain 15 days</p>
                     </div>
                 </div> 
-                <div className='mt-8 grid justify-items-end'>
-                   
-                <FontAwesomeIcon className='color-' icon={faSearch}/>
-               
+                <div className='text-white ml-auto mr-5 text-2xl mt-7'>                 
+                <FontAwesomeIcon icon={faSearch}/>
                 </div>  
             </div>
         </div>
