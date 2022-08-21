@@ -1,0 +1,14 @@
+.image{
+    
+}
+.upper{
+   
+    display: flex;
+    justify-content: space-between;
+    
+}
+.bg{
+    background-image: url(../components/assets/11.jpg);
+    width: auto;
+    height: auto;
+}

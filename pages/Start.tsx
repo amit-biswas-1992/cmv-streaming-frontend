@@ -19,8 +19,10 @@ const Start = () => {
                 <div className="grid place-items-center pt-6 pb-40">
                 <img className="h-8" src="./CMV.png" alt="/" />
                 </div>
-              <div className="min-h-full relative">
-                <div className='absolute top-20'>
+
+
+              <div className="mt-44">
+                <div className=''>
                     <div className="px-4">
                         <h3 className="text-lg px-5 text-center">
                         First time in Bangladesh Unlimited Drama only on{" "}
