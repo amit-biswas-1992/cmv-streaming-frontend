@@ -5,7 +5,7 @@ const UpcomingCard = (props) => {
   return (
     <div className='text-white'>
     {props.details.map( (value,index)=>(
-    <div className='mx-2' key={index}>
+    <div className='' key={index}>
         <div>
             <h1 className='text-2xl font-bold mx-4 mb-2'>{value.release}</h1>   
         </div> 
@@ -13,19 +13,19 @@ const UpcomingCard = (props) => {
           <img className='rounded-lg' src={value.img.src} alt='' />  
         </div>
 
-        <div className='flex mt-5 mx-4'>
+        <div className='flex mt-4 mx-4'>
             <div className=''>
-                <p className='mb-1 font-thin'>Coming in December 2022</p>
+                <p className='mb-1'>Coming in December 2022</p>
                 <p className='text-2xl font-bold'>{value.title}</p>
             </div>
             <div className='flex space-x-4 ml-auto'>
-                <div className='grid place-items-center'>
+                <div className='grid place-items-center whitespace-nowrap font-light'>
                             <FontAwesomeIcon icon={faBell} className='text-2xl'/> 
-                            <h1 className='font-thin text-sm'>Remind me</h1>  
+                            <h1 className='text-sm'>Remind me</h1>  
                 </div>
-                <div className='grid place-items-center'>
+                <div className='grid place-items-center whitespace-nowrap font-light'>
                             <FontAwesomeIcon icon={faShareNodes} className='text-2xl'/> 
-                            <h1 className='font-thin text-sm'>Share</h1>  
+                            <h1 className='text-sm'>Share</h1>  
                 </div>   
             </div>
         </div>

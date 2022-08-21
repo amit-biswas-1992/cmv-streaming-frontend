@@ -10,7 +10,7 @@ const BuyPackage = () => {
 
 
   return (
-    <div className='bg-slate-900 h-screen'>
+    <div className='bg-slate-900 h-screen font-body'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
                 <FontAwesomeIcon icon={faArrowLeft}/>  

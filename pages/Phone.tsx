@@ -3,7 +3,7 @@ import Link from 'next/Link'
 
 const Phone = () => {
   return (
-    <div className='bg-slate-900 h-screen grid place-items-center'>
+    <div className='bg-slate-900 h-screen grid place-items-center font-body'>
       <div className='m-2 p-2 text-white'>
           <div>
             <h1>Enter your Mobile Number</h1>

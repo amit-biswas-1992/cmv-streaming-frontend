@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily:{
+      body:['Poppins']
+    }
   },
   plugins: [require('tailwind-scrollbar-hide')],
 }

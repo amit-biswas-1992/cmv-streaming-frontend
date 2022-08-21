@@ -7,7 +7,7 @@ import image from '../components/assets/11.jpg'
 
 const MoviePreview = () => {
   return (
-    <div className='bg-slate-900'>
+    <div className='bg-slate-900 font-body'>
         
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>

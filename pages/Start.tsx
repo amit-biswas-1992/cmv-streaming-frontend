@@ -6,7 +6,7 @@ const Start = () => {
     
   return (
     <div className="">
-      <div className="w-full h-full bg-slate-900/80 absolute ">
+      <div className="w-full h-full bg-slate-900/80 absolute font-body">
         <img
           className="w-full h-full object-cover mix-blend-overlay"
           src="./image 25.jpg"

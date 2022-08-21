@@ -10,7 +10,7 @@ import Corasoul from '../components/Home Corasoul/Corasoul'
 
 const Home = () => {
   return (
-    <div className='bg-slate-900'>
+    <div className='bg-slate-900 font-body'>
         <div className='first Segment pt-8'>
             <div className='grid grid-cols-2'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>

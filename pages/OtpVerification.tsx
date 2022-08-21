@@ -7,7 +7,7 @@ const Phone = () => {
 
   
   return (
-    <div className='grid place-items-center'>
+    <div className='grid place-items-center font-body'>
         
       <div className=''>
         <div className='mt-6 mb-4'>
