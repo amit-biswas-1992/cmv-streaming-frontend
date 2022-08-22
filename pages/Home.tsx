@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser} from '../components'
 import Corasoul from '../components/Home Corasoul/Corasoul'
+import Navigation from '../components/Navigation'
 
 
 
@@ -29,9 +30,10 @@ const Home = () => {
                
 
         <Corasoul />
-        <Explore />
-        <NewRelease />
+        <Explore />       
+        <NewRelease />      
         <MostRecent />
+        <Navigation />
         <TrendingNow />
         <Exclusive />
         <ContinueWatching />
