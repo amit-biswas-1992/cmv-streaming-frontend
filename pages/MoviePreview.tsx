@@ -1,11 +1,14 @@
-
+import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/11.jpg'
+import ModalSubscribe from '../components/ModalSubscribe'
 
 
 
 const MoviePreview = () => {
+    const [showModal,setShowModal] = useState(false)
+    const handleOnClose =() => setShowModal(false)
   return (
     <div className='bg-slate-900 font-body'>
         
@@ -27,8 +30,9 @@ const MoviePreview = () => {
             <p className='mt-2 font-thin'>2021  |  Romance  |  1h 35m</p>
         </div>
         <div className='grid place-items-center mt-4'>
-            <div className='text-6xl text-slate-200'>
-                <FontAwesomeIcon icon={faCirclePlay}/>   
+            <div className='text-slate-200'>
+               <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-6xl'/></button> 
+               <ModalSubscribe onClose={handleOnClose}visible={showModal}/>   
             </div>
             <p className='mt-3 text-white'>Show More</p>
             <div className='text-xl text-white mt-2'>
