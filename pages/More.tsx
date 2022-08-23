@@ -8,7 +8,7 @@ const More = () => {
     <div className='bg-slate-900 min-h-screen font-body text-white'>
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-                <Link href='/Upcoming'>
+                <Link href='/Home'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
                 </Link>
                 <h1 className='font-light'>More</h1> 
@@ -33,7 +33,9 @@ const More = () => {
 
         <div className='flex justify-center mt-8'>
             <FontAwesomeIcon icon={faGift} className='bg-purple-600 p-4'/>
+            <Link href='./Bonus'>
             <button className='bg-purple-600 pr-6'>Collect Bonus</button>
+            </Link>
         </div>
         <div>
         <div className='bg-slate-700 mx-6 mt-16 rounded-xl'>

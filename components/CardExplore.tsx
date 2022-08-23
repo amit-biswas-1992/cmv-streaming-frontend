@@ -22,8 +22,8 @@ const CardExplore = () => {
                             <div className="rounded-md bg-gradient-to-bl from-stone-400 via-neutral-400 to-slate-600 mx-2">
                               <h1 className='text-white py-4 px-20 text-center'>Horror</h1>
                             </div> 
-                                                    
-                    </div>         
+                            </div>                                      
+                            
                          
           </div>
   )

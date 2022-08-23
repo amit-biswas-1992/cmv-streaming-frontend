@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
 import style from '../components/assets/package.module.css'
+import Link from 'next/Link'
 
 const BuyPackage = () => {
     const [showModal,setShowModal] = useState(false)
@@ -13,7 +14,9 @@ const BuyPackage = () => {
     <div className='bg-slate-900 h-screen font-body'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
-                <FontAwesomeIcon icon={faArrowLeft}/>  
+                <Link href='/MoviePreview'>
+                <FontAwesomeIcon icon={faArrowLeft}/>
+                </Link>  
             </div>
             <h1 className='text-xl grid place-items-center'>Premium</h1>
         </div>

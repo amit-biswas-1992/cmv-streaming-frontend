@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/11.jpg'
 import ModalSubscribe from '../components/ModalSubscribe'
+import Link from 'next/Link'
 
 
 
@@ -15,7 +16,10 @@ const MoviePreview = () => {
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
-                <FontAwesomeIcon icon={faArrowLeft}/>  
+              <Link href='/Home'>
+              <FontAwesomeIcon icon={faArrowLeft}/>
+              </Link>
+                  
             </div>
             <div className=' text-white font-thin mr-4 ml-auto text-2xl relative'>
                 <FontAwesomeIcon icon={faHeart}/>   

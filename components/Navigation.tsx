@@ -12,6 +12,7 @@ import Paper from '@mui/material/Paper';
 
 
 
+
 export default function FixedBottomNavigation() {
   
   return (
@@ -21,12 +22,15 @@ export default function FixedBottomNavigation() {
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
           <BottomNavigation className='bg-slate-700'>
             
-          <BottomNavigationAction label="Recents" icon={<HomeIcon className=' text-white' />} />
-          <BottomNavigationAction label="Favorites" icon={<LegendToggleIcon className=' text-white'/>} />
-          <BottomNavigationAction label="Archive" icon={<VideoLibraryIcon className=' text-white'/>} />
-          <BottomNavigationAction label="Archive" icon={<ShoppingBasketIcon className=' text-white'/>} />
-          <BottomNavigationAction label="Archive" icon={<WidgetsIcon className=' text-white'/>} />
-        </BottomNavigation>
+          <BottomNavigationAction  icon={<HomeIcon className=' text-white' />} />
+          <BottomNavigationAction icon={<LegendToggleIcon className=' text-white'/>} />
+          <BottomNavigationAction icon={<VideoLibraryIcon className=' text-white'/>} />
+          <BottomNavigationAction icon={<ShoppingBasketIcon className=' text-white'/>} />
+          
+          <BottomNavigationAction icon={<WidgetsIcon className=' text-white'/>} />
+          </BottomNavigation>
+          
+          
       </Paper>
     </Box>
   );
