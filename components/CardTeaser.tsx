@@ -17,7 +17,7 @@ const CardContinue = (props) => {
         <img className='aspect-square rounded-full ring-2 mt-2' src={value.img.src} />
        </div>
         
-              <div className='whitespace-nowrap text-white items-center align-middle mt-4'>
+              <div className='whitespace-nowrap text-white items-center text-center mt-4'>
                 <h1 className='text-white'>{value.title}</h1>
                 <h1 className='text-cyan-400'>{value.catagory}</h1>
               </div>   

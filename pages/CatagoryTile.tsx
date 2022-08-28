@@ -1,8 +1,11 @@
 import Link from 'next/Link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import CardData from '../components/CardData'
 
 const CatagoryTile = () => {
+  
+  
   return (
     <div className='bg-slate-900 font-body min-h-screen'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
@@ -16,9 +19,12 @@ const CatagoryTile = () => {
          </div>
         <div className='mx-8 mt-8'>
         <div className='grid grid-cols-2 gap-6'>
-                            <div className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
-                              <h1 className='text-white text-center'>Drama</h1>
-                            </div>  
+
+                       <Link href='/ViewAll'>
+                       <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">               
+                              <h1 className='text-white text-center'>Drama</h1>      
+                        </button>
+                       </Link>
                             <div className="rounded-md bg-gradient-to-r from-red-500 via-red-600 to-pink-500 p-4">
                               <h1 className='text-white text-center'>Romance</h1>
                             </div>   

@@ -2,6 +2,7 @@ import Link from "next/Link";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faEllipsis, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/4.jpg'
+import image2 from '../components/assets/2.jpg'
 
 const Teaser = () => {
   return (
@@ -37,9 +38,16 @@ const Teaser = () => {
                 <p className='my-2 text-lg font-semibold'>Cast</p>
                 <p className='text-sm'>Tasnuva Tisha, Bari Mondol, Ghum parano mashi pishi</p>
             </div>
-            <div className='mt-4 pb-4'>
+            <div className='mt-4'>
                 <p className='my-2 text-lg font-semibold'>Script and Director</p>
                 <p className='text-sm'>Nayem Milton, Biddut Ray</p>
+            </div>
+            <div className='mt-8 pb-4'>
+                <p className='text-sm mb-2'>Relate Movies</p>
+                <div className='w-full h-full'>
+                      <img className='rounded-lg' src={image2.src} alt='' />
+                </div>
+                
             </div>
                 
          </div>

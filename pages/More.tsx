@@ -11,7 +11,7 @@ const More = () => {
                 <Link href='/Home'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
                 </Link>
-                <h1 className='font-light'>More</h1> 
+                <h1 className='font-light'>Back</h1> 
                 
             </div>
             <div className=' text-white font-thin mr-4 ml-auto text-2xl relative'>
@@ -59,7 +59,7 @@ const More = () => {
                 <h1>FAQ</h1>
             </div>
             <Link href='/FAQ'>
-            <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto'/>
+            <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/>
             </Link> 
         </div>       
         <div className='flex items-center'>

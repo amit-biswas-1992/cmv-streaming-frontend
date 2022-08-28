@@ -7,6 +7,7 @@ import image4 from './assets/4.jpg'
 const CardData2 = [
      
         {
+            id:9,
            img:image1,
            title: 'Uro Prem',
            time:'2h 10min',
@@ -16,6 +17,7 @@ const CardData2 = [
            details:'Presenting Eid Ul Fitr Drama, Mohidul Mohims “Uro Prem”, Script & Directed by Mohidul Mohim, Starring Apurba, Mehazabien Chowdhury & many. Producer SK Shahed Ali Pappu & Produced by Central Music and Video (CMV).'
         },
         {
+            id:10,
             img:image2,
             title:'Tui Janish', 
             time:'2h 10min',
@@ -25,6 +27,7 @@ const CardData2 = [
             details:'Presenting Eid Ul Fitr Drama, Mohidul Mohims “Uro Prem”, Script & Directed by Mohidul Mohim, Starring Apurba, Mehazabien Chowdhury & many.'
         },
         {
+            id:11,
             img:image3,
             title:'Tomar Achi',
             time:'2h 10min',
@@ -34,6 +37,7 @@ const CardData2 = [
             details:'Presenting Eid Ul Fitr Drama, Mohidul Mohims “Uro Prem”, Script & Directed by Mohidul Mohim, Starring Apurba, Mehazabien Chowdhury & many.'
         },
         {
+            id:12,
             img:image4,
             title: 'Bou jokhon 16',
             time:'2h 10min',

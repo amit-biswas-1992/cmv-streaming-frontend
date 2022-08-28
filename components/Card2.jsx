@@ -6,10 +6,10 @@ import Link from "next/Link";
 const Card = (props) => {
   return (
     <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer">
-      {props.details.map((value, index) => (
+      {props.details.map((value, id) => (
         <div
           className="bg-slate-800 rounded-lg p-4 pr-24 w-full flex flex-nowrap"
-          key={index}
+          key={id}
         >
           <img className="w-24 h-18 rounded-xl" src={value.img.src} />
           <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
@@ -21,7 +21,9 @@ const Card = (props) => {
           </div>
           <div className="text-cyan-400 py-14 pr-4 pl-4 text-4xl hover:text-white">
             <Link href="/MoviePreview">
-              <FontAwesomeIcon icon={faCirclePlay} />
+              <button>
+                <FontAwesomeIcon icon={faCirclePlay} />
+              </button>
             </Link>
           </div>
         </div>

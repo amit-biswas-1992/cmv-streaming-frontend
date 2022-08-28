@@ -1,9 +1,13 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import image from '../components/assets/11.jpg'
+import TestData from "../Components/TestData";
 import ModalSubscribe from '../components/ModalSubscribe'
 import Link from 'next/Link'
+import img from '../components/assets/6.png'
+
+
+
 
 
 
@@ -11,8 +15,8 @@ const MoviePreview = () => {
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)
   return (
-    <div className='bg-slate-900 font-body'>
-        
+    <div className='bg-slate-900 font-body'>    
+    
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
@@ -25,10 +29,12 @@ const MoviePreview = () => {
                 <FontAwesomeIcon icon={faHeart}/>   
             </div>
         </div>
-        </div> 
-        <div className='mx-4'>
-          <img className='rounded-lg drop-shadow-xl' src={image.src} alt='' />   
-        </div>        
+        </div>
+        <div className='px-8'>
+            <img className='rounded-2xl items-center' src={img.src} />
+          </div>
+        
+                 
         <div className='grid place-items-center text-white mt-2'>
             <h1 className='font-bold mt-2'>Megher Bari Jabo</h1>
             <p className='mt-2 font-thin'>2021  |  Romance  |  1h 35m</p>
@@ -36,7 +42,7 @@ const MoviePreview = () => {
         <div className='grid place-items-center mt-4'>
             <div className='text-slate-200'>
                <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-6xl'/></button> 
-               <ModalSubscribe onClose={handleOnClose}visible={showModal}/>   
+               <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>
             <p className='mt-3 text-white'>Show More</p>
             <div className='text-xl text-white mt-2'>
@@ -49,6 +55,9 @@ const MoviePreview = () => {
             <p>Tasnuva Tisha, Syed Zaman Shaon, Nayan Babu, Kajal Suborno</p>
             <h1 className='font-bold text-xl my-4'>Script Director</h1>
             <p>Biddut Roy, Animesh Iche</p>
+        </div>
+        <div className=''>
+          
         </div>
 
     </div>

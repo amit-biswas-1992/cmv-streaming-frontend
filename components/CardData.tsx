@@ -7,13 +7,15 @@ import image10 from './assets/10.png'
 const CardData = [
      
         {
+           id:1,
            img:image5,
            title: 'Poran',
            time:'2h 10min',
-           catagory:'Romance',
+           catagory:'Drama',
            year:'2021',
         },
         {
+            id:2,
             img:image6,
             title:'Poran', 
             time:'2h 10min',
@@ -21,36 +23,41 @@ const CardData = [
             year:'2022',
         },
         {
+            id:3,
             img:image7,
             title:'Jaan Baz',
             time:'2h 10min',
-            catagory:'Romance',
+            catagory:'Drama',
             year:'2011',
         },
         {
+            id:3,
             img:image8,
             title: 'Din the Day',
             time:'2h 10min',
-           catagory:'Romance',
+           catagory:'Horror',
            year:'2012',
         },
         
         {
+            id:4,
             img:image10,
             title: 'Bibaho Ovijan',
             time:'2h 20min',
-            catagory:'Romance',
+            catagory:'Drama',
             year:'2021',
         },
         {
+            id:5,
             img:image8,
             title: 'Din the Day',
             time:'1h 49min',
-            catagory:'Romance',
+            catagory:'Horror',
             year:'2021',
         },
         
         {
+            id:6,
             img:image10,
             title: 'Bibaho Ovijan',
             time:'2h 10min',
@@ -58,18 +65,20 @@ const CardData = [
             year:'2021',
         },
         {
+            id:7,
             img:image8,
             title: 'Din the Day',
             time:'1h 20min',
-            catagory:'Romance',
+            catagory:'Horror',
             year:'2019',
         },
         
         {
+            id:8,
             img:image10,
             title: 'Bibaho Ovijan',
             time:'3h 25min',
-            catagory:'Romance',
+            catagory:'Drama',
             year:'2018',
         }
    
