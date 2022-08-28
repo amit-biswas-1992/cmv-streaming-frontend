@@ -1,10 +1,11 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
-import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser} from '../components'
+import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade} from '../components'
 import Corasoul from '../components/Home Corasoul/Corasoul'
 import Navigation from '../components/Navigation'
-import Link from 'next/Link'
+import Link from '../node_modules/next/link'
+import Image from '../node_modules/next/image'
 
 
 
@@ -13,11 +14,11 @@ import Link from 'next/Link'
 const Home = () => {
   return (
     <div className='bg-slate-900 font-body'>
-        <div className='first Segment pt-8'>
+        <div className='first Segment pt-3'>
             <div className='grid grid-cols-2'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
                     <Link href='/More'>
-                <img className='h-12 rounded-full ring-offset-2 ring-2 cursor-pointer' src="/ash.png" />
+                <Image className='h-12 rounded-full ring-offset-2 ring-2 cursor-pointer' src="/ash.png" alt=''/>
                 </Link>
                     <div className='text-white'>
                         <p className='text-2xl font-semibold whitespace-nowrap'>Hi Ishtiaq!</p>
@@ -41,7 +42,9 @@ const Home = () => {
         <Exclusive />
         <ContinueWatching />
         <Teaser />
+        <OnlyMade />
         <Navigation />
+
 
 
 

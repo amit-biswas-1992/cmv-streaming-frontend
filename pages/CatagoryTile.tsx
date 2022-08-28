@@ -1,7 +1,7 @@
-import Link from 'next/Link'
+import Link from '../node_modules/next/link'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import CardData from '../components/CardData'
+
 
 const CatagoryTile = () => {
   

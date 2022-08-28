@@ -2,8 +2,8 @@ import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
-import style from '../components/assets/package.module.css'
-import Link from 'next/Link'
+import style from '../components/package.module.css'
+import Link from '../node_modules/next/link'
 
 const BuyPackage = () => {
     const [showModal,setShowModal] = useState(false)
@@ -40,7 +40,7 @@ const BuyPackage = () => {
 
 
         <input type='radio' name='size' id='small' className={style.input}/>      
-            <label for='small' className=''> 
+            <label className=''> 
             <div className='bg-slate-700 mx-4 mt-16 rounded-xl cursor-pointer hover:ring-4'>
                             <div className='flex text-white py-4 ml-4'>
                                     <div className=''>
@@ -53,7 +53,7 @@ const BuyPackage = () => {
             </label><br/>
 
         <input type='radio' name='size' id='large' className={style.input}/>
-            <label for='large'>
+            <label>
             <div className='bg-slate-700 mx-4 mt-10 rounded-xl cursor-pointer hover:ring-4'>
                 <div className='flex text-white py-4 ml-4'>
                         <div className=''>

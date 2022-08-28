@@ -15,7 +15,7 @@ const Teaser = () => {
           <p className=" text-white font-thin mr-4">View all</p>
         </button>
       </div>
-      <div className="pb-20">
+      <div className="">
         <CardTeaser details={CardData} />
       </div>
     </div>

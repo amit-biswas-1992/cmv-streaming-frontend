@@ -1,6 +1,5 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
+import Image from '../node_modules/next/image'
 
 
 
@@ -14,7 +13,7 @@ const CardContinue = (props) => {
 
           
        <div className='w-32'>
-        <img className='aspect-square rounded-full ring-2 mt-2' src={value.img.src} />
+        <Image className='aspect-square rounded-full ring-2 mt-2' src={value.img.src} alt='' />
        </div>
         
               <div className='whitespace-nowrap text-white items-center text-center mt-4'>

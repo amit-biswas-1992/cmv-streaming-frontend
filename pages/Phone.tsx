@@ -1,5 +1,5 @@
 
-import Link from 'next/Link'
+import Link from "../node_modules/next/link"
 
 const Phone = () => {
   return (

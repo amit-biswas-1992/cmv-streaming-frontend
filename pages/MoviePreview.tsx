@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import TestData from "../Components/TestData";
 import ModalSubscribe from '../components/ModalSubscribe'
-import Link from 'next/Link'
-import img from '../components/assets/6.png'
+import Link from '../node_modules/next/link'
+import Natok from '../components/assets/6.png'
+import Image from '../node_modules/next/image'
 
 
 
@@ -31,7 +31,7 @@ const MoviePreview = () => {
         </div>
         </div>
         <div className='px-8'>
-            <img className='rounded-2xl items-center' src={img.src} />
+            <Image className='rounded-2xl items-center' src={Natok} alt='' />
           </div>
         
                  

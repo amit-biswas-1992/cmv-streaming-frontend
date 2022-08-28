@@ -1,10 +1,13 @@
 import TestAnimation from '../components/TestAnimation'
-import Link from 'next/Link'
+import Link from '../node_modules/next/link'
+
+import Timer from '../components/Timer'
 
 
 
 const Phone = () => {
-
+  
+  
   
   return (
     <div className='grid place-items-center font-body'>
@@ -46,7 +49,9 @@ const Phone = () => {
       </div>
       <div>
         <p className='mt-6 w-full py-4 text-red-500 text-center'>Re-send code in 0:30</p>
+        <Timer />
       </div>
+      
     </div>  
    
       

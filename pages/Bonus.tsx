@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft,faStar, faTv, faBahai} from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/Link'
+import Link from '../node_modules/next/link';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Modal2 from '../components/Modal2'

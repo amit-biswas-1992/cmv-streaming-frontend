@@ -1,6 +1,6 @@
 import React from 'react'
 import CardExplore from './CardExplore'
-import Link from 'next/Link'
+import Link from '../node_modules/next/link'
 
 
 

@@ -1,5 +1,6 @@
 import React from "react";
-import Link from 'next/Link'
+import Link from "../node_modules/next/link";
+import Image from "../node_modules/next/image";
 
 const Start = () => {
 
@@ -7,7 +8,7 @@ const Start = () => {
   return (
     <div className="">
       <div className="w-full h-full bg-slate-900/80 absolute font-body">
-        <img
+        <Image
           className="w-full h-full object-cover mix-blend-overlay"
           src="./image 25.jpg"
           alt="/"
@@ -17,7 +18,7 @@ const Start = () => {
       <div className="text-white relative">
 
                 <div className="grid place-items-center pt-6 pb-40">
-                <img className="h-8" src="./CMV.png" alt="/" />
+                <Image className="h-8" src="./CMV.png" alt="/" />
                 </div>
 
             
