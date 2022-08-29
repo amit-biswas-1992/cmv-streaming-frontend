@@ -14,7 +14,7 @@ const BuyPackage = () => {
     <div className='bg-slate-900 h-screen font-body'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
-                <Link href='/MoviePreview'>
+                <Link href='Home'>
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>  
             </div>

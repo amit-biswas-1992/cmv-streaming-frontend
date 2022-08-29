@@ -20,8 +20,10 @@ const MoviePreview = () => {
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
-              <Link href='/Home'>
-              <FontAwesomeIcon icon={faArrowLeft}/>
+              <Link href='Home'>
+              <a>
+               <FontAwesomeIcon icon={faArrowLeft}/>
+              </a>
               </Link>
                   
             </div>

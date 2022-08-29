@@ -51,7 +51,10 @@ const Home = () => {
         <ContinueWatching />
         <Teaser />
         <OnlyMade />
-        <Navigation />
+       
+          <Navigation />
+      
+       
 
 
 

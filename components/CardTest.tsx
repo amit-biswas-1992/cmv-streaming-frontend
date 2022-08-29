@@ -2,23 +2,18 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link"
-import Image from 'next/image';
-import image10 from './assets/10.png'
+import Image from "next/image"
 const CardTest = (props) => {
-  console.log(props,"image");
-  
   return (
     <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer">
-      {props?.details?.map((value, index) => (
+      {props.details.map((value, index) => (
 
         <div
-          className="bg-slate-800 rounded-lg p-4 pr-24 w-full flex flex-nowrap"
+          className="bg-slate-800 rounded-lg p-4 pr-8 w-full flex flex-nowrap"
           key={index}
         >
             <div className=" border-2 p-10">
-              <Image src={image10} alt="img" />
-
-              <Image className='rounded-xl' src={value?.img} alt='images' />  
+              <Image className='rounded-xl' src={value.img} alt='' />  
             </div>
              
           <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
@@ -28,8 +23,8 @@ const CardTest = (props) => {
             </p>
             <h1 className="text-lg text-cyan-400">{value.catagory}</h1>
           </div>
-          <div className="text-cyan-400 py-14 pr-4 pl-4 text-4xl hover:text-white">
-            <Link href="/MoviePreview">
+          <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
+            <Link href="MoviePreview">
               <button>
                 <FontAwesomeIcon icon={faCirclePlay} />
               </button>

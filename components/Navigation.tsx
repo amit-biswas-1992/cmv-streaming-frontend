@@ -1,40 +1,58 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import HomeIcon from '@mui/icons-material/Home';
-import LegendToggleIcon from '@mui/icons-material/LegendToggle';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import WidgetsIcon from '@mui/icons-material/Widgets';
-import Paper from '@mui/material/Paper';
+import React from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faHome, faChartLine,faPhotoFilm, faCoins, faBars} from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
-
-
-
-export default function FixedBottomNavigation() {
-  
+const Navigation = () => {
   return (
-    <Box>
-      <CssBaseline />
-      
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-          <BottomNavigation className='bg-slate-700'>
-            
-          <BottomNavigationAction  icon={<HomeIcon className=' text-white' />} />
-          <BottomNavigationAction icon={<LegendToggleIcon className=' text-white'/>} />
-          <BottomNavigationAction icon={<VideoLibraryIcon className=' text-white'/>} />
-          <BottomNavigationAction icon={<ShoppingBasketIcon className=' text-white'/>} />
-          
-          <BottomNavigationAction icon={<WidgetsIcon className=' text-white'/>} />
-          </BottomNavigation>
-          
-          
-      </Paper>
-    </Box>
-  );
+    <div className='fixed bottom-0 inset-x-0 z-50'>
+
+   
+    <div className='text-slate-600 bg-slate-800 py-4 grid grid-cols-5 gap-3 place-items-center text-xl'>
+              <Link href='Home'>
+                <a>
+                  <button className='hover:text-white'>
+                    <FontAwesomeIcon icon={faHome}/>
+                    <p className='text-sm'>Home</p>
+                  </button>
+                </a>
+              </Link>
+              <Link href='NewRelease'>
+                <a>
+                  <button className='hover:text-white'>
+                   <FontAwesomeIcon icon={faChartLine}/>
+                   <p className='text-sm'>Exclusive</p>
+                  </button>               
+                </a>
+              </Link>
+              <Link href='Upcoming'>
+                <a>
+                  <button className='hover:text-white'>
+                  <FontAwesomeIcon icon={faPhotoFilm}/>
+                  <p className='text-sm'>Coming Soon</p>
+                  </button>    
+                </a>
+              </Link>
+              <Link href='BuyPackage'>
+                <a>
+                  <button className='hover:text-white'>
+                    <FontAwesomeIcon icon={faCoins}/>
+                    <p className='text-sm'>Packages</p>
+                  </button> 
+                </a>
+              </Link>
+              <Link href='More'>
+                <a>
+                  <button className='hover:text-white'>
+                    <FontAwesomeIcon icon={faBars}/>
+                    <p className='text-sm'>More</p>
+                  </button>
+                
+                </a>
+              </Link>
+    </div>
+    </div>
+  )
 }
 
-
-
+export default Navigation
