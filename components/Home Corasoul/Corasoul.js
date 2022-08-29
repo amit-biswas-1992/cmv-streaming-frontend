@@ -3,6 +3,7 @@ import images from '../images'
 import {motion} from 'framer-motion'
 import{useState,useEffect,useRef} from'react'
 import style from './Corasoul.module.css'
+import Image from 'next/image'
 
 function Corasoul() {
   const[width,setWidth]=useState(0)
@@ -25,7 +26,7 @@ function Corasoul() {
                 return(
                   
                   <motion.div className={style.item} key={image}>
-                    <img className={style.img} src={image.src} alt='' />
+                    <Image className={style.img} src={image} alt='' />
                   </motion.div>
                 )
               })}

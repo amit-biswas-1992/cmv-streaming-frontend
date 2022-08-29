@@ -2,9 +2,9 @@ import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import ModalSubscribe from '../components/ModalSubscribe'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 import Natok from '../components/assets/6.png'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 
 
 
@@ -50,7 +50,7 @@ const MoviePreview = () => {
             </div>
         </div>
         <div className='text-white mx-4'>
-            <p className='font-thin'>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+            <p className='font-thin'>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
             <h1 className='font-bold text-xl my-4'>Cast</h1>
             <p>Tasnuva Tisha, Syed Zaman Shaon, Nayan Babu, Kajal Suborno</p>
             <h1 className='font-bold text-xl my-4'>Script Director</h1>

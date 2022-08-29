@@ -1,11 +1,12 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
-import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade} from '../components'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade} from '../components/index'
 import Corasoul from '../components/Home Corasoul/Corasoul'
 import Navigation from '../components/Navigation'
-import Link from '../node_modules/next/link'
-import Image from '../node_modules/next/image'
+import Link from 'next/link'
+import Image from 'next/image'
+import img from '../components/assets/ash.png'
 
 
 
@@ -18,7 +19,7 @@ const Home = () => {
             <div className='grid grid-cols-2'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
                     <Link href='/More'>
-                <Image className='h-12 rounded-full ring-offset-2 ring-2 cursor-pointer' src="/ash.png" alt=''/>
+                <Image className='h-12 rounded-full ring-offset-2 ring-2 cursor-pointer' src={img} alt=''/>
                 </Link>
                     <div className='text-white'>
                         <p className='text-2xl font-semibold whitespace-nowrap'>Hi Ishtiaq!</p>

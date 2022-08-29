@@ -1,5 +1,5 @@
 import TestAnimation from '../components/TestAnimation'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 
 import Timer from '../components/Timer'
 

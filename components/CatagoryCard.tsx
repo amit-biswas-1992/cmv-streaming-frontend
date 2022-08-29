@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 const CatagoryCard = (props) => {
   return (
     <div className=''>
@@ -12,7 +12,7 @@ const CatagoryCard = (props) => {
         <div className='pt-4 px-2'>
             <div className='grid grid-cols-3 gap-3 place-items-stretch items-center mx-3'>
             <div className='w-full'> 
-              <Image className='' src={value.img.src} alt='' />
+              <Image className='' src={value.img} alt='' />
             </div>
 
             <div className='text-lg'>

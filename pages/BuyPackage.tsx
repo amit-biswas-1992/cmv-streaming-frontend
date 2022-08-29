@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
 import style from '../components/package.module.css'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 
 const BuyPackage = () => {
     const [showModal,setShowModal] = useState(false)

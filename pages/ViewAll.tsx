@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 import CardData from '../components/CardData'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 
 const ViewAll = () => {
   const [items, setItems] =useState(CardData)
@@ -44,7 +44,7 @@ const ViewAll = () => {
                           return(                             
                                 <div className='' key={'index'}>
                                   <Link href='/MoviePreview'>
-                                  <Image className='' src={elem.img.src} alt='' />
+                                  <Image className='' src={elem.img} alt='' />
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>
                                       <h1 className='text-white mt-3'>{elem.title}</h1>

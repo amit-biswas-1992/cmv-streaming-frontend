@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUserTie, faArrowLeft, faPenToSquare, faGift, faStar, faGear, faAngleRight} from '@fortawesome/free-solid-svg-icons'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 
 const More = () => {
   return (

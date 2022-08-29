@@ -1,6 +1,6 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import Link from '../node_modules/next/link'
+import Link from 'next/link'
 import CardNewRelease from '../components/CardNewRelease'
 import CardData from '../components/CardData'
 

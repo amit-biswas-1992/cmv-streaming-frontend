@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 
 
 
@@ -15,7 +15,7 @@ const CardContinue = (props) => {
 
           
           <button>
-              <Image className='w-30 h-18' src={value.img.src} alt=''/>
+              <Image className='w-30 h-18' src={value.img} alt=''/>
               <div className='w-32 whitespace-nowrap text-white items-center align-middle'>
                 <h1 className='text-white'>{value.title}</h1>
               </div>  

@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 
 
 
@@ -13,7 +13,7 @@ const CardContinue = (props) => {
 
           
        <div className='w-32'>
-        <Image className='aspect-square rounded-full ring-2 mt-2' src={value.img.src} alt='' />
+        <Image className='aspect-square rounded-full ring-2 mt-2' src={value.img} alt='' />
        </div>
         
               <div className='whitespace-nowrap text-white items-center text-center mt-4'>

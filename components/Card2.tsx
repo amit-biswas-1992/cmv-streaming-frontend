@@ -1,8 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/Link";
-import Image from "../node_modules/next/image";
+import Link from "next/link";
+import Image from "next/image";
 
 const Card = (props) => {
   return (
@@ -12,7 +12,7 @@ const Card = (props) => {
           className="bg-slate-800 rounded-lg p-4 pr-24 w-full flex flex-nowrap"
           key={id}
         >
-          <Image className="w-24 h-18 rounded-xl" src={value.img.src} alt="" />
+          <Image className="w-24 h-18 rounded-xl" src={value.img} alt="" />
           <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
             <h1>{value.title}</h1>
             <p>

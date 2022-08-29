@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faEllipsis, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/4.jpg'
 import image2 from '../components/assets/2.jpg'
-import Image from "../node_modules/next/image";
+import Image from "next/image";
 
 const Teaser = () => {
   return (
@@ -21,7 +21,7 @@ const Teaser = () => {
                     <div className=''>
                     
                     <div className='w-full h-full mt-6'>
-                      <Image className='' src={image.src} alt='' />
+                      <Image className='' src={image} alt='' />
                     </div>
                                       
                 </div>     
@@ -46,7 +46,7 @@ const Teaser = () => {
             <div className='mt-8 pb-4'>
                 <p className='text-sm mb-2'>Relate Movies</p>
                 <div className='w-full h-full'>
-                      <Image className='rounded-lg' src={image2.src} alt='' />
+                      <Image className='rounded-lg' src={image2} alt='' />
                 </div>
                 
             </div>

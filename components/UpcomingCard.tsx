@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBell,faShareNodes} from '@fortawesome/free-solid-svg-icons'
-import Image from '../node_modules/next/image'
+import Image from 'next/image'
 const UpcomingCard = (props) => {
   return (
     <div className='text-white'>
@@ -11,7 +11,7 @@ const UpcomingCard = (props) => {
             <h1 className='text-2xl font-bold mx-4 mb-2'>{value.release}</h1>   
         </div> 
         <div className='mx-4'>
-          <Image className='rounded-lg' src={value.img.src} alt='' />  
+          <Image className='rounded-lg' src={value.img} alt='' />  
         </div>
 
         <div className='flex mt-4 mx-4'>

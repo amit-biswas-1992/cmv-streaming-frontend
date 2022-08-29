@@ -4,6 +4,7 @@ import {faHeart, faArrowLeft, faCirclePlay, faSearch} from '@fortawesome/free-so
 import image from '../components/assets/3.jpg'
 import CatagoryCard from '../components/CatagoryCard'
 import CardData from '../components/CardData' 
+import Image from 'next/image'
 
 
 const Catagory = () => {
@@ -25,7 +26,7 @@ const Catagory = () => {
         </div>
 
         <div className='mx-4'>
-                <img className='rounded-lg' src={image.src} alt='' />             
+                <Image className='rounded-lg' src={image} alt='' />             
                     <div className='text-xl flex items-center space-x-1 mt-1'>
                         <FontAwesomeIcon icon={faCirclePlay}/> 
                         <h1>Play Now</h1>  
