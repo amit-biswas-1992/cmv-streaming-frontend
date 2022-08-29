@@ -19,8 +19,12 @@ const Home = () => {
             <div className='flex items-center'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
                     <div className='w-16 pt-2'>
-                        <Link href='/More'>
-                     <Image className='rounded-full ring-cyan-400 cursor-pointer' src={Avatar} alt=''/>
+                        <Link href='More'>
+                            <a >
+
+ <Image className='rounded-full ring-cyan-400 cursor-pointer' src={Avatar} alt=''/>
+                    
+                            </a>
                      </Link>
                     </div>
                    

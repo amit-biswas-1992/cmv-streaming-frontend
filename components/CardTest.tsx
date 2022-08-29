@@ -2,17 +2,25 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link"
-import Image from 'next/image'
-
+import Image from 'next/image';
+import image10 from './assets/10.png'
 const CardTest = (props) => {
+  console.log(props,"image");
+  
   return (
     <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer">
-      {props.details.map((value, index) => (
+      {props?.details?.map((value, index) => (
+
         <div
           className="bg-slate-800 rounded-lg p-4 pr-24 w-full flex flex-nowrap"
           key={index}
         >
-            <Image className='rounded-xl' src={value.img} alt=''/>   
+            <div className=" border-2 p-10">
+              <Image src={image10} alt="img" />
+
+              <Image className='rounded-xl' src={value?.img} alt='images' />  
+            </div>
+             
           <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
             <h1>{value.title}</h1>
             <p>

@@ -3,7 +3,7 @@ import React from 'react'
 const CardExplore = () => {
   return (
     <div>
-              <div className='flex flex-nowrap mt-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer'>
+              <div className='flex flex-nowrap mt-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-2 cursor-pointer'>
                             <div className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-2">
                               <h1 className='text-white py-4 px-20 text-center'>Drama</h1>
                             </div>  
