@@ -3,6 +3,7 @@ import image6 from './assets/6.png'
 import image7 from './assets/7.png'
 import image8 from './assets/8.png'
 import image10 from './assets/10.png'
+import test from './assets/test.png'
 
 const CardData = [
      
@@ -42,7 +43,7 @@ const CardData = [
         {
             id:4,
             img:image10,
-            title: 'Bibaho Ovijan',
+            title: 'Bibaho Ovi',
             time:'2h 20min',
             catagory:'Drama',
             year:'2021',
@@ -59,7 +60,7 @@ const CardData = [
         {
             id:6,
             img:image10,
-            title: 'Bibaho Ovijan',
+            title: 'Bibaho Ov',
             time:'2h 10min',
             catagory:'Romance',
             year:'2021',
@@ -76,7 +77,7 @@ const CardData = [
         {
             id:8,
             img:image10,
-            title: 'Bibaho Ovijan',
+            title: 'Bibah',
             time:'3h 25min',
             catagory:'Drama',
             year:'2018',

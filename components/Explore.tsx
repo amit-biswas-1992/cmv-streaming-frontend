@@ -8,7 +8,7 @@ import Link from 'next/link'
 function Explore() {
   return (
     <div className=''>
-        <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
+        <div className='flex justify-between items-center ml-4 whitespace-nowrap'>
             <h1 className='text-xl font-bold text-white cursor-pointer'>Explore Catagory</h1>
             <Link href='/CatagoryTile'>
             <button>

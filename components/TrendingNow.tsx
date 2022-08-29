@@ -1,6 +1,6 @@
 import React from 'react'
-import Card2 from './Card2'
 import CardData from './CardData'
+import CardTest from './CardTest'
 
 const TrendingNow = () => {
   
@@ -13,7 +13,7 @@ const TrendingNow = () => {
             </button>
     </div>
     <div className='mt-4'>
-     <Card2 details={CardData}/> 
+     <CardTest details={CardData}/> 
     </div>
 </div>
   )

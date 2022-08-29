@@ -1,12 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade} from '../components/index'
-import Corasoul from '../components/Home Corasoul/Corasoul'
+import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade, HomeCorasoul} from '../components/index'
 import Navigation from '../components/Navigation'
-import Link from 'next/link'
 import Image from 'next/image'
-import img from '../components/assets/ash.png'
+import Avatar from '../components/assets/test.png'
+import Link from 'next/link'
+
 
 
 
@@ -15,18 +15,22 @@ import img from '../components/assets/ash.png'
 const Home = () => {
   return (
     <div className='bg-slate-900 font-body'>
-        <div className='first Segment pt-3'>
-            <div className='grid grid-cols-2'>
+        <div className='pt-3'>
+            <div className='flex items-center'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
-                    <Link href='/More'>
-                <Image className='h-12 rounded-full ring-offset-2 ring-2 cursor-pointer' src={img} alt=''/>
-                </Link>
+                    <div className='w-16 pt-2'>
+                        <Link href='/More'>
+                     <Image className='rounded-full ring-cyan-400 cursor-pointer' src={Avatar} alt=''/>
+                     </Link>
+                    </div>
+                   
+                   
                     <div className='text-white'>
-                        <p className='text-2xl font-semibold whitespace-nowrap'>Hi Ishtiaq!</p>
+                        <p className='text-xl font-semibold whitespace-nowrap'>Hi Ishtiaq!</p>
                         <p className='whitespace-nowrap'>You have remain 15 days</p>
                     </div>
                 </div> 
-                <div className='text-white ml-auto mr-5 text-2xl mt-7'>                 
+                <div className='text-white ml-auto mr-5 text-3xl mt-4'>                 
                 <FontAwesomeIcon icon={faSearch}/>
                 </div>  
             </div>
@@ -34,11 +38,10 @@ const Home = () => {
         
                
 
-        <Corasoul />
+        <HomeCorasoul/>
         <Explore />       
         <NewRelease />      
-        <MostRecent />
-        
+        <MostRecent />       
         <TrendingNow />
         <Exclusive />
         <ContinueWatching />

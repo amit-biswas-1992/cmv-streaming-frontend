@@ -4,7 +4,7 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link"
 import Image from 'next/image'
 
-const Card2 = (props) => {
+const CardTest = (props) => {
   return (
     <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer">
       {props.details.map((value, index) => (
@@ -12,7 +12,7 @@ const Card2 = (props) => {
           className="bg-slate-800 rounded-lg p-4 pr-24 w-full flex flex-nowrap"
           key={index}
         >
-          <Image className="w-24 h-18 rounded-xl" src={value.img} alt="" />
+            <Image className='rounded-xl' src={value.img} alt=''/>   
           <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
             <h1>{value.title}</h1>
             <p>
@@ -33,4 +33,4 @@ const Card2 = (props) => {
   );
 };
 
-export default Card2;
+export default CardTest;

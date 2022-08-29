@@ -6,5 +6,7 @@ export {default as Exclusive} from './Exclusive'
 export {default as ContinueWatching} from './ContinueWatching'
 export {default as Teaser} from './Teaser'
 export {default as OnlyMade} from './OnlyMade'
+export {default as HomeCorasoul} from './HomeCorasoul'
+
 
 

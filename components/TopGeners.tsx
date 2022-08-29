@@ -18,21 +18,33 @@ const TopGeners = () => {
                       
                             <div className="rounded-md bg-pink-300 flex items-center px-3 p-2 justify-center">
                               <h1 className='text-white text-center'>Romance</h1>
-                              <Image className='ml-auto' src={Romantic} alt=''/>   
+                              <div className='ml-auto'>
+                               <Image className='' src={Romantic} alt=''/>
+                              </div>
+                                 
                             </div> 
-                            <div className="rounded-md bg-orange-400 flex items-center px-3 p-2 justify-center">
+                            <div className="rounded-md bg-orange-400 flex items-center px-6 p-2">
                               <h1 className='text-white text-center'>Thriller</h1>
-                              <Image className='ml-auto' src={Thriller} alt='' /> 
+                              <div className='ml-auto'>
+                              <Image className='' src={Thriller} alt='' /> 
+                              </div>
+                              
                               
                             </div>  
-                            <div className="rounded-md bg-blue-700 flex items-center px-3 p-2 justify-center">
+                            <div className="rounded-md bg-blue-700 flex items-center px-6 p-2 justify-center">
                               <h1 className='text-white text-center'>Comedy</h1>
-                              <Image className='ml-auto' src={Comedy} alt='' /> 
+                              <div className='ml-auto'>
+                               <Image className='' src={Comedy} alt='' /> 
+                              </div>
+                             
                               
                             </div>  
-                            <div className="rounded-md bg-green-600 flex items-center px-3 p-2 justify-center">
+                            <div className="rounded-md bg-green-600 flex items-center px-6 p-2 justify-center">
                               <h1 className='text-white text-center'>Horror</h1>
-                              <Image className='ml-auto' src={Horror} alt=''/> 
+                              <div className='ml-auto'>
+                               <Image className='' src={Horror} alt=''/> 
+                              </div>
+                              
                               
                             </div>
                            

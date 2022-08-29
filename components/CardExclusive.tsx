@@ -10,7 +10,7 @@ const CardContinue = (props) => {
 
  
   return (
-    <div className='flex space-x-8 text-left overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
+    <div className='flex space-x-4 text-left overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
     {props.details.map( (value,index)=>(
 
      <div className='' key={index}>
@@ -18,7 +18,7 @@ const CardContinue = (props) => {
           
               <div className='relative'>
                <Image className='rounded-xl' src={value.img} alt=''/>   
-              <div className='flex w-32 mt-3 whitespace-nowrap text-white items-center space-x-2'>
+              <div className='flex w-32 mt-2 whitespace-nowrap text-white items-center space-x-2'>
                 <FontAwesomeIcon className='text-cyan-400'icon={faCirclePlay}/>
                 <h1 className='text-white'>{value.title}</h1>
               </div>  
