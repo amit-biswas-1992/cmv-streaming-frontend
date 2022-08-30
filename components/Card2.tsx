@@ -21,7 +21,7 @@ const Card2 = (props) => {
             <h1 className="text-lg text-cyan-400">{value.catagory}</h1>
           </div>
           <div className="text-cyan-400 py-14 pr-4 pl-4 text-4xl hover:text-white">
-            <Link href="/MoviePreview">
+            <Link href="moviePreview">
               <button>
                 <FontAwesomeIcon icon={faCirclePlay} />
               </button>

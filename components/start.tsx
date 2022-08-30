@@ -29,12 +29,14 @@ const Start = () => {
                         </h3>
                     </div>
                     <div className="grid place-items-center px-8">
-                        <Link href='/Phone'>
+                        <Link href='phone'>
                         <button className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
                         Registration
                         </button>
                         </Link>
+                        <Link href='home'>
                         <button className="pt-4 mt-4 grid place-items-center text-center">Log In</button>
+                        </Link>
                     </div>
                 </div>
               </div> 

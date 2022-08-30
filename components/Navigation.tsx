@@ -9,7 +9,7 @@ const Navigation = () => {
 
    
     <div className='text-slate-600 bg-slate-800 py-3 grid grid-cols-5 gap-3 place-items-center text-xl'>
-              <Link href='Home'>
+              <Link href='home'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon icon={faHome}/>
@@ -17,7 +17,7 @@ const Navigation = () => {
                   </button>
                 </a>
               </Link>
-              <Link href='NewRelease'>
+              <Link href='newRelease'>
                 <a>
                   <button className='hover:text-white'>
                    <FontAwesomeIcon icon={faChartLine}/>
@@ -25,7 +25,7 @@ const Navigation = () => {
                   </button>               
                 </a>
               </Link>
-              <Link href='Upcoming'>
+              <Link href='upcoming'>
                 <a>
                   <button className='hover:text-white'>
                   <FontAwesomeIcon icon={faPhotoFilm}/>
@@ -33,7 +33,7 @@ const Navigation = () => {
                   </button>    
                 </a>
               </Link>
-              <Link href='BuyPackage'>
+              <Link href='buyPackage'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon icon={faCoins}/>
@@ -41,7 +41,7 @@ const Navigation = () => {
                   </button> 
                 </a>
               </Link>
-              <Link href='More'>
+              <Link href='more'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon icon={faBars}/>
