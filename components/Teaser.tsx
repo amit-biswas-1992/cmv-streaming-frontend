@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 import CardTeaser from "./CardTeaser";
 import CardData from "./CardData";
 
