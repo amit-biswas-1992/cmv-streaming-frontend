@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Navigation = () => {
   return (
-    <div className='fixed bottom-0 inset-x-0 z-50'>
+    <div className='fixed bottom-0 inset-x-0 z-50 font-body'>
 
    
     <div className='text-slate-600 bg-slate-800 py-3 grid grid-cols-5 gap-3 place-items-center text-xl'>
