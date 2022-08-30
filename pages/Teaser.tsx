@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faEllipsis, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import image from '../components/assets/4.jpg'
