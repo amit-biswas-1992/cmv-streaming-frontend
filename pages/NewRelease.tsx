@@ -3,6 +3,7 @@ import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import CardNewRelease from '../components/CardNewRelease'
 import CardData from '../components/CardData'
+import React from 'react'
 
 
 const NewRelease = () => {

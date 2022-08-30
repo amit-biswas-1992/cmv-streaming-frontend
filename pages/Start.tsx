@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Logo from '../components/assets/CMV.png'
+import BG from '../components/assets/image 25.jpg'
 
 const Start = () => {
 
@@ -8,17 +10,13 @@ const Start = () => {
   return (
     <div className="">
       <div className="w-full h-full bg-slate-900/80 absolute font-body">
-        <Image
-          className="w-full h-full object-cover mix-blend-overlay"
-          src="./image 25.jpg"
-          alt="/"
-        />
+
       </div>
 
       <div className="text-white relative">
 
                 <div className="grid place-items-center pt-6 pb-40">
-                <Image className="h-8" src="./CMV.png" alt="/" />
+                <Image className="h-8" src={Logo} alt='' />
                 </div>
 
             

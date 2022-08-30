@@ -1,5 +1,6 @@
 import TestAnimation from '../components/TestAnimation'
 import Link from 'next/link'
+import React from 'react'
 
 import Timer from '../components/Timer'
 

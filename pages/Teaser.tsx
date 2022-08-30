@@ -4,6 +4,7 @@ import {faHeart, faArrowLeft, faEllipsis, faAngleUp} from '@fortawesome/free-sol
 import image from '../components/assets/4.jpg'
 import image2 from '../components/assets/2.jpg'
 import Image from "next/image";
+import React from 'react'
 
 const Teaser = () => {
   return (

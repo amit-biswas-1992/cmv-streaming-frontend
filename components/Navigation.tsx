@@ -8,7 +8,7 @@ const Navigation = () => {
     <div className='fixed bottom-0 inset-x-0 z-50'>
 
    
-    <div className='text-slate-600 bg-slate-800 py-4 grid grid-cols-5 gap-3 place-items-center text-xl'>
+    <div className='text-slate-600 bg-slate-800 py-3 grid grid-cols-5 gap-3 place-items-center text-xl'>
               <Link href='Home'>
                 <a>
                   <button className='hover:text-white'>

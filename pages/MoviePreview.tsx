@@ -11,6 +11,7 @@ import Image from 'next/image'
 
 
 
+
 const MoviePreview = () => {
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)

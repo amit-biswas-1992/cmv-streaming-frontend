@@ -1,5 +1,6 @@
 import UpcomingCard from '../components/UpcomingCard'
 import CardData2 from '../components/CardData2' 
+import React from 'react'
 
 const Upcoming = () => {
   return (
