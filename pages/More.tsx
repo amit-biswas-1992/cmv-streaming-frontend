@@ -8,7 +8,7 @@ const More = () => {
     <div className='bg-slate-900 min-h-screen font-body text-white'>
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-                <Link href='/Home'>
+                <Link href='home'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
                 </Link>
                 <h1 className='font-light'>Back</h1> 

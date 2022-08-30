@@ -12,7 +12,7 @@ const Teaser = () => {
         <div className=''>
                 
                 <div className='flex mx-4 pt-4 text-xl'>
-                    <Link href='/Home'>
+                    <Link href='home'>
                      <FontAwesomeIcon icon={faArrowLeft}/>  
                     </Link>
                         

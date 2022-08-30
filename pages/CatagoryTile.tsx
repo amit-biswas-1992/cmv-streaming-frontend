@@ -11,7 +11,7 @@ const CatagoryTile = () => {
     <div className='bg-slate-900 font-body min-h-screen'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-              <Link href='./Home'>
+              <Link href='home'>
                <FontAwesomeIcon icon={faArrowLeft}/>
               </Link>
                 
@@ -21,7 +21,7 @@ const CatagoryTile = () => {
         <div className='mx-8 mt-8'>
         <div className='grid grid-cols-2 gap-6'>
 
-                       <Link href='/ViewAll'>
+                       <Link href='viewAll'>
                        <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">               
                               <h1 className='text-white text-center'>Drama</h1>      
                         </button>

@@ -11,7 +11,7 @@ const NewRelease = () => {
     <div className='bg-slate-900 font-body min-h-screen'>
         <div className='ml-4 pt-4 mb-4'>
             <div className='text-xl text-white'>
-                <Link href='/Home'>
+                <Link href='home'>
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <h1 className='font-semibold text-white text-center'>New Release</h1> 

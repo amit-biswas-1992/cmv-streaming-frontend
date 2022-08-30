@@ -43,7 +43,7 @@ const ViewAll = () => {
                          items.map((elem)=>{
                           return(                             
                                 <div className='' key={'index'}>
-                                  <Link href='/MoviePreview'>
+                                  <Link href='moviePreview'>
                                   <Image className='' src={elem.img} alt='' />
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>
