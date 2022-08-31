@@ -11,7 +11,7 @@ const BuyPackage = () => {
 
 
   return (
-    <div className='bg-slate-900 h-screen font-body'>
+    <div className='bg-slate-900 font-body'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
                 <Link href='home'>
@@ -68,7 +68,7 @@ const BuyPackage = () => {
 
         </div>
 
-        <div className='grow justify-end mx-4'>
+        <div className='grow justify-end mx-4 pb-24'>
                         <button onClick={() => setShowModal(true)}className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
                         Register
                         </button>
