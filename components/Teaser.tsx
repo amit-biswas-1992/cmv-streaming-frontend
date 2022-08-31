@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CardTeaser from "./CardTeaser";
-import CardData from "./CardData";
+import CardData3 from "./CardData3";
 
 const Teaser = () => {
   return (
@@ -16,7 +16,7 @@ const Teaser = () => {
         </button>
       </div>
       <div className="">
-        <CardTeaser details={CardData} />
+        <CardTeaser details={CardData3} />
       </div>
     </div>
   );
