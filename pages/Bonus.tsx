@@ -48,7 +48,7 @@ const Bonus = () => {
         </div>                       
                     </div>                   
                 </div>
-
+            <div className='mb-20'>
                 <div className='bg-slate-700 mx-4 mt-6 rounded-lg pb-8'>
                     <div className='flex items-center p-6'>
                         <h1 className='text-xl'>How to works</h1>
@@ -87,7 +87,7 @@ const Bonus = () => {
                     </div> 
                 </div>
                 
-        
+            </div>  
     </div>
   )
 }

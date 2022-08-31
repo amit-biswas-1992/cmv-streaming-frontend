@@ -33,7 +33,7 @@ const More = () => {
 
         <div className='flex justify-center mt-8'>
             <FontAwesomeIcon icon={faGift} className='bg-purple-600 p-4'/>
-            <Link href='./Bonus'>
+            <Link href='bonus'>
             <button className='bg-purple-600 pr-6'>Collect Bonus</button>
             </Link>
         </div>
@@ -56,7 +56,7 @@ const More = () => {
                 
                 <FontAwesomeIcon icon={faStar} className='bg-white text-slate-500 p-2 rounded-xl'/> 
                
-                <h1>FAQ</h1>
+                <h1>faq</h1>
             </div>
             <Link href='/FAQ'>
             <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/>
