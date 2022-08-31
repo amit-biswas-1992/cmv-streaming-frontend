@@ -34,8 +34,14 @@ const Home = () => {
                         <p className='whitespace-nowrap'>You have remain 15 days</p>
                     </div>
                 </div> 
-                <div className='text-white ml-auto mr-5 text-3xl mt-4'>                 
-                <FontAwesomeIcon icon={faSearch}/>
+                <div className='text-white ml-auto mr-5 text-3xl mt-4'> 
+                <button>
+                    <Link href='search'>
+                    <FontAwesomeIcon icon={faSearch}/>
+                    </Link>
+                </button>            
+
+                
                 </div>  
             </div>
         </div>

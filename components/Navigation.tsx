@@ -8,11 +8,11 @@ const Navigation = () => {
     <div className='fixed bottom-0 inset-x-0 z-50 font-body'>
 
    
-    <div className='text-slate-600 bg-slate-800 py-3 grid grid-cols-5 gap-3 place-items-center text-xl'>
+    <div className='text-slate-600 bg-slate-800 py-2 grid grid-cols-5 gap-3 place-items-center text-xl mt-5'>
               <Link href='home'>
                 <a>
                   <button className='hover:text-white'>
-                    <FontAwesomeIcon icon={faHome}/>
+                    <FontAwesomeIcon className='text-sm' icon={faHome}/>
                     <p className='text-sm'>Home</p>
                   </button>
                 </a>
@@ -20,7 +20,7 @@ const Navigation = () => {
               <Link href='newRelease'>
                 <a>
                   <button className='hover:text-white'>
-                   <FontAwesomeIcon icon={faChartLine}/>
+                   <FontAwesomeIcon className='text-sm' icon={faChartLine}/>
                    <p className='text-sm'>Exclusive</p>
                   </button>               
                 </a>
@@ -28,15 +28,15 @@ const Navigation = () => {
               <Link href='upcoming'>
                 <a>
                   <button className='hover:text-white'>
-                  <FontAwesomeIcon icon={faPhotoFilm}/>
-                  <p className='text-sm'>Coming Soon</p>
+                  <FontAwesomeIcon className='text-sm' icon={faPhotoFilm}/>
+                  <p className='text-sm'>Coming</p>
                   </button>    
                 </a>
               </Link>
               <Link href='buyPackage'>
                 <a>
                   <button className='hover:text-white'>
-                    <FontAwesomeIcon icon={faCoins}/>
+                    <FontAwesomeIcon className='text-sm' icon={faCoins}/>
                     <p className='text-sm'>Packages</p>
                   </button> 
                 </a>
@@ -44,7 +44,7 @@ const Navigation = () => {
               <Link href='more'>
                 <a>
                   <button className='hover:text-white'>
-                    <FontAwesomeIcon icon={faBars}/>
+                    <FontAwesomeIcon className='text-sm' icon={faBars}/>
                     <p className='text-sm'>More</p>
                   </button>
                 

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import HomePage from "../components/start";
 
+
 export default function Home() {
   return (
     <div >
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <div>
           <HomePage />
+         
         </div>
       </main>
  

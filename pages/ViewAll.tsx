@@ -10,7 +10,6 @@ const ViewAll = () => {
   const filterItem=(catagitem) =>{
     const updatedItems = CardData.filter((curElem)=> {
       return curElem.catagory === catagitem;
-
     })
     setItems(updatedItems)
   }
@@ -19,8 +18,10 @@ const ViewAll = () => {
   return (
     <div className='bg-slate-900 font-body min-h-screen'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
-            <div className='text-xl text-white flex space-x-3 items-center'>  
-                <FontAwesomeIcon icon={faArrowLeft}/>
+            <div className='text-xl text-white flex space-x-3 items-center'> 
+                <Link href='home' >
+                   <FontAwesomeIcon icon={faArrowLeft}/>
+                </Link>
                 <h1 className='font-light'>Romance</h1> 
              </div>           
          </div>
@@ -47,7 +48,7 @@ const ViewAll = () => {
                                   <Image className='' src={elem.img} alt='' />
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>
-                                      <h1 className='text-white mt-3'>{elem.title}</h1>
+                                      <h1 className='text-white'>{elem.title}</h1>
                                       <p className='text-cyan-400'>{elem.catagory}</p>
                                     </div> 
                                      

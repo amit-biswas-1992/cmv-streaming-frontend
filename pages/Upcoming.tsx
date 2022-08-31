@@ -1,13 +1,21 @@
 import UpcomingCard from '../components/UpcomingCard'
 import CardData2 from '../components/CardData2' 
-import React from 'react'
+import React,{useState}  from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
-const Upcoming = () => {
+const upcoming = () => {
   return (
     <div className='bg-slate-900 font-body text-white'>
-        <div className='flex justify-center space-x-3 py-8'>
-            <h1 className='hover:bg-cyan-400 p-2 rounded-2xl'>Coming Soon</h1>
-            <h1 className='hover:bg-cyan-400 py-2 px-5 rounded-2xl'>Exclusive</h1>
+        <div className='text-xl text-white ml-4 pt-8'>
+        <Link href='home' >
+                   <FontAwesomeIcon icon={faArrowLeft}/>
+                </Link>
+        </div>
+        <div className='flex justify-center space-x-2 py-8'>
+            <button className='border-cyan-400 border-2 py-2 px-4 rounded-2xl'>Coming Soon</button>
+            <button className='hover:bg-cyan-400 py-2 px-7 rounded-2xl'>Exclusive</button>
 
         </div>
         
@@ -16,4 +24,4 @@ const Upcoming = () => {
   )
 }
 
-export default Upcoming
+export default upcoming

@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 
 const Timer = (props:any) => {
-    const {initialMinute = 0,initialSeconds = 0} = props;
+    const {initialMinute = 0,initialSeconds = 45} = props;
     const [ minutes, setMinutes ] = useState(initialMinute);
     const [seconds, setSeconds ] =  useState(initialSeconds);
+
+   
     useEffect(()=>{
     let myInterval = setInterval(() => {
             if (seconds > 0) {
@@ -25,10 +27,10 @@ const Timer = (props:any) => {
     });
 
     return (
-        <div>
-        { minutes === 0 && seconds === 0
+        <div className='text-red-500'>
+            { minutes === 0 && seconds === 0
             ? null
-            : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+            : <h1> Re-send code in : {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
         }
         </div>
     )

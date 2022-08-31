@@ -10,7 +10,7 @@ const UpcomingCard = (props) => {
         <div>
             <h1 className='text-2xl font-bold mx-4 mb-2'>{value.release}</h1>   
         </div> 
-        <div className='mx-4'>
+        <div className='px-4 place-items-center'>
           <Image className='rounded-lg' src={value.img} alt='' />  
         </div>
 
@@ -21,7 +21,7 @@ const UpcomingCard = (props) => {
             </div>
             <div className='flex space-x-4 ml-auto'>
                 <div className='grid place-items-center whitespace-nowrap font-light'>
-                            <FontAwesomeIcon icon={faBell} className='text-2xl'/> 
+                         <button className='hover:text-cyan-400 text-white'> <FontAwesomeIcon icon={faBell} className='text-2xl'/> </button>   
                             <h1 className='text-sm'>Remind me</h1>  
                 </div>
                 <div className='grid place-items-center whitespace-nowrap font-light'>
