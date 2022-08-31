@@ -31,7 +31,7 @@ const UpcomingCard = (props) => {
             </div>
         </div>
 
-        <div className='mx-4 mt-3 pb-6'>
+        <div className='mx-4 mt-3 pb-10'>
             <p className='font-thin text-sm'>{value.details}</p>
         </div>
 

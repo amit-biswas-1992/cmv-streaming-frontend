@@ -11,8 +11,8 @@ const OnlyMade = () => {
             <p className=' text-white font-thin mr-4'>View all</p>
             </button>
     </div>
-    <div className='pb-32'>
-    <div className='bg-slate-700 p-3 ml-6 rounded-lg'>
+    <div className='pb-24'>
+    <div className='bg-slate-700 p-3 ml-6 rounded-l-lg'>
       <CardOnly details={CardData} />
     </div>
     </div>

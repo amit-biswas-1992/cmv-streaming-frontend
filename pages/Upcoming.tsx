@@ -13,13 +13,18 @@ const upcoming = () => {
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
         </div>
-        <div className='flex justify-center space-x-2 py-8'>
+        <div className='flex justify-center space-x-2 pb-8'>
             <button className='border-cyan-400 border-2 py-2 px-4 rounded-2xl'>Coming Soon</button>
             <button className='hover:bg-cyan-400 py-2 px-7 rounded-2xl'>Exclusive</button>
 
         </div>
+        <div>
+           <UpcomingCard details={CardData2}/>
+        </div>
+        <div className='pb-12'>
+
+        </div>
         
-        <UpcomingCard details={CardData2}/>
     </div>
   )
 }
