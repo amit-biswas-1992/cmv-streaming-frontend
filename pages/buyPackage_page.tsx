@@ -11,7 +11,7 @@ const BuyPackage = () => {
 
 
   return (
-    <div className='bg-slate-900 font-body'>
+    <div className='bg-slate-900 font-body h-screen'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
                 <Link href='home_page'>
@@ -54,7 +54,7 @@ const BuyPackage = () => {
 
         <input type='radio' name='size' id='large' className={style.input}/>
             <label>
-            <div className='bg-slate-700 mx-4 mt-10 rounded-xl cursor-pointer hover:ring-4'>
+            <div className='bg-slate-700 mx-4 mt-2 rounded-xl cursor-pointer hover:ring-4'>
                 <div className='flex text-white py-4 ml-4'>
                         <div className=''>
                             <p>15 Days Package</p>
@@ -68,7 +68,7 @@ const BuyPackage = () => {
 
         </div>
 
-        <div className='grow justify-end mx-4 pb-24'>
+        <div className='fixed bottom-20 inset-x-0 z-50 mx-4'>
                         <button onClick={() => setShowModal(true)}className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
                         Register
                         </button>
