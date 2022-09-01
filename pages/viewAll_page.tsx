@@ -23,21 +23,30 @@ const ViewAll = () => {
                 <Link href='home_page' >
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
-                <h1 className='font-light'>Romance</h1> 
+                <h1 className='font-light'>View All</h1> 
              </div>           
          </div>
-         <div className='space-x-2 mb-4 px-6'>
-          <Link href='test_viewAll'>
-                        <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4" onClick={()=>filterItem('Drama')}>               
+         <div className='grid grid-cols-3 mb-6 lg:grid-cols-6 gap-4 lg:mb-12 px-4'>
+          
+                        <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Drama')}>               
                               <h1 className='text-white text-center'>Drama</h1>      
                         </button>
-                        </Link>
-                        <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4" onClick={()=>filterItem('Romance')}>               
+                      
+                        <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Romance')}>               
                               <h1 className='text-white text-center'>Romance</h1>      
                         </button>
-                        <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4" onClick={()=>filterItem('Horror')}>               
+                        <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Horror')}>               
                               <h1 className='text-white text-center'>Horror</h1>      
+                        </button><button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Comedy')}>               
+                              <h1 className='text-white text-center'>Comedy</h1>      
                         </button>
+                        <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Story')}>               
+                              <h1 className='text-white text-center'>Story</h1>      
+                        </button>
+                        <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Mystery')}>               
+                              <h1 className='text-white text-center'>Mystery</h1>      
+                        </button>
+
                         
          </div>
                         
