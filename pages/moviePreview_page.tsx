@@ -49,7 +49,7 @@ const MoviePreview = () => {
                <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>
             <p className='mt-3 text-white'>Show More</p>
-            <div className='text-xl text-white mt-2'> 
+            <div className='text-xl text-white'> 
                   <ShowMore />      
             </div>
         </div>
