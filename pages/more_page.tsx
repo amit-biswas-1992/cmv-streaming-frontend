@@ -56,7 +56,7 @@ const More = () => {
                 
                 <FontAwesomeIcon icon={faStar} className='bg-white text-slate-500 p-2 rounded-xl'/> 
                
-                <h1>faq</h1>
+                <h1>FAQ</h1>
             </div>
             <Link href='faq_page'>
             <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/>

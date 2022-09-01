@@ -6,7 +6,7 @@ const Teaser = () => {
   return (
     <div className="pt-6">
       <div className="flex justify-between items-center ml-4 whitespace-nowrap mt-4">
-        <Link href="teaser">
+        <Link href="teaser_page">
           <h1 className="text-xl font-bold text-white cursor-pointer">
             Teaser
           </h1>
