@@ -33,7 +33,7 @@ const MoviePreview = () => {
             </div>
         </div>
         </div>
-        <div className='px-8'>
+        <div className='px-8 lg:w-80 lg:items-center'>
             <Image className='rounded-2xl items-center' src={Natok} alt='' />
           </div>
         

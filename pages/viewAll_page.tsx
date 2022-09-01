@@ -4,6 +4,7 @@ import CardData from '../components/CardData'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
+import { elementAcceptingRef } from '@mui/utils'
 
 const ViewAll = () => {
   const [items, setItems] =useState(CardData)
@@ -16,7 +17,7 @@ const ViewAll = () => {
   
   
   return (
-    <div className='bg-slate-900 font-body min-h-screen'>
+    <div className='bg-slate-900 font-body'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'> 
                 <Link href='home_page' >
@@ -38,11 +39,11 @@ const ViewAll = () => {
                         
          </div>
                         
-                        
-          <div className='grid grid-cols-3 gap-3 px-4'>
+                      
+          <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4'>
                        {
                          items.map((elem)=>{
-                          return(                             
+                          return(                                                        
                                 <div className='' key={'index'}>
                                   <Link href='moviePreview_page'>
                                   <Image className='' src={elem.img} alt='' />
@@ -50,8 +51,7 @@ const ViewAll = () => {
                                     <div className='whitespace-nowrap text-white items-center align-middle'>
                                       <h1 className='text-white'>{elem.title}</h1>
                                       <p className='text-cyan-400'>{elem.catagory}</p>
-                                    </div> 
-                                     
+                                    </div>     
                                 </div> 
                                                           
                             )
@@ -59,6 +59,8 @@ const ViewAll = () => {
                         }
                         )
                       }
+          </div>
+          <div className='pb-24'>
           </div>           
                         
 
