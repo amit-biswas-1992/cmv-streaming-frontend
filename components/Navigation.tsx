@@ -9,7 +9,7 @@ const Navigation = () => {
 
    
     <div className='text-slate-600 bg-slate-800 py-2 grid grid-cols-5 gap-3 place-items-center text-xl mt-5'>
-              <Link href='home'>
+              <Link href='home_page'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon className='text-sm' icon={faHome}/>
@@ -17,7 +17,7 @@ const Navigation = () => {
                   </button>
                 </a>
               </Link>
-              <Link href='newRelease'>
+              <Link href='newRelease_page'>
                 <a>
                   <button className='hover:text-white'>
                    <FontAwesomeIcon className='text-sm' icon={faChartLine}/>
@@ -25,7 +25,7 @@ const Navigation = () => {
                   </button>               
                 </a>
               </Link>
-              <Link href='upcoming'>
+              <Link href='upcoming_page'>
                 <a>
                   <button className='hover:text-white'>
                   <FontAwesomeIcon className='text-sm' icon={faPhotoFilm}/>
@@ -33,7 +33,7 @@ const Navigation = () => {
                   </button>    
                 </a>
               </Link>
-              <Link href='buyPackage'>
+              <Link href='buyPackage_page'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon className='text-sm' icon={faCoins}/>
@@ -41,7 +41,7 @@ const Navigation = () => {
                   </button> 
                 </a>
               </Link>
-              <Link href='more'>
+              <Link href='more_page'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon className='text-sm' icon={faBars}/>
