@@ -11,9 +11,11 @@ const Teaser = () => {
             Teaser
           </h1>
         </Link>
+        <Link href='viewAll_page'>
         <button>
           <p className=" text-white font-thin mr-4">View all</p>
         </button>
+        </Link>
       </div>
       <div className="">
         <CardTeaser details={CardData3} />

@@ -36,6 +36,8 @@ const Catagory = () => {
        
           <CatagoryCard details={CardData} />
         
+        </div>
+        <div className='pb-16'>
         </div>    
 
 
