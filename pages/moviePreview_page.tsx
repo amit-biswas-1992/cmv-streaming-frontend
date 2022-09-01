@@ -5,6 +5,7 @@ import ModalSubscribe from '../components/ModalSubscribe'
 import Link from 'next/link'
 import Natok from '../components/assets/6.png'
 import Image from 'next/image'
+import ShowMore from '../components/showmore'
 
 
 
@@ -33,7 +34,7 @@ const MoviePreview = () => {
             </div>
         </div>
         </div>
-        <div className='px-8 lg:w-80 lg:items-center'>
+        <div className='px-8 lg:w-80 '>
             <Image className='rounded-2xl items-center' src={Natok} alt='' />
           </div>
         
@@ -48,19 +49,11 @@ const MoviePreview = () => {
                <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>
             <p className='mt-3 text-white'>Show More</p>
-            <div className='text-xl text-white mt-2'>
-                <FontAwesomeIcon icon={faAngleUp}/>   
+            <div className='text-xl text-white mt-2'> 
+                  <ShowMore />      
             </div>
         </div>
-        <div className='text-white mx-4'>
-            <p className='font-thin'>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-            <h1 className='font-bold text-xl my-4'>Cast</h1>
-            <p>Tasnuva Tisha, Syed Zaman Shaon, Nayan Babu, Kajal Suborno</p>
-            <h1 className='font-bold text-xl my-4'>Script Director</h1>
-            <p>Biddut Roy, Animesh Iche</p>
-        </div>
-        <div className=''>
-          
+        <div className='pb-20'>
         </div>
 
     </div>
