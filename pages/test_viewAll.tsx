@@ -8,9 +8,9 @@ import Image from 'next/image'
 
 const ViewAll = () => {
   const [items, setItems] =useState(CardData)
-  const filterItem=(catagitem) =>{
+  const filterItem=(Drama) =>{
     const updatedItems = CardData.filter((curElem)=> {
-      return curElem.catagory === catagitem;
+      return curElem.catagory === Drama;
     })
     setItems(updatedItems)
   }
@@ -27,11 +27,9 @@ const ViewAll = () => {
              </div>           
          </div>
          <div className='space-x-2 mb-4 px-6'>
-          <Link href='test_viewAll'>
                         <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4" onClick={()=>filterItem('Drama')}>               
                               <h1 className='text-white text-center'>Drama</h1>      
                         </button>
-                        </Link>
                         <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4" onClick={()=>filterItem('Romance')}>               
                               <h1 className='text-white text-center'>Romance</h1>      
                         </button>

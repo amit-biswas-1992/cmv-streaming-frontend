@@ -10,7 +10,7 @@ const UpcomingCard = (props) => {
         <div>
             <h1 className='text-2xl font-bold mx-4 mb-2'>{value.release}</h1>   
         </div> 
-        <div className='px-4 place-items-center'>
+        <div className='px-4 place-items-center lg:max-h-fit'>
           <Image className='rounded-lg' src={value.img} alt='' />  
         </div>
 
