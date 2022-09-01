@@ -9,7 +9,7 @@ const upcoming = () => {
   return (
     <div className='bg-slate-900 font-body text-white'>
         <div className='text-xl text-white ml-4 pt-8'>
-        <Link href='home' >
+        <Link href='home_page' >
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
         </div>

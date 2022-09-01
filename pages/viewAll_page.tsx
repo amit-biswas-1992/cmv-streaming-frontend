@@ -19,7 +19,7 @@ const ViewAll = () => {
     <div className='bg-slate-900 font-body min-h-screen'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'> 
-                <Link href='home' >
+                <Link href='home_page' >
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <h1 className='font-light'>Romance</h1> 
@@ -44,7 +44,7 @@ const ViewAll = () => {
                          items.map((elem)=>{
                           return(                             
                                 <div className='' key={'index'}>
-                                  <Link href='moviePreview'>
+                                  <Link href='moviePreview_page'>
                                   <Image className='' src={elem.img} alt='' />
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>
