@@ -15,7 +15,7 @@ const Bonus = () => {
         
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-                <Link href='more_page'>
+                <Link href='more'>
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <h1 className='font-light'>Bonus</h1> 

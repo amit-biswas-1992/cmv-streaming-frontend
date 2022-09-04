@@ -19,7 +19,7 @@ const Home = () => {
             <div className='flex items-center'>
                 <div className='ml-4 mt-4 flex space-x-3 items-center'>
                     <div className='w-16 pt-2'>
-                        <Link href='more_page'>
+                        <Link href='more'>
                             <a >
 
  <Image className='rounded-full ring-cyan-400 cursor-pointer' src={Avatar} alt=''/>
@@ -36,7 +36,7 @@ const Home = () => {
                 </div> 
                 <div className='text-white ml-auto mr-5 text-3xl mt-4'> 
                 <button>
-                    <Link href='search_page'>
+                    <Link href='search'>
                     <FontAwesomeIcon icon={faSearch}/>
                     </Link>
                 </button>            

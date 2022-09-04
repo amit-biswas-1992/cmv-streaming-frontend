@@ -8,7 +8,7 @@ const More = () => {
     <div className='bg-slate-900 min-h-screen font-body text-white'>
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-                <Link href='home_page'>
+                <Link href='home'>
                 <FontAwesomeIcon icon={faArrowLeft}/> 
                 </Link>
                 <h1 className='font-light'>Back</h1> 
@@ -33,7 +33,7 @@ const More = () => {
 
         <div className='flex justify-center mt-8'>
             <FontAwesomeIcon icon={faGift} className='bg-purple-600 p-4'/>
-            <Link href='bonus_pack'>
+            <Link href='bonus'>
             <button className='bg-purple-600 pr-6'>Collect Bonus</button>
             </Link>
         </div>
@@ -58,7 +58,7 @@ const More = () => {
                
                 <h1>FAQ</h1>
             </div>
-            <Link href='faq_page'>
+            <Link href='faq'>
             <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/>
             </Link> 
         </div>       

@@ -21,7 +21,7 @@ const CatagoryTile = () => {
         <div className='mx-8 mt-8'>
         <div className='grid grid-cols-2 gap-6'>
 
-                       <Link href='viewAll_page'>
+                       <Link href='viewAll'>
                        <button className="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">               
                               <h1 className='text-white text-center text-xl'>Drama</h1>      
                         </button>

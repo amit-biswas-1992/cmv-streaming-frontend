@@ -9,9 +9,11 @@ const CardTest = (props) => {
       {props.details.map((value, index) => (
 
         <div className='bg-slate-800 rounded-lg p-4 pr-8 w-full' key={index}>  
-            <Image className='rounded-xl' src={value.img} alt='' />     
+              
             <div className="flex">
-            <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center inline-block align-middle py-10">
+            
+            <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
+            <Image className='rounded-xl' src={value.img} alt='' />   
                 <h1>{value.title}</h1>
                 <p>
                   {value.year} | {value.time}
@@ -19,7 +21,7 @@ const CardTest = (props) => {
                 <h1 className="text-lg text-cyan-400">{value.catagory}</h1>
               </div>
               <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
-                <Link href="moviePreview_page">
+                <Link href="moviePreview">
                   <button>
                     <FontAwesomeIcon icon={faCirclePlay} />
                   </button>

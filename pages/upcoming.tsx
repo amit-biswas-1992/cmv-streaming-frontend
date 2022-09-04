@@ -5,21 +5,20 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
-const exclusive = () => {
+const upcoming = () => {
   return (
     <div className='bg-slate-900 font-body text-white'>
         <div className='text-xl text-white ml-4 pt-8'>
-        <Link href='home_page' >
+        <Link href='home' >
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
         </div>
         <div className='flex justify-center space-x-2 pb-8'>
-          <Link href='upcoming_page'>
-            <button className='hover:bg-cyan-400 text-white py-2 px-4 rounded-2xl'>Coming Soon</button>
+            <button className='bg-cyan-400 hover:text-white py-2 px-4 rounded-2xl'>Coming Soon</button>
+            <Link href='exclusive'>
+                  <button className='hover:bg-cyan-400 py-2 px-7 rounded-2xl'>Exclusive</button>
             </Link>
             
-            <button className='bg-cyan-400 py-2 px-7 rounded-2xl'>Exclusive</button>
-          
 
         </div>
         <div>
@@ -33,4 +32,4 @@ const exclusive = () => {
   )
 }
 
-export default exclusive
+export default upcoming
