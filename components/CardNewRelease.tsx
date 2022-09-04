@@ -12,10 +12,10 @@ const CardNewRelease = (props) => {
 
      <div className='' key={index}>
 
-<Link href='moviePreview'> 
+
        <div>
        <Image className='' src={value.img} alt='' />
-       </div> </Link>
+       </div>
         
         
               <div className='w-32 whitespace-nowrap text-white items-center align-middle'>
