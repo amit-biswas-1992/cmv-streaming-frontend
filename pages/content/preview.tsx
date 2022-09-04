@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import ModalSubscribe from '../components/ModalSubscribe'
+import ModalSubscribe from '../../components/ModalSubscribe'
 import Link from 'next/link'
 import Natok from '../components/assets/6.png'
 import Image from 'next/image'
-import ShowMore from '../components/showmore'
+import ShowMore from '../../components/showmore'
 
 
 
@@ -13,7 +13,7 @@ import ShowMore from '../components/showmore'
 
 
 
-const MoviePreview = () => {
+const Preview = () => {
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)
   return (
@@ -22,7 +22,7 @@ const MoviePreview = () => {
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-2 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
-              <Link href='home'>
+              <Link href='../home'>
               <a>
                <FontAwesomeIcon icon={faArrowLeft}/>
               </a>
@@ -62,4 +62,4 @@ const MoviePreview = () => {
   )
 }
 
-export default MoviePreview
+export default Preview
