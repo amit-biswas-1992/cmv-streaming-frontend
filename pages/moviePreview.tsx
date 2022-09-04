@@ -20,7 +20,7 @@ const MoviePreview = () => {
     <div className='bg-slate-900 font-body'>    
     
       <div className=''> 
-        <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
+        <div className='grid grid-cols-2 ml-4 pt-2 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
               <Link href='home'>
               <a>
@@ -34,13 +34,14 @@ const MoviePreview = () => {
             </div>
         </div>
         </div>
-        <div className='px-8 lg:w-80 '>
-            <Image className='rounded-2xl items-center' src={Natok} alt='' />
+    <div className=''>
+        <div className='px-20 lg:w-80'>
+            <Image className='rounded-2xl' src={Natok} alt='' />
           </div>
         
                  
-        <div className='grid place-items-center text-white mt-2'>
-            <h1 className='font-bold mt-2'>Megher Bari Jabo</h1>
+        <div className='grid place-items-center text-white'>
+            <h1 className='font-bold mt-1'>Megher Bari Jabo</h1>
             <p className='mt-2 font-thin'>2021  |  Romance  |  1h 35m</p>
         </div>
         <div className='grid place-items-center mt-4'>
@@ -53,8 +54,9 @@ const MoviePreview = () => {
                   <ShowMore />      
             </div>
         </div>
-        <div className='pb-20'>
+        <div className='pb-16'>
         </div>
+    </div>
 
     </div>
   )
