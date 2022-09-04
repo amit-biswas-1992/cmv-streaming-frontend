@@ -35,10 +35,8 @@ const BuyPackage = () => {
             </div>
         </div>
 
-
+<div className='mb-6'>
         <div className={style.container}>
-
-
         <input type='radio' name='size' id='small' className={style.input}/>      
             <label className=''> 
             <div className='bg-slate-700 mx-4 mt-16 rounded-xl cursor-pointer hover:ring-4'>
@@ -51,7 +49,6 @@ const BuyPackage = () => {
                             </div>
                         </div>   
             </label><br/>
-
         <input type='radio' name='size' id='large' className={style.input}/>
             <label>
             <div className='bg-slate-700 mx-4 mt-2 rounded-xl cursor-pointer hover:ring-4'>
@@ -64,9 +61,8 @@ const BuyPackage = () => {
                 </div>
             </div>
             </label>
-
-
         </div>
+</div>
 
         <div className='fixed bottom-20 inset-x-0 z-50 mx-4'>
                         <button onClick={() => setShowModal(true)}className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
