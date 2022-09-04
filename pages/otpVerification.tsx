@@ -18,7 +18,7 @@ export default class App extends Component {
         <div className='mt-6 mb-4'>
            <TestAnimation />
         </div>
-        <div className='text-center text-xl'>
+        <div className='text-center text-xl text-white'>
             <h1 className='font-bold'>Verification</h1>
             <p className='font-light mt-2'>Enter 4 digit number that sent<br/>to the Email on your device</p>
         </div>
