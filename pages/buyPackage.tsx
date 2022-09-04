@@ -35,11 +35,11 @@ const BuyPackage = () => {
             </div>
         </div>
 
-<div className='mb-12'>
+
         <div className={style.container}>
         <input type='radio' name='size' id='small' className={style.input}/>      
             <label className=''> 
-            <div className='bg-slate-700 mx-4 mt-16 rounded-xl cursor-pointer hover:ring-4'>
+            <div className='bg-slate-700 mx-4 mt-10 rounded-xl cursor-pointer hover:ring-4'>
                             <div className='flex text-white py-4 ml-4'>
                                     <div className=''>
                                         <p>Monthly</p>
@@ -51,7 +51,7 @@ const BuyPackage = () => {
             </label><br/>
         <input type='radio' name='size' id='large' className={style.input}/>
             <label>
-            <div className='bg-slate-700 mx-4 mt-2 rounded-xl cursor-pointer hover:ring-4'>
+            <div className='bg-slate-700 mx-4 rounded-xl cursor-pointer hover:ring-4'>
                 <div className='flex text-white py-4 ml-4'>
                         <div className=''>
                             <p>15 Days Package</p>
@@ -62,9 +62,8 @@ const BuyPackage = () => {
             </div>
             </label>
         </div>
-</div>
 
-        <div className='fixed bottom-20 inset-x-0 z-50 mx-4'>
+        <div className='fixed bottom-16 inset-x-0 z-50 mx-4'>
                         <button onClick={() => setShowModal(true)}className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
                         Register
                         </button>
