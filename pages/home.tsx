@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation'
 import Image from 'next/image'
 import Avatar from '../components/assets/test.png'
 import Link from 'next/link'
+import Video from './video'
 
 
 
@@ -57,7 +58,7 @@ const Home = () => {
         <ContinueWatching />
         <Teaser />
         <OnlyMade />
-       
+       <Video/>
           <Navigation />
       
        
