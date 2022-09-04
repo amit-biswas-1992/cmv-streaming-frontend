@@ -4,13 +4,13 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 import Navigation from '../components/Navigation'
 config.autoAddCss = false;
 function MyApp({ Component, pageProps }) {
-  return<>
+  return(
   <div className='bg-slate-900'>
   <Navigation />
   <Component {...pageProps} />
   </div>
   
-  </>
+  )
    
 }
 
