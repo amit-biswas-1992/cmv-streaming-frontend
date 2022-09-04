@@ -16,8 +16,8 @@ export default function TestAnimation() {
         <div>
             <Lottie
                 options={defaultOptions}
-                height={200}
-                width={200}
+                height={160}
+                width={160}
             />
         </div>
     );

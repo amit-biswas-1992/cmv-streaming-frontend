@@ -22,7 +22,7 @@ export default class App extends Component {
             <h1 className='font-bold'>Verification</h1>
             <p className='font-light mt-2'>Enter 4 digit number that sent<br/>to the Email on your device</p>
         </div>
-      <div className='place-items-stretch mt-14 justify-items-center'>
+      <div className='place-items-stretch mt-8 justify-items-center'>
         <div className=''>
         <OtpInput
           className='border-2 rounded-xl p-6 border-slate-400 mx-2'
@@ -39,7 +39,7 @@ export default class App extends Component {
             <button className='w-full rounded-lg py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center'>Continue</button>
             </Link>  
       </div> 
-      <div className='pb-4'>
+      <div className='pb-20'>
       <Timer/>
       </div>
         

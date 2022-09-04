@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 
@@ -11,10 +12,11 @@ const CardContinue = (props) => {
 
      <div className='' key={index}>
 
-          
+       <Link href='moviePreview'>   
        <div className='w-32 py-2'>
         <Image className='aspect-square rounded-full ring-2 mt-2 py-2' src={value.img} alt='' />
        </div>
+       </Link>
         
               <div className='whitespace-nowrap text-white items-center text-center'>
                 <h1 className='text-white'>{value.title}</h1>
