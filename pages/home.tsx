@@ -52,13 +52,14 @@ const Home = () => {
         <HomeCorasoul/>
         <Explore />       
         <NewRelease />      
-        <MostRecent />       
+        <MostRecent />  
+        <Video/>     
         <TrendingNow />
         <Exclusive />
         <ContinueWatching />
         <Teaser />
         <OnlyMade />
-       <Video/>
+    
           <Navigation />
       
        
