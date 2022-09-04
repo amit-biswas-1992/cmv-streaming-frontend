@@ -46,7 +46,7 @@ const MoviePreview = () => {
         </div>
         <div className='grid place-items-center mt-4'>
             <div className='text-cyan-400'>
-               <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-6xl'/></button> 
+               <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-5xl'/></button> 
                <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>
             <p className='mt-3 text-white'>Show More</p>

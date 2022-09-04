@@ -10,7 +10,7 @@ const Phone = () => {
   
 
   const handleNumChange = event => {
-    const limit =11;
+    const limit = 11;
     setNum(event.target.value.slice(0, limit));
   };
   
