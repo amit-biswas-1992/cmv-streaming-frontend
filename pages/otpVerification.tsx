@@ -13,7 +13,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='grid place-items-center font-body bg-white'>
+      <div className='grid place-items-center font-body bg-white h-screen'>
         
         <div className='mt-6 mb-4'>
            <TestAnimation />
