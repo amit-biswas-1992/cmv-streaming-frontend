@@ -39,7 +39,7 @@ export default class App extends Component {
             <button className='w-full rounded-lg py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center'>Continue</button>
             </Link>  
       </div> 
-      <div className='mt-8 pb-4'>
+      <div className='pb-4'>
       <Timer/>
       </div>
         
