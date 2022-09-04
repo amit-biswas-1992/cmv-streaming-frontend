@@ -8,8 +8,8 @@ const CardTest = (props) => {
     <div className="flex space-x-3 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer">
       {props.details.map((value, index) => (
 
-        <div className='bg-slate-800 rounded-lg p-4 flex' key={index}>  
-        <div className='bg-red-400 px-10 py-12 rounded-lg'><Image className='rounded-xl' src={value.img} alt='' />   </div>       
+        <div className='bg-slate-800 rounded-lg p-2 flex' key={index}>  
+        <div className='bg-red-400 px-10 py-4 rounded-lg'><Image className='rounded-xl' src={value.img} alt='' />   </div>       
              
             <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
                   

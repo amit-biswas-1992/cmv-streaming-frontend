@@ -1,4 +1,4 @@
-import UpcomingCard from '../components/UpcomingCard'
+import ExclusiveCard from '../components/ExclusiveCard'
 import CardData2 from '../components/CardData2' 
 import React,{useState}  from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -23,7 +23,7 @@ const exclusive = () => {
 
         </div>
         <div>
-           <UpcomingCard details={CardData2}/>
+           <ExclusiveCard details={CardData2}/>
         </div>
         <div className='pb-12'>
 
