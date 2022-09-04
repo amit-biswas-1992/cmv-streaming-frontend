@@ -15,7 +15,7 @@ export default function App() {
   return (
     <div className='grid place-items-center font-body'>
       <button className='text-xl text-white'onClick={handleClick}>
-      <FontAwesomeIcon icon={faAngleUp}/>
+      <FontAwesomeIcon className='text-cyan-400' icon={faAngleUp}/>
       </button>
 
       

@@ -45,7 +45,7 @@ const MoviePreview = () => {
             <p className='mt-2 font-thin'>2021  |  Romance  |  1h 35m</p>
         </div>
         <div className='grid place-items-center mt-4'>
-            <div className='text-slate-200'>
+            <div className='text-cyan-400'>
                <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-6xl'/></button> 
                <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>
