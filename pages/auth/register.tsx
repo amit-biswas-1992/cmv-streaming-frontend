@@ -4,14 +4,14 @@ import 'react-phone-number-input/style.css'
 import Link from "next/link"
 import { Input } from '@mui/material'
 
-const Phone = () => {
+const Register = () => {
   
   const [num, setNum] = useState('');
-  
+
 
   const handleNumChange = event => {
     const limit =11;
-    setNum(event.target.value.slice(0, limit));
+    setNum(event.target.value)
   };
   
     
@@ -33,7 +33,7 @@ const Phone = () => {
           </div>
           <div>
             <p className='mt-6 w-full py-4'>By continuing, you agree to our terms and conditions</p>
-            <Link href='otpVerification'>
+            <Link href='../auth/verification'>
             <button className='w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center'>Continue</button>
             </Link>
           </div>
@@ -44,4 +44,4 @@ const Phone = () => {
   )
 }
 
-export default Phone
+export default Register

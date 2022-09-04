@@ -1,5 +1,5 @@
 import Head from "next/head";
-import HomePage from "./start";
+import HomePage from "./auth/start";
 
 
 export default function Home() {
@@ -13,8 +13,6 @@ export default function Home() {
       <main>
         <div>
           <HomePage />
-          
-         
         </div>
       </main>
  

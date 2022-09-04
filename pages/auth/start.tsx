@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../components/assets/CMV.png'
-import BG from '../components/assets/image 25.jpg'
+import Logo from '../../components/assets/CMV.png'
+
 
 const Start = () => {
 
@@ -29,7 +29,7 @@ const Start = () => {
                         </h3>
                     </div>
                     <div className="grid fixed bottom-20 inset-x-0 z-50 place-items-center px-8">
-                        <Link href='login'>
+                        <Link href='../auth/register'>
                         <button className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
                         Registration
                         </button>
