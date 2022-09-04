@@ -13,14 +13,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='grid place-items-center font-body'>
+      <div className='grid place-items-center font-body bg-white'>
         
         <div className='mt-6 mb-4'>
            <TestAnimation />
         </div>
-        <div className='text-center text-xl text-white'>
-            <h1 className='font-bold text-white'>Verification</h1>
-            <p className='font-light mt-2 text-white'>Enter 4 digit number that sent<br/>to the Email on your device</p>
+        <div className='text-center text-xl'>
+            <h1 className='font-bold'>Verification</h1>
+            <p className='font-light mt-2'>Enter 4 digit number that sent<br/>to the Email on your device</p>
         </div>
       <div className='place-items-stretch mt-14 justify-items-center'>
         <div className=''>

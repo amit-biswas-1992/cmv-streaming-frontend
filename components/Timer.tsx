@@ -30,7 +30,7 @@ const Timer = (props:any) => {
         <div className='text-red-500'>
             { minutes === 0 && seconds === 0
             ? null
-            : <h1> Re-send code in : {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+            : <h1 className=''> Re-send code in : {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
         }
         </div>
     )
