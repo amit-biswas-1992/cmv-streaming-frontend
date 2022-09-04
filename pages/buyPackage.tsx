@@ -35,7 +35,7 @@ const BuyPackage = () => {
             </div>
         </div>
 
-<div className='mb-6'>
+<div className='mb-12'>
         <div className={style.container}>
         <input type='radio' name='size' id='small' className={style.input}/>      
             <label className=''> 
