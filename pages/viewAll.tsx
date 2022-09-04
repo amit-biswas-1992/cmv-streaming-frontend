@@ -17,7 +17,7 @@ const ViewAll = () => {
   
   
   return (
-    <div className='font-body bg-slate-900'>
+    <div className='font-body bg-slate-900 h-full'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'> 
                 <Link href='home' >
