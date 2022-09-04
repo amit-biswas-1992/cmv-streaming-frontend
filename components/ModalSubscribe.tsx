@@ -13,7 +13,7 @@ const Modal2 = ({visible, onClose}) => {
             <h1 className='text-2xl text-black mb-4'>Please Subscribe</h1>         
             <div className='bg-purple-600 rounded-lg p-3'>
               <Link href='buyPackage'>
-               <button>Buy Package</button>
+               <button className='text-white'>Buy Package</button>
               </Link>
               
             </div>
