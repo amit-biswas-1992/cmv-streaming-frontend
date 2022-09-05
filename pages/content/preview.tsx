@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import ModalSubscribe from '../../components/ModalSubscribe'
 import Link from 'next/link'
-import Natok from '../components/assets/6.png'
+import Natok from '../../components/assets/6.png'
 import Image from 'next/image'
 import ShowMore from '../../components/showmore'
 
@@ -54,7 +54,7 @@ const Preview = () => {
                   <ShowMore />      
             </div>
         </div>
-        <div className='pb-16'>
+        <div className='pb-24'>
         </div>
     </div>
 

@@ -17,7 +17,7 @@ const CardContinue = (props) => {
      <div className='' key={index}>
 
           
-              <div className='relative'><Link href='moviePreview'>
+              <div className='relative'><Link href='../content/preview'>
                <Image className='rounded-xl' src={value.img} alt=''/></Link> 
               <div className='flex w-32 mt-2 whitespace-nowrap text-white items-center space-x-2'>
                 <FontAwesomeIcon className='text-cyan-400'icon={faCirclePlay}/>

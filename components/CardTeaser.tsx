@@ -12,7 +12,7 @@ const CardContinue = (props) => {
 
      <div className='' key={index}>
 
-       <Link href='moviePreview'>   
+       <Link href='../content/preview'>   
        <div className='w-32 py-2'>
         <Image className='aspect-square rounded-full ring-2 mt-2 py-2' src={value.img} alt='' />
        </div>
