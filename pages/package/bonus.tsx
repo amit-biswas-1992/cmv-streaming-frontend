@@ -4,7 +4,7 @@ import {faArrowLeft,faStar, faTv, faBahai} from '@fortawesome/free-solid-svg-ico
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import Modal2 from '../components/Modal2'
+import Modal2 from '../../components/Modal2'
 
 
 const Bonus = () => {
@@ -15,7 +15,7 @@ const Bonus = () => {
         
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'>
-                <Link href='more'>
+                <Link href='../home'>
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <h1 className='font-light'>Bonus</h1> 

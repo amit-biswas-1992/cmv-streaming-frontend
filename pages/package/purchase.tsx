@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg-icons'
-import Modal from '../components/Modal'
-import style from '../components/package.module.css'
+import Modal from '../../components/Modal'
+import style from '../../components/package.module.css'
 import Link from 'next/link'
 
-const BuyPackage = () => {
+const Purchase = () => {
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)
 
@@ -14,7 +14,7 @@ const BuyPackage = () => {
     <div className='bg-slate-900 font-body h-screen'>
         <div className='pt-4 text-white'>
             <div className='text-2xl font-thin text-white ml-4'>
-                <Link href='home'>
+                <Link href='../home'>
                 <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>  
             </div>
@@ -76,4 +76,4 @@ const BuyPackage = () => {
   )
 }
 
-export default BuyPackage
+export default Purchase

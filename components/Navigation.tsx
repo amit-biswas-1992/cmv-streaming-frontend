@@ -33,7 +33,7 @@ const Navigation = () => {
                   </button>    
                 </a>
               </Link>
-              <Link href='../buyPackage'>
+              <Link href='../../package/purchase'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon className='text-sm' icon={faCoins}/>

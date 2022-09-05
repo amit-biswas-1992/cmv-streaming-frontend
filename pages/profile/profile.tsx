@@ -34,7 +34,7 @@ const Profile = () => {
 
         <div className='flex justify-center mt-8'>
             <FontAwesomeIcon icon={faGift} className='bg-purple-600 p-4'/>
-            <Link href='bonus'>
+            <Link href='../../package/bonus'>
             <button className='bg-purple-600 pr-6'>Collect Bonus</button>
             </Link>
         </div>
