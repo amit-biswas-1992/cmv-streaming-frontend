@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
-import CardData from '../components/CardData'
+import CardData from '../../components/CardData'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
@@ -20,7 +20,7 @@ const ViewAll = () => {
     <div className='font-body bg-slate-900 h-full'>
          <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>
             <div className='text-xl text-white flex space-x-3 items-center'> 
-                <Link href='home' >
+                <Link href='../home' >
                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <h1 className='font-light'>View All</h1> 
@@ -56,7 +56,7 @@ const ViewAll = () => {
                          items.map((elem,index)=>{
                           return(                                                        
                                 <div className='' key={index}>
-                                  <Link href='moviePreview'>
+                                  <Link href='../content/preview'>
                                   <Image className='' src={elem.img} alt='' />
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoContainer from '../components/VideoContainer'
+import VideoContainer from '../../components/VideoContainer'
 
 const video_page = () => {
   return (

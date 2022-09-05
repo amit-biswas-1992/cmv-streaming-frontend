@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faEllipsis, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import image from '../components/assets/4.jpg'
-import image2 from '../components/assets/2.jpg'
+import image from '../../components/assets/4.jpg'
+import image2 from '../../components/assets/2.jpg'
 import Image from "next/image";
 import React from 'react'
 
@@ -12,7 +12,7 @@ const Teaser = () => {
         <div className=''>
                 
                 <div className='flex mx-4 pt-4 text-xl'>
-                    <Link href='home'>
+                    <Link href='../home'>
                      <FontAwesomeIcon icon={faArrowLeft}/>  
                     </Link>
                         
