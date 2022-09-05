@@ -1,20 +1,22 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faSearch} from '@fortawesome/free-solid-svg-icons'
-import image from '../components/assets/3.jpg'
-import CatagoryCard from '../components/CatagoryCard'
-import CardData from '../components/CardData' 
+import image from '../../components/assets/3.jpg'
+import CatagoryCard from '../../components/CatagoryCard'
+import CardData from '../../components/CardData' 
 import Image from 'next/image'
+import Link from 'next/link'
 
 
-const Catagory = () => {
+const view = () => {
   return (
 
 
     <div className='text-white bg-slate-900'>     
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white p-1'>
-                <FontAwesomeIcon icon={faArrowLeft}/>  
+                <Link href='../search'>
+                <FontAwesomeIcon icon={faArrowLeft}/></Link> 
             </div>
             <div className=' text-white font-thin mr-4 ml-auto text-2xl relative border p-1 px-2 rounded-lg'>
                 <FontAwesomeIcon icon={faSearch}/>   
@@ -51,4 +53,4 @@ const Catagory = () => {
   )
 }
 
-export default Catagory
+export default view
