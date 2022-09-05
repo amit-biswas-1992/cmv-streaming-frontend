@@ -11,8 +11,11 @@ const CardExplore = () => {
                               </Link>
                             </div>  
                             <div className="rounded-md bg-gradient-to-r from-red-500 via-red-600 to-pink-500 ml-2">
+                            <Link href='../content/view-all'>
                               <button className='text-white py-4 px-9 text-center text-lg'>Romance</button>
-                            </div>   
+                            </Link>
+                            </div> 
+
                             <div className="rounded-md bg-gradient-to-bl from-teal-700 via-emerald-400 to-cyan-600 ml-2">
                             <Link href='../content/view-all'>
                               <button className='text-white py-4 px-10 text-center text-lg'>Comedy</button>
