@@ -6,7 +6,7 @@ const Card = (props) => {
     <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer'>
     {props.details.map( (value,index)=>(
     <div className='w-44 bg-slate-800 text-white rounded-b-2xl rounded-t-2xl whitespace-nowrap' key={index}>
-       <Link href='moviePreview'>
+       <Link href='../content/preview'>
           <div>
             <Image className='rounded-t-2xl' src={value.img} alt=''/>
           </div></Link>

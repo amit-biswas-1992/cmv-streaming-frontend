@@ -20,7 +20,7 @@ const CardTest = (props) => {
                     <h1 className="text-lg text-cyan-400">{value.catagory}</h1>
               </div>
               <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
-                <Link href="moviePreview">
+                <Link href="../content/video">
                   <button>
                     <FontAwesomeIcon icon={faCirclePlay} />
                   </button>

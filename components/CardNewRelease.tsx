@@ -14,7 +14,9 @@ const CardNewRelease = (props) => {
 
 
        <div>
-       <Image className='' src={value.img} alt='' />
+        <Link href='../content/preview'><Image className='' src={value.img} alt='' />
+        </Link>
+       
        </div>
         
         
