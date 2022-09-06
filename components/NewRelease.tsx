@@ -1,6 +1,6 @@
 import React from 'react'
-import CardContinue from './CardContinue'
-import CardData from './CardData'
+import CardRelease from './CardRelease'
+
 import Link from 'next/link'
 const NewRelease = () => {
   return (
@@ -14,7 +14,7 @@ const NewRelease = () => {
             </Link> 
         </div>
         <div>
-      <CardContinue details={CardData} />
+      <CardRelease/>
     </div>    
     </div>
   )

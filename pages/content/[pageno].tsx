@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 export const getStaticPaths = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await res.json();
 
   const paths = data.map((curElem) => {
@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.pageno;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
   const data = await res.json();
 
   return {
@@ -32,7 +32,7 @@ export const getStaticProps = async (context) => {
 };
 
 const myData = ({ data }) => {
-  const { id, title, body } = data;
+  const { id, title, completed } = data;
   return (
     <>
      
@@ -61,7 +61,7 @@ const myData = ({ data }) => {
                
       <div className='grid place-items-center text-white'>
           <h1 className='font-bold mt-1'>{title}</h1>
-          <p className='mt-2 font-thin'>{id}  |  {body}  | {title}</p>
+          <p className='mt-2 font-thin'>{id}  |  {id}  | {title}</p>
       </div>
       <div className='grid place-items-center mt-4'>
           <div className='text-cyan-400'>

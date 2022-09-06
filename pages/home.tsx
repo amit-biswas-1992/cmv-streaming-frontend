@@ -9,9 +9,6 @@ import Link from 'next/link'
 
 
 
-
-
-
 const Home = () => {
   return (
     <div className='bg-slate-900 font-body'>
