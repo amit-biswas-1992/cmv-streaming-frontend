@@ -58,7 +58,7 @@ const content = ({ data }) => {
     
            
 
-    <HomeCorasoul/>
+    <HomeCorasoul data={data.featureVideos}/>
     <Explore data={data.mediaContentCategory} />       
     <NewRelease data={data.newReleaseVideos} />      
     <MostRecent />      
