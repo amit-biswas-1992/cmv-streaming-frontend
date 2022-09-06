@@ -1,11 +1,21 @@
 import React from 'react'
-import CardExplore from './CardExplore'
+
 import Link from 'next/link'
+import Image from 'next/image'
 
 
 
 
-function Explore() {
+
+function Explore({data}) {
+  console.log('explore card',data)
+
+
+  const myLoader = ({ src, width, quality }) => {
+    return `https://cmv.dvcoreapi.com/media/category/${src}?w=${width}&q=${quality || 75}`
+  }
+
+  
   return (
     <div className=''>
         <div className='flex justify-between items-center ml-4 whitespace-nowrap'>
@@ -16,13 +26,27 @@ function Explore() {
             </button>
             </Link>
         </div>
+      
         <div>
-          <CardExplore />
-        </div>
+        <div className='flex space-x-4 text-left overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
+    {data.map( (curElem)=>(
 
+     <div className='' key={curElem.id}>
 
-       
-      </div>
+          
+              <div className=''>
+                <Link href='../content/preview'>
+               <Image className='rounded-sm'loader={myLoader}
+                  src={curElem.cover_photo} width={200} height={80} alt=''/>
+               </Link> 
+              </div>           
+    </div>
+    ))}
+
+    </div>
+  </div>
+
+</div>
    
   )
 }

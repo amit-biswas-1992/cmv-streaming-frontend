@@ -19,9 +19,9 @@ export const getStaticProps = async () => {
     },
   };
 }; 
-
 const content = ({ data }) => {
     console.log('data is showing recent', data.mediaContentCategory)
+
   return (
 <div>
     <div className='bg-slate-900 font-body'>
@@ -59,47 +59,27 @@ const content = ({ data }) => {
            
 
     <HomeCorasoul/>
-   
-    <Explore />       
-    <NewRelease />      
+    <Explore data={data.mediaContentCategory} />       
+    <NewRelease data={data.newReleaseVideos} />      
     <MostRecent />      
     <TrendingNow />
-    <Exclusive />
+    <Exclusive data={data.exclusiveVideos}   />
     <ContinueWatching />
     <Teaser />
     <OnlyMade />
 
-      <Navigation />
-  
-   
 
-
-
-
-
-
-
-    
-
-
-
-
-
+    <Navigation />
 </div>
 
 
 
-
-
-
-
-
-    <div className="pb-24">
-      {data.mediaContentCategory.map((curElem) => {
+    {/* <div className="pb-24">
+      {data.map((curElem) => {
         return (
 
             
-          <div key={curElem.id} className="bg-red-200 flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4 text-white">
+          <div key={curElem.id} className="bg-slate-600 ml-4 px-4 cursor-pointer mt-4 text-white">
             <h3>{curElem.id}</h3>
             <Link href={`/content/${curElem.id}`}>
               <h2>{curElem.release_date}</h2>
@@ -107,7 +87,7 @@ const content = ({ data }) => {
           </div>
         );
       })}
-    </div>
+    </div> */}
 </div>    
   );
 };

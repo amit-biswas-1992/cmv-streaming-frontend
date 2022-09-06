@@ -19,7 +19,9 @@ const FAQ = () => {
         </div>
     <div className='mt-4'>
     <MuiAccrodion />
-    </div>       
+    </div>   
+    <div className=''>
+    </div>    
     </div>
   )
 }

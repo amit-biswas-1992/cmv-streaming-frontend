@@ -11,7 +11,6 @@ const CardContinue = (props) => {
     {props.details.map( (value,index)=>(
 
      <div className='' key={index}>
-
        <Link href='../content/preview'>   
        <div className='w-32 py-2'>
         <Image className='aspect-square rounded-full ring-2 mt-2 py-2' src={value.img} alt='' />

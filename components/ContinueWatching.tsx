@@ -11,7 +11,7 @@ const ContinueWatching = () => {
             <p className=' text-white font-thin mr-4'>View all</p>
             </button>
     </div>
-    <div>
+    <div className=''>
       <CardContinue details={CardData} />
     </div>
 </div>
