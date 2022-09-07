@@ -21,7 +21,7 @@ const Navigation = () => {
                 <a>
                   <button className='hover:text-white'>
                    <FontAwesomeIcon className='text-sm' icon={faChartLine}/>
-                   <p className='text-sm'>Exclusive</p>
+                   <p className='text-sm'>Populer</p>
                   </button>               
                 </a>
               </Link>
