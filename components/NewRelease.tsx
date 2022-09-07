@@ -8,7 +8,7 @@ const NewRelease = ({data}) => {
     return `https://cmv.dvcoreapi.com/media/content/${src}?w=${width}&q=${quality || 75}`
   }
   return (
-    <div className='pt-6'>
+    <div className='pt-4'>
         <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
             <h1 className='text-xl font-bold text-white cursor-pointer'>New Release</h1>
             <Link href='../content'>

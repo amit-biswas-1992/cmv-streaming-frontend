@@ -25,10 +25,10 @@ const content = ({ data }) => {
   return (
 <div>
     <div className='bg-slate-900 font-body'>
-    <div className='pt-3'>
+    <div className='pt-3 mb-6'>
         <div className='flex items-center'>
             <div className='ml-4 mt-4 flex space-x-3 items-center'>
-                <div className='w-16 pt-2'>
+                <div className='w-12 pt-2'>
                     <Link href='../profile/profile'>
                         <a >
 

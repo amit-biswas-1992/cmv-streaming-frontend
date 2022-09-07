@@ -15,11 +15,6 @@ const upcoming = () => {
         </div>
         <div className='flex justify-center space-x-2 pb-8'>
             <button className='bg-cyan-400 hover:text-white py-2 px-4 rounded-2xl'>Coming Soon</button>
-            <Link href='../sub-catagory/exclusive'>
-                  <button className='hover:bg-cyan-400 py-2 px-7 rounded-2xl'>Exclusive</button>
-            </Link>
-            
-
         </div>
         <div>
            <UpcomingCard details={CardData2}/>
