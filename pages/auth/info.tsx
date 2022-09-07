@@ -28,8 +28,7 @@ const Register = () => {
 
             <label>Set password</label>
             <input className='w-full py-3 my-2 bg-white text-xl text-black' type="password" id="pswrd" name="pswrd" />
-            <label>Confirm password</label>
-            <input className='w-full py-3 my-2 bg-white text-xl text-black' type="password" id="pswrd" name="pswrd" />
+            
       </form>
           </div>    
           <div className='mx-4'>

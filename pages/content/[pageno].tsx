@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 export const getStaticPaths = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const res = await fetch("https://cmv.dvcoreapi.com/api/v1/core/home");
   const data = await res.json();
 
   const paths = data.map((curElem) => {
@@ -18,19 +18,16 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
 export const getStaticProps = async (context) => {
   const id = context.params.pageno;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  const res = await fetch(`https://cmv.dvcoreapi.com/api/v1/core/home/${id}`);
   const data = await res.json();
-
   return {
     props: {
       data,
     },
   };
 };
-
 const myData = ({ data }) => {
   const { id, title, completed } = data;
   return (

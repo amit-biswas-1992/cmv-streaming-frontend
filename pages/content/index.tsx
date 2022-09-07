@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const res = await fetch("https://cmv.dvcoreapi.com/api/v1/core/home");
   const data = await res.json();
   
 

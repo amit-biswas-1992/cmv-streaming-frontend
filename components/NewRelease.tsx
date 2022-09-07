@@ -22,10 +22,12 @@ const NewRelease = ({data}) => {
 
      <div className='' key={curElem.id}>
 
-          
-       
-                <Image className='rounded-2xl'loader={myLoader}
+            <Link href={`/content/${curElem.id}`}>
+            <Image className='rounded-2xl'loader={myLoader}
                   src={curElem.cover} width={300} height={350}  alt=''/>
+            </Link>
+       
+                
               <div className='w-32 whitespace-nowrap text-white items-center align-middle'>
                 
                 <h1 className='text-white mt-2'>{curElem.title}</h1>
