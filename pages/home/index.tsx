@@ -61,8 +61,8 @@ const content = ({ data }) => {
     <Explore data={data.mediaContentCategory} />       
     <NewRelease data={data.newReleaseVideos} />      
     <MostRecent />      
-    <TrendingNow />
-    <ContinueWatching />
+    <TrendingNow /> 
+    <ContinueWatching /> 
     <Teaser />
     <OnlyMade />
 

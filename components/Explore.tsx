@@ -20,11 +20,11 @@ function Explore({data}) {
     <div className=''>
         <div className='flex justify-between items-center ml-4 whitespace-nowrap'>
             <h1 className='text-xl font-bold text-white cursor-pointer'>Explore Catagory</h1>
-            <Link href='../content/view-all'>
-            <button>
-            <p className=' text-white font-thin mr-4'>View all</p>
-            </button>
+            
+            <Link href='../content/view-all'><button className=' text-white font-thin mr-4'>View all</button>
             </Link>
+           
+           
         </div>
       
         <div>
@@ -35,10 +35,10 @@ function Explore({data}) {
 
           
               <div className=''>
-                <Link href='../content/preview'>
+                {/* <Link href='../content/preview'> */}
                <Image className='rounded-sm'loader={myLoader}
                   src={curElem.cover_photo} width={200} height={80} alt=''/>
-               </Link> 
+               {/* </Link>  */}
               </div>           
     </div>
     ))}
