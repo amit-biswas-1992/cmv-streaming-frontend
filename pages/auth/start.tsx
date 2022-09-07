@@ -34,7 +34,7 @@ const Start = () => {
                         Registration
                         </button>
                         </Link>
-                        <Link href='../package/purchase'>
+                        <Link href='../auth/login'>
                         <button className="mt-2 grid place-items-center text-center">Log In</button>
                         </Link>
                     </div>

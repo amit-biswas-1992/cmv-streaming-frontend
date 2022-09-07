@@ -41,7 +41,7 @@ const Navigation = () => {
                   </button> 
                 </a>
               </Link>
-              <Link href='more'>
+              <Link href='../faq/more'>
                 <a>
                   <button className='hover:text-white'>
                     <FontAwesomeIcon className='text-sm' icon={faBars}/>

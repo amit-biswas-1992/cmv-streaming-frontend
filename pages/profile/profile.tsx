@@ -32,14 +32,14 @@ const Profile = () => {
             <h1>-------------</h1>
         </div>
 
-        <div className='flex justify-center mt-8'>
+        <div className='flex justify-center mt-4'>
             <FontAwesomeIcon icon={faGift} className='bg-purple-600 p-4'/>
             <Link href='../../package/bonus'>
             <button className='bg-purple-600 pr-6'>Collect Bonus</button>
             </Link>
         </div>
         <div>
-        <div className='bg-slate-700 mx-6 mt-16 rounded-xl'>
+        <div className='bg-slate-700 mx-6 mt-8 rounded-xl'>
                             <div className='flex text-white py-4 ml-4'>
                                     <div className='text-sm'>
                                         <p>Premium package</p>
@@ -51,7 +51,7 @@ const Profile = () => {
         </div>
 
 
-    <div className='mx-6 my-4'>
+    <div className='mx-6 my-2'>
         <div className='flex items-center py-8'>
             <div className='flex items-center space-x-3'>  
                 <FontAwesomeIcon icon={faStar} className='bg-white text-slate-500 p-2 rounded-xl'/> 
@@ -64,13 +64,13 @@ const Profile = () => {
         <div className='flex items-center'>
             <div className='flex items-center space-x-3'>
                 <FontAwesomeIcon icon={faGear} className='bg-white text-slate-500 p-2 rounded-xl'/> 
-                <h1>Settings</h1>
+                <h1>Edit Profile</h1>
             </div>
-            <Link href='../faq/settings'>
-            <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/></Link>
+           
+            <FontAwesomeIcon icon={faAngleRight} className='text-white ml-auto cursor-pointer'/>
         </div>
     </div>    
-        <div className='mt-28 pb-6 flex justify-center'>
+        <div className='mt-6 pb-20 flex justify-center'>
             <h1>Unsubscribe</h1>
         </div>
     </div>
