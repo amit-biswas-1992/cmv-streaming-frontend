@@ -18,15 +18,15 @@ const NewRelease = ({data}) => {
             </Link> 
         </div>
         <div>
-        <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain mx-4 cursor-pointer mt-4'>
+        <div className='flex space-x-3 overflow-x-auto scrollbar-hide overscroll-x-contain mx-4 cursor-pointer mt-4'>
     {data.map( (curElem)=>(
 
      <div className='' key={curElem.id}>
 
           
        
-                <Image className='rounded-sm'loader={myLoader}
-                  src={curElem.cover} width={500} height={250} alt=''/>
+                <Image className='rounded-2xl'loader={myLoader}
+                  src={curElem.cover} width={300} height={350}  alt=''/>
               <div className='w-32 whitespace-nowrap text-white items-center align-middle'>
                 
                 <h1 className='text-white mt-2'>{curElem.title}</h1>

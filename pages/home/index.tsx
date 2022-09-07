@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import {Explore, NewRelease, MostRecent, TrendingNow, Exclusive, ContinueWatching, Teaser, OnlyMade, HomeCorasoul} from '../../components/index'
+import {Explore, NewRelease, MostRecent, TrendingNow, ContinueWatching, Teaser, OnlyMade, HomeCorasoul} from '../../components/index'
 import Navigation from '../../components/Navigation'
 import Image from 'next/image'
 import Avatar from '../../components/assets/test.png'
@@ -41,7 +41,6 @@ const content = ({ data }) => {
                
                 <div className='text-white'>
                     <p className='text-xl font-semibold whitespace-nowrap'>Hi Ishtiaq!</p>
-                    <p className='whitespace-nowrap'>You have remain 15 days</p>
                 </div>
             </div> 
             <div className='text-white ml-auto mr-5 text-3xl mt-4'> 
@@ -58,12 +57,11 @@ const content = ({ data }) => {
     
            
 
-    <HomeCorasoul data={data.featureVideos}/>
+    {/* <HomeCorasoul data={data.featureVideos}/> */}
     <Explore data={data.mediaContentCategory} />       
     <NewRelease data={data.newReleaseVideos} />      
     <MostRecent />      
     <TrendingNow />
-    <Exclusive data={data.exclusiveVideos}   />
     <ContinueWatching />
     <Teaser />
     <OnlyMade />
