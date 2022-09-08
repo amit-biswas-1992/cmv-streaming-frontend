@@ -2,6 +2,7 @@ import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCirclePlay} from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 const CatagoryCard = (props) => {
   return (
     <div className=''>
@@ -22,7 +23,7 @@ const CatagoryCard = (props) => {
             </div>
 
             <div className='text-3xl ml-auto'>
-                <FontAwesomeIcon icon={faCirclePlay}/> 
+            <Link href='../content-original/video'><a><FontAwesomeIcon icon={faCirclePlay}/></a></Link> 
             </div>  
             </div>
         </div> 

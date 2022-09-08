@@ -30,7 +30,7 @@ const view = () => {
         <div className='mx-4'>
                 <Image className='rounded-lg' src={image} alt='' />             
                     <div className='text-xl flex items-center space-x-1 mt-1'>
-                        <FontAwesomeIcon icon={faCirclePlay}/> 
+                    <Link href='../content-original/video'><a><FontAwesomeIcon icon={faCirclePlay}/></a></Link>  
                         <h1>Play Now</h1>  
                     </div>                         
         </div>
