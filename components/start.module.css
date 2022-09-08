@@ -1,0 +1,11 @@
+.item{
+    background-image: url(../components/assets/25.png);
+    height: auto;
+    width:100%;
+
+    background-size: cover;
+    background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+
+}
