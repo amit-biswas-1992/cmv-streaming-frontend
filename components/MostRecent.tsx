@@ -9,9 +9,9 @@ const MostRecent = () => {
     <div className='pt-6'>
     <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
         <h1 className='text-xl font-bold text-white cursor-pointer'>Most Populer</h1>
-        <Link href='../content/view-all'>
+        <Link href='../search'><a>
         <button className=' text-white font-thin mr-4'>View all
-            </button>
+            </button></a>
             </Link>
     </div>
     <div>
