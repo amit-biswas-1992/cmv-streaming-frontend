@@ -17,7 +17,7 @@ const Navigation = () => {
                   </button>
                 </a>
               </Link>
-              <Link href='../../new-release'>
+              <Link href='../../sub-catagory/upcoming'>
                 <a>
                   <button className='hover:text-white'>
                    <FontAwesomeIcon className='text-sm' icon={faChartLine}/>

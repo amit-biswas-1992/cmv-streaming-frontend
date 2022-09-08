@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from '../../components/assets/CMV.png'
+import BG from '../../components/assets/bg.jpg'
 
 
 const Start = () => {
@@ -12,6 +13,7 @@ const Start = () => {
       <div className="w-full h-full bg-slate-900/80 absolute font-body">
 
       </div>
+      
 
       <div className="text-white relative">
 

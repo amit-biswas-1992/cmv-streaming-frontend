@@ -11,10 +11,10 @@ const Teaser = () => {
             Teaser
           </h1>
         </Link>
-        <Link href='viewAll'>
+        <Link href='../demo-view'><a>
         <button>
           <p className=" text-white font-thin mr-4">View all</p>
-        </button>
+        </button></a>
         </Link>
       </div>
       <div className="">
