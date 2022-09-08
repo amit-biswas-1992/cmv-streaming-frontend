@@ -22,9 +22,9 @@ const NewRelease = ({data}) => {
 
      <div className='' key={curElem.id}>
 
-            <Link href={`/content/${curElem.id}`}>
+            <Link href={`/content/${curElem.id}`}><a>
             <Image className='rounded-2xl'loader={myLoader}
-                  src={curElem.cover} width={300} height={350}  alt=''/>
+                  src={curElem.cover} width={300} height={350}  alt=''/></a>
             </Link>
        
                 
