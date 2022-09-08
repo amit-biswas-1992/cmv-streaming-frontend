@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <div className='bg-slate-900 font-body'>
         
-        <div className='mx-4 py-4'>
+        <div className='mx-4 pt-4'>
         <Link href='../home'>
               <a>
                <FontAwesomeIcon className='text-2xl font-thin text-white mb-4'icon={faArrowLeft}/>
@@ -22,7 +22,7 @@ const Search = () => {
             <input className="placeholder:text-slate-500 block bg-slate-700 w-full rounded-full py-4 pl-5 pr-3 shadow-sm focus:outline-none focus:border-slate-800 focus:ring-slate-800 focus:ring-1 text-lg" placeholder="Search" type="text" name="search"/>
             </label>
         </div>
-        <div>
+        <div className=''>
             <ViewAll />
         </div>
        

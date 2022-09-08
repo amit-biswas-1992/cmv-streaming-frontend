@@ -36,7 +36,8 @@ const Preview = () => {
         </div>
     <div className=''>
         <div className='px-20 lg:w-80'>
-            <Image className='rounded-2xl' src={Natok} alt='' />
+          <Link href='../content-original/video'><a>
+            <Image className='rounded-2xl' src={Natok} alt='' /></a></Link>
           </div>
         
                  

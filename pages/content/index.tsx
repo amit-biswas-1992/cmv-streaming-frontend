@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://cmv.dvcoreapi.com/api/v1/core/home");
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await res.json();
   
 
@@ -20,7 +20,7 @@ const content = ({ data }) => {
       
       {data.map((curElem) => {
         return (
-          <div key={curElem.id} className="bg-red-200 flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4 text-white">
+          <div key={curElem.id} className="bg-blue-200 flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4 text-white">
             <h3>{curElem.id}</h3>
             <Link href={`/content/${curElem.id}`}>
               <h2>{curElem.title}</h2>
