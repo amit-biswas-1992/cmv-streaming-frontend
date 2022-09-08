@@ -6,10 +6,10 @@ import {Explore, NewRelease, MostRecent, TrendingNow, ContinueWatching, Teaser, 
 import Navigation from '../../components/Navigation'
 import Image from 'next/image'
 import Avatar from '../../components/assets/test.png'
+import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://cmv.dvcoreapi.com/api/v1/core/home");
-  const data = await res.json();
+  const data = await callApiGetWithoutToken("https://cmv.dvcoreapi.com/api/v1/core/home");
  
   
 

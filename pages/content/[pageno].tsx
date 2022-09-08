@@ -1,27 +1,12 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
-export const getStaticPaths = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await res.json();
+import { callApiGetWithoutToken, callApiWithoutToken } from '../../services/api.service';
 
-  const paths = data.map((curElem) => {
-    return {
-      params: {
-        pageno: curElem.id.toString(),
-      },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const id = context.params.pageno;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-  const data = await res.json();
+  const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
+  
   return {
     props: {
       data,
