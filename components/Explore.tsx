@@ -28,7 +28,7 @@ function Explore({data}) {
         </div>
       
         <div>
-        <div className='flex space-x-4 text-left overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
+        <div className='flex space-x-3 overflow-x-auto scrollbar-hide overscroll-x-contain mx-4 cursor-pointer mt-4'>
     {data.map( (curElem)=>(
 
      <div className='' key={curElem.id}>
@@ -37,7 +37,7 @@ function Explore({data}) {
               <div className=''>
                 {/* <Link href='../content/preview'> */}
                <Image className='rounded-sm'loader={myLoader}
-                  src={curElem.cover_photo} width={200} height={80} alt=''/>
+                  src={curElem.cover_photo} width={350} height={150} alt=''/>
                {/* </Link>  */}
               </div>           
     </div>
