@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Link from 'next/link'
 import CardData from '../components/CardData'
 import Image from 'next/image'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg-icons'
 
 
 const ViewComp = () => {
@@ -16,8 +18,14 @@ const ViewComp = () => {
   
   return (
     <div className='font-body bg-slate-900 h-full'>
-         <div className='grid grid-cols-2 ml-4 pt-8 mb-4 justify-items-stretch'>        
-         </div>
+         <div className='pt-4 text-white mb-4'>
+            <div className='text-2xl font-thin text-white ml-4'>
+                <Link href='../home'>
+                <FontAwesomeIcon icon={faArrowLeft}/>
+                </Link>  
+            </div>
+            <h1 className='text-xl grid place-items-center'>View</h1>
+        </div>
          {/* <div className='grid grid-cols-3 mb-6 lg:grid-cols-6 gap-4 lg:mb-12 px-4'>
           
                         <button className="rounded-md bg-gradient-to-r border-2 border-slate-600 p-4" onClick={()=>filterItem('Drama')}>               
@@ -48,7 +56,7 @@ const ViewComp = () => {
                          items.map((elem,index)=>{
                           return(                                                        
                                 <div className='' key={index}>
-                                  <Link href='../content/preview'><a>
+                                  <Link href='../content-original/preview'><a>
                                   <Image className='' src={elem.img} alt='' /></a>
                                   </Link> 
                                     <div className='whitespace-nowrap text-white items-center align-middle'>

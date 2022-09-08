@@ -12,7 +12,7 @@ const NewRelease = ({data}) => {
         <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
             <h1 className='text-xl font-bold text-white cursor-pointer'>New Release</h1>
             
-            <Link href='../content'><button className=' text-white font-thin mr-4'>View all
+            <Link href='../demo-view'><button className=' text-white font-thin mr-4'>View all
             </button></Link> 
            
         </div>

@@ -35,10 +35,10 @@ function Explore({data}) {
 
           
               <div className=''>
-                {/* <Link href='../content/preview'> */}
+                 <Link href='../demo-view'><a>
                <Image className='rounded-sm'loader={myLoader}
-                  src={curElem.cover_photo} width={350} height={150} alt=''/>
-               {/* </Link>  */}
+                  src={curElem.cover_photo} width={350} height={150} alt=''/></a> 
+               </Link>
               </div>           
     </div>
     ))}

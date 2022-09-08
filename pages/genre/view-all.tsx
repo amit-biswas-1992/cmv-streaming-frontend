@@ -15,11 +15,11 @@ const view = () => {
     <div className='text-white bg-slate-900'>     
         <div className='grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white p-1'>
-                <Link href='../search'>
-                <FontAwesomeIcon icon={faArrowLeft}/></Link> 
+                <Link href='../catagoryTile'><a>
+                <FontAwesomeIcon icon={faArrowLeft}/></a></Link> 
             </div>
             <div className=' text-white font-thin mr-4 ml-auto text-2xl relative border p-1 px-2 rounded-lg'>
-                <FontAwesomeIcon icon={faSearch}/>   
+            <Link href='../search'><a><FontAwesomeIcon icon={faSearch}/></a></Link>   
             </div>
         </div>
 
