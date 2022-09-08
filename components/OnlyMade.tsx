@@ -1,6 +1,7 @@
 import React from 'react'
 import CardOnly from './CardOnly'
 import CardData from './CardData'
+import Link from 'next/link'
 
 const OnlyMade = () => {
   return (
@@ -8,7 +9,7 @@ const OnlyMade = () => {
     <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4 mb-7'>
         <h1 className='text-xl font-bold text-white cursor-pointer'>Only For You</h1>
         <button>
-            <p className=' text-white font-thin mr-4'>View all</p>
+        <Link href='../demo-view'><a><p className=' text-white font-thin mr-4'>View all</p></a></Link>
             </button>
     </div>
     <div className='pb-24'>
