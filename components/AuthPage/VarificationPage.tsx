@@ -11,7 +11,7 @@ function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
   const [loginData, setLoginData] = useState("");
-  console.log(loginData.notification_text,"notificationText");
+  // console.log(loginData.notification_text,"notificationText");
   console.log(otp,"otp");
   
   const [timeOut, setTimeOut] = useState(false);
@@ -46,12 +46,18 @@ function VarificationPage(props) {
           notification_type:"otp",
         });
         if (response.data.profileScreen===true) {
+          console.log(response.data.otpData.receiver);
+          
           localStorage.setItem("otp_response", JSON.stringify(response.data.otpData.receiver));
+          
           navigate.push("../auth/info");
-          toast.success("OTP varified");
+
+          // toast.success("OTP varified");
         } else {
-          localStorage.setItem("otp_response", JSON.stringify(response.data.token));
-          navigate.push(".../home");
+          console.log(response.data.token);
+          
+          localStorage.setItem("user_token", JSON.stringify(response.data.token));
+          navigate.push("../home");
           toast.success("OTP varified");
         }
         console.log(response.data.profileScreen,"response");
