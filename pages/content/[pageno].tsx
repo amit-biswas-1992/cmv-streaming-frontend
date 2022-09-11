@@ -42,8 +42,8 @@ const myData = ({ data }) => {
       
                
       <div className='grid place-items-center text-white'>
-          <h1 className='font-bold mt-1'>{title}</h1>
-          <p className='mt-2 font-thin'>{id}  |  {id}  | {title}</p>
+          <h1 className='font-bold mt-1'>{data.title}</h1>
+          <p className='mt-2 font-thin'>{data.id}  |  {data.id}  | {title}</p>
       </div>
       <div className='grid place-items-center mt-4'>
           <div className='text-cyan-400'>
