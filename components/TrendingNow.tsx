@@ -24,9 +24,9 @@ const TrendingNow = ({data}) => {
     <div className="flex space-x-3 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">
       {data.map((curElem) => (
 
-        <div className='bg-slate-800 rounded-lg p-2 flex' key={curElem.id}>  
+        <div className='bg-slate-800 rounded-lg p-2 flex text-justify min-w-[300px]' key={curElem.id}>  
         <Image className='rounded-xl' loader={myLoader}
-                  src={curElem.cover} width={300} height={350}  alt='' />       
+                  src={curElem.cover} width={100} height={100}  alt='' />       
              
             <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
                   
