@@ -16,9 +16,9 @@ import { ApiConstants } from '../../services/api.service'
       // event.preventDefault()
      
       setNum(e.target.value)
-      if (e.target.value.length > 11) {
+      if (e.target.value.length > 13) {
         setIsError(true);
-      } else if (e.target.value.length < 11) {
+      } else if (e.target.value.length < 13) {
         setIsError(true);
       } else {
         setIsError(false);
