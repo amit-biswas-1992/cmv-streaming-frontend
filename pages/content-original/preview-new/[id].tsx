@@ -1,17 +1,21 @@
 import React,{useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import ModalSubscribe from '../../components/ModalSubscribe'
+import ModalSubscribe from '../../../components/ModalSubscribe'
 import Link from 'next/link'
 import Natok from '../../components/assets/6.png'
 import Image from 'next/image'
-import ShowMore from '../../components/showmore'
-import { callApiGetWithoutToken } from '../../../services/api.service'
+import ShowMore from '../../../components/showmore'
+// import { callApiGetWithoutToken } from '../../../services/api.service'
 
+
+// export const getServerSideProps = async (context) => {
+//     const id = context.params.pageno;
+//     const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
 
 export const getServerSideProps = async (context) => {
-    const id = context.params.pageno;
-    const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
+  const id = context.params.pageno;
+  const data = await (`/core/media-content-preview/${id}`);
     
     return {
       props: {

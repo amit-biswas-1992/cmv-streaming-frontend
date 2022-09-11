@@ -9,8 +9,7 @@ import { IMAGE_BASE_URL } from '../../utils/constants'
 
 
 export const getStaticProps = async () => {
-     const data = await callApiGetWithoutToken("/core/upcoming-content");
-     console.log('image',data)
+     const data = await callApiGetWithoutToken("/core/most-popular-content");
   return {
     props: {
       data,
@@ -31,16 +30,16 @@ const upcoming = ({data}) => {
                 </Link>
         </div>
         <div className='flex justify-center space-x-2 pb-8'>
-            <button className='bg-cyan-400 hover:text-white py-2 px-4 rounded-2xl'>Coming Soon</button>
+            <button className='bg-cyan-400 hover:text-white py-2 px-4 rounded-2xl'>Most Populer</button>
         </div>
         <div className='text-white'>
     {data.map( (curElem)=>(
     <div className='' key={curElem.id}>
         <div>
-            <h1 className='text-2xl font-bold mx-4 mb-2'>{curElem.release_date}</h1>   
+            {/* <h1 className='text-2xl font-bold mx-4 mb-2'>{curElem.release_date}</h1>    */}
         </div> 
         <div className='px-4 place-items-center lg:max-h-fit'>
-        <Image className='rounded-2xl' loader={myLoader}
+        <Image className='rounded-2xl'loader={myLoader}
                   src={curElem.thumb} width={350} height={200}  alt=''/> 
         </div>
 
@@ -63,6 +62,7 @@ const upcoming = ({data}) => {
 
         <div className='mx-4 mt-3 pb-10'>
             <p className='font-thin text-sm'>{'value.details'}</p>
+            <p className='font-thin text-sm'>{'Total view '+curElem.total_view_count}</p>
         </div>
 
         

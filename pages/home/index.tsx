@@ -9,7 +9,7 @@ import Avatar from '../../components/assets/test.png'
 import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getStaticProps = async () => {
-  const data = await callApiGetWithoutToken("https://cmv.dvcoreapi.com/api/v1/core/home");
+  const data = await callApiGetWithoutToken("/core/home");
  
   
 
@@ -57,12 +57,12 @@ const content = ({ data }) => {
     
            
 
-    {/* <HomeCorasoul data={data.featureVideos}/> */}
+    <HomeCorasoul data={data.featureVideos}/> 
     <Explore data={data.mediaContentCategory} />       
     <NewRelease data={data.newReleaseVideos} />      
-    <MostRecent />      
+    {/* <MostRecent data={data.newReleaseVideos}/>       */}
     <TrendingNow /> 
-    <ContinueWatching /> 
+    {/* <ContinueWatching data={data.newReleaseVideos} />  */}
     <Teaser />
     <OnlyMade />
 
