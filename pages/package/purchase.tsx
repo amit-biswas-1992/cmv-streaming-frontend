@@ -47,7 +47,7 @@ const Purchase = ({data}) => {
         <div className='ml-4 cursor-pointer mt-4'>
     {data.map( (curElem)=>(
 
-     <div className='' key={curElem.id}>
+     <div className={style.input} key={curElem.id}>
 
                     <div className='bg-slate-700 mx-4 mt-4 rounded-xl cursor-pointer hover:ring-4'>
                             <div className='flex text-white py-4 ml-4'>
