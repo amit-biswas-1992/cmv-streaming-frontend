@@ -1,9 +1,8 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../components/assets/CMV.png'
+import Link from "next/link";
+import Logo from '../../components/assets/CMV.png';
 
-import style from '../../components/start.module.css'
+import style from '../../components/start.module.css';
 
 
 const Start = () => {
@@ -32,12 +31,12 @@ const Start = () => {
                      <div className="grid fixed bottom-20 inset-x-0 z-50 place-items-center px-8">
                         <Link href='../auth/register'>
                         <button className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
-                        Registration
+                        Log In
                         </button>
                         </Link>
-                        <Link href='../auth/login'>
+                        {/* <Link href='../auth/login'>
                         <button className="mt-2 grid place-items-center text-center">Log In</button>
-                        </Link>
+                        </Link> */}
                     </div> 
                 </div>
               </div> 

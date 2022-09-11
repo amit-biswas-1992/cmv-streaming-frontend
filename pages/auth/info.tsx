@@ -1,8 +1,7 @@
-import React,{useState} from 'react'
-import 'react-phone-number-input/style.css'
+import { useState } from 'react';
+import 'react-phone-number-input/style.css';
 
-import Link from "next/link"
-import { Input } from '@mui/material'
+import Link from "next/link";
 
 const Register = () => {
   
@@ -22,12 +21,11 @@ const Register = () => {
       <div className='mx-4'>
       <form action="/send-data-here" method="post">
             <label>Enter your Name</label>
-            <input className='w-full py-3 my-2 bg-white text-xl text-black' type="text" id="text" name="text" />
-            <label>Enter your Email</label>
-            <input className='w-full py-3 my-2 mb-8 bg-white text-xl text-black' type="text" id="text" name="text" />
-
-            <label>Set password</label>
-            <input className='w-full py-3 my-2 bg-white text-xl text-black' type="password" id="pswrd" name="pswrd" />
+            <input className='w-full py-3 px-3 my-2 bg-white text-xl text-black' type="text" id="text" name="text"
+            placeholder='Please Input your name '
+            required
+            />
+         
             
       </form>
           </div>    
