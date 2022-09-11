@@ -39,6 +39,7 @@ function Explore({data}) {
                <Image className='rounded-sm'loader={myLoader}
                   src={curElem.cover_photo} width={350} height={150} alt=''/></a> 
                </Link>
+               {/* <p className='mr-12'></p> */}
               </div>           
     </div>
     ))}

@@ -20,11 +20,11 @@ const MostRecent = ({data}) => {
     <div>
     
     <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
-    {data.map( (curElem)=>(
-    <div className='w-44 bg-slate-800 text-white rounded-b-2xl rounded-t-2xl whitespace-nowrap' key={curElem}>
+    {data.map((curElem)=>(
+    <div className='w-44 bg-slate-800 text-white rounded-b-2xl rounded-t-2xl whitespace-nowrap' key={curElem.id}>
        <Link href='../content-original/preview'><a>
           <div>
-          <Image className='rounded-2xl'loader={myLoader}
+          <Image className='rounded-2xl' loader={myLoader}
                   src={curElem.cover} width={300} height={350}  alt=''/>
             
           </div></a></Link>

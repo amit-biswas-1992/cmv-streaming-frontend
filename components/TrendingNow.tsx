@@ -1,12 +1,18 @@
 import React from 'react'
-import CardData from './CardData'
-import CardTest from './CardTest'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image"
 import Link from 'next/link'
+import { IMAGE_BASE_URL } from '../utils/constants'
 
-const TrendingNow = () => {
+const TrendingNow = ({data}) => {
+  const myLoader = ({ src, width, quality }) => {
+    return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
+  }
   
   return (
-    <div className='pt-3'>
+
+  <div className='pt-3'>
     <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
         <h1 className='text-xl font-bold text-white cursor-pointer'>Trending Now</h1>
         <Link href='../demo-view'><a>
@@ -15,10 +21,35 @@ const TrendingNow = () => {
             </button></a>
             </Link>
     </div>
-    <div className='mt-4'>
-     <CardTest details={CardData}/> 
+    <div className="flex space-x-3 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">
+      {data.map((curElem) => (
+
+        <div className='bg-slate-800 rounded-lg p-2 flex' key={curElem.id}>  
+        <div className='rounded-lg'><Image className='rounded-xl' loader={myLoader}
+                  src={curElem.cover} width={300} height={350}  alt='' />   </div>       
+             
+            <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
+                  
+                    <h1>{curElem.title}</h1>
+                    <p>
+                      {'2022'} | {'duration'}
+                    </p>
+                    <h1 className="text-lg text-cyan-400">{'catagory'}</h1>
+              </div>
+              <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
+                <Link href="../content-original/video">
+                  <button>
+                    <FontAwesomeIcon icon={faCirclePlay} />
+                  </button>
+                </Link>
+              </div>
+                 
+        </div>
+      ))}
+
     </div>
-</div>
+   
+    </div>
   )
 }
 
