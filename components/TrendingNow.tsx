@@ -25,8 +25,8 @@ const TrendingNow = ({data}) => {
       {data.map((curElem) => (
 
         <div className='bg-slate-800 rounded-lg p-2 flex' key={curElem.id}>  
-        <div className='rounded-lg'><Image className='rounded-xl' loader={myLoader}
-                  src={curElem.cover} width={300} height={350}  alt='' />   </div>       
+        <Image className='rounded-xl' loader={myLoader}
+                  src={curElem.cover} width={300} height={350}  alt='' />       
              
             <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
                   
