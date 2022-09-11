@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 import Link from "next/link";
 import Avatar from '../../components/assets/test.png';
-import { ContinueWatching, Explore, MostRecent, NewRelease, OnlyMade, Teaser, TrendingNow } from '../../components/index';
+import { Explore, HomeCorasoul, MostRecent, NewRelease, OnlyMade, Teaser, TrendingNow } from '../../components/index';
 import Navigation from '../../components/Navigation';
 import { callApiGetWithoutToken } from "../../services/api.service";
 

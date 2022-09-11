@@ -1,20 +1,20 @@
-import React,{useState} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import ModalSubscribe from '../../../components/ModalSubscribe'
-import Link from 'next/link'
-import Natok from '../../components/assets/6.png'
+import { faArrowLeft, faCirclePlay, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import ModalSubscribe from '../../../components/ModalSubscribe'
 import ShowMore from '../../../components/showmore'
 import { callApiGetWithoutToken } from '../../../services/api.service'
 import { IMAGE_BASE_URL } from '../../../utils/constants'
 
 
 export const getServerSideProps = async (context) => {
-   const id = context.params.pageno;
+   const id = context.params.id;
+   
    const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
 
-    
+   
     return {
       props: {
         data,
@@ -26,6 +26,7 @@ export const getServerSideProps = async (context) => {
 
 
 const Preview = ({data}) => { 
+  console.log('id pacchi',data)
   const myLoader = ({ src, width, quality }) => {
   return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
 }
@@ -38,7 +39,7 @@ const Preview = ({data}) => {
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-2 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
-              <Link href='../home'>
+              <Link href='../../home'>
               <a>
                <FontAwesomeIcon icon={faArrowLeft}/>
               </a>

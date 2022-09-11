@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import Link from "next/link";
-import Image from 'next/image'
-import { IMAGE_BASE_URL } from '../utils/constants'
+import { IMAGE_BASE_URL } from '../utils/constants';
 
 
 const Teaser = ({data}) => {
@@ -25,7 +25,7 @@ const Teaser = ({data}) => {
     {data.map( (curElem)=>(
 
      <div className='' key={curElem.id}>
-       <Link href='../content-original/preview'>   
+       <Link href={`/content-original/preview-new/${curElem.id}`}>   
        <div className='w-32 py-2'>
         <Image className='aspect-square rounded-full ring-2 mt-2 py-2' loader={myLoader}
                   src={curElem.cover} width={350} height={350}  alt=''/> 

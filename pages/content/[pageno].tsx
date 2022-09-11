@@ -1,7 +1,7 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
-import { callApiGetWithoutToken, callApiWithoutToken } from '../../services/api.service';
+import { faArrowLeft, faCirclePlay, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { callApiGetWithoutToken } from '../../services/api.service';
 
 export const getServerSideProps = async (context) => {
   const id = context.params.pageno;

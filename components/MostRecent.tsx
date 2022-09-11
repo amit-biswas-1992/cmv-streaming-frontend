@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IMAGE_BASE_URL } from '../utils/constants'
@@ -22,12 +21,12 @@ const MostRecent = ({data}) => {
     <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
     {data.map((curElem)=>(
     <div className='w-44 bg-slate-800 text-white rounded-b-2xl rounded-t-2xl whitespace-nowrap' key={curElem.id}>
-       <Link href='../content-original/preview'><a>
-          <div>
+       <Link href={`/content-original/preview-new/${curElem.id}`}><a>
+          
           <Image className='rounded-2xl' loader={myLoader}
                   src={curElem.cover} width={300} height={350}  alt=''/>
             
-          </div></a></Link>
+          </a></Link>
           <div className=''>
             <div className='mr-16 px-2 pb-3 text-sm'>
                 <p>{curElem.title}</p>
