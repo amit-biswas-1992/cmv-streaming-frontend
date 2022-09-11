@@ -1,6 +1,6 @@
 import Head from "next/head";
-import HomePage from "./auth/start";
 
+import HomePage from "./auth/start";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
 
       <main>
         <div>
+   
           <HomePage />
         </div>
       </main>

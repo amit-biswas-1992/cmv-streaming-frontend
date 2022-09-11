@@ -1,11 +1,11 @@
 
-import Link from "next/link";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import {Explore, NewRelease, MostRecent, TrendingNow, ContinueWatching, Teaser, OnlyMade, HomeCorasoul} from '../../components/index'
-import Navigation from '../../components/Navigation'
-import Image from 'next/image'
-import Avatar from '../../components/assets/test.png'
+import Image from 'next/image';
+import Link from "next/link";
+import Avatar from '../../components/assets/test.png';
+import { ContinueWatching, Explore, MostRecent, NewRelease, OnlyMade, Teaser, TrendingNow } from '../../components/index';
+import Navigation from '../../components/Navigation';
 import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getStaticProps = async () => {
