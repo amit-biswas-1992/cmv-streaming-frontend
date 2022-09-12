@@ -10,8 +10,9 @@ import ShowMore from '../../../components/showmore'
 
 
 export const getServerSideProps = async (context) => {
-    const id = context.params.pageno;
-    const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
+   const id = context.params.pageno;
+   const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
+
     
     return {
       props: {
@@ -23,7 +24,11 @@ export const getServerSideProps = async (context) => {
 
 
 
-const Preview = ({data}) => {
+const Preview = ({data}) => { 
+  const myLoader = ({ src, width, quality }) => {
+  return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
+}
+
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)
   return (
@@ -47,7 +52,8 @@ const Preview = ({data}) => {
     <div className=''>
         <div className='px-20 lg:w-80'>
           <Link href='../content-original/video'><a>
-            <Image className='rounded-2xl' src={Natok} alt='' /></a></Link>
+            <Image className='rounded-2xl' loader={myLoader}
+                  src={data.cover} width={300} height={350}  alt='' /></a></Link>
           </div>
         
                  

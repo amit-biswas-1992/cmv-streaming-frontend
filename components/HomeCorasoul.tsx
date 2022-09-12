@@ -1,16 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
+import { IMAGE_BASE_URL } from '../utils/constants'
 
 
 
 
 const myLoader = ({ src, width, quality }) => {
-  return `https://cmv.dvcoreapi.com/media/content/${src}?w=${width}&q=${quality || 75}`
+  return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
 }
 const HomeCorasoul = ({data}) => {
   return (
-    <div className='pt-6'>
-        
+    <div className=''>  
     <div>
     <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4 mb-8'>
     {data.map( (curElem)=>(
@@ -19,8 +19,9 @@ const HomeCorasoul = ({data}) => {
 
           
        
-<Image className='rounded-sm'loader={myLoader}
-                  src={curElem.thumb} width={500} height={250} alt=''/>
+           <Image className='rounded-sm'loader={myLoader}
+                  src={curElem.thumb} width={'700'} height={'450'} alt=''/>
+                  <p className='mr-40'></p>
                            
               </div>   
     

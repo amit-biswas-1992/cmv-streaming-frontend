@@ -25,7 +25,7 @@ const content = ({ data }) => {
   return (
 <div>
     <div className='bg-slate-900 font-body'>
-    <div className='pt-3 mb-6'>
+    <div className='pt-3 mb-4'>
         <div className='flex items-center'>
             <div className='ml-4 mt-4 flex space-x-3 items-center'>
                 <div className='w-12 pt-2'>
@@ -57,35 +57,19 @@ const content = ({ data }) => {
     
            
 
-    {/* <HomeCorasoul data={data.featureVideos}/> */}
+    <HomeCorasoul data={data.featureVideos}/> 
     <Explore data={data.mediaContentCategory} />       
     <NewRelease data={data.newReleaseVideos} />      
-    <MostRecent />      
-    <TrendingNow /> 
-    <ContinueWatching /> 
-    <Teaser />
+    <MostRecent data={data.mostPopularVideos}/>        
+    <TrendingNow data={data.trendingVideos} /> 
+    {/* <ContinueWatching data={data.newReleaseVideos} />  */}
+    <Teaser data={data.teaserVideos}/>
     <OnlyMade />
 
 
     <Navigation />
 </div>
 
-
-
-    {/* <div className="pb-24">
-      {data.map((curElem) => {
-        return (
-
-            
-          <div key={curElem.id} className="bg-slate-600 ml-4 px-4 cursor-pointer mt-4 text-white">
-            <h3>{curElem.id}</h3>
-            <Link href={`/content/${curElem.id}`}>
-              <h2>{curElem.release_date}</h2>
-            </Link>
-          </div>
-        );
-      })}
-    </div> */}
 </div>    
   );
 };

@@ -4,10 +4,20 @@ import {faArrowLeft, faLock, faDownload, faTv} from '@fortawesome/free-solid-svg
 import Modal from '../../components/Modal'
 import style from '../../components/package.module.css'
 import Link from 'next/link'
+import { callApiGetWithoutToken } from "../../services/api.service";
 
-const Purchase = () => {
+export const getStaticProps = async () => {
+      const data = await callApiGetWithoutToken("/package");
+    return {
+      props: {
+        data,
+      },
+    };
+  }; 
+const Purchase = ({data}) => {
     const [showModal,setShowModal] = useState(false)
     const handleOnClose =() => setShowModal(false)
+    console.log('package data is',data)
 
 
   return (
@@ -34,34 +44,27 @@ const Purchase = () => {
             <FontAwesomeIcon className='text-purple-400' icon={faTv}/><p>Watch in HD up to 4K resolution</p>
             </div>
         </div>
+        <div className='ml-4 cursor-pointer mt-4'>
+    {data.map( (curElem)=>(
 
+     <div className={style.input} key={curElem.id}>
 
-        <div className={style.container}>
-        <input type='radio' name='size' id='small' className={style.input}/>      
-            <label className=''> 
-            <div className='bg-slate-700 mx-4 mt-10 rounded-xl cursor-pointer hover:ring-4'>
+                    <div className='bg-slate-700 mx-4 mt-4 rounded-xl cursor-pointer hover:ring-4'>
                             <div className='flex text-white py-4 ml-4'>
                                     <div className=''>
-                                        <p>Monthly</p>
-                                        <p className='font-thin text-slate-300'>30 Days</p>
+                                        <p>{curElem.name}</p>
+                                        <p className='font-thin text-slate-300'>{curElem.cycle}</p>
                                     </div>
-                                    <h1 className='font-bold ml-auto mr-12 text-center mt-2 text-xl'>39 BDT</h1>
+                                    <h1 className='font-bold ml-auto mr-12 text-center mt-2 text-xl'>{curElem.price+' BDT'}</h1>
                             </div>
-                        </div>   
-            </label><br/>
-        <input type='radio' name='size' id='large' className={style.input}/>
-            <label>
-            <div className='bg-slate-700 mx-4 rounded-xl cursor-pointer hover:ring-4'>
-                <div className='flex text-white py-4 ml-4'>
-                        <div className=''>
-                            <p>15 Days Package</p>
-                            <p className='font-thin text-slate-300'>15 Days</p>
-                        </div>
-                        <h1 className='font-bold ml-auto mr-12 text-center mt-2 text-xl'>29 BDT</h1>
-                </div>
-            </div>
-            </label>
-        </div>
+                        </div>     
+       
+                
+              
+    </div>
+    ))}
+
+    </div>
 
         <div className='fixed bottom-16 inset-x-0 z-50 mx-4'>
                         <button onClick={() => setShowModal(true)}className="rounded-2xl w-full py-4 my-4 mt-8 bg-sky-600 hover:bg-sky-700 text-white text-center">
