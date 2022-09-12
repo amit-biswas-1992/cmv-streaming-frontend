@@ -1,6 +1,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { CATAGORY_IMAGE_BASE_URL } from '../utils/constants'
 
 
 
@@ -11,7 +12,7 @@ function Explore({data}) {
 
 
   const myLoader = ({ src, width, quality }) => {
-    return `https://cmv.dvcoreapi.com/media/category/${src}?w=${width}&q=${quality || 75}`
+    return `${CATAGORY_IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
   }
 
   

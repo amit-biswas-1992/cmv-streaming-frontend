@@ -1,13 +1,13 @@
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
-import { IMAGE_BASE_URL } from '../utils/constants';
+import { IMAGE_BASE_URL } from "../utils/constants";
 
 
 const Teaser = ({data}) => {
   const tag = 'Teaser'
   const myLoader = ({ src, width, quality }) => {
-    return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
-  }
+    return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
+  };
   return (
     <div className="pt-6 pb-28">
       <div className="flex justify-between items-center ml-4 whitespace-nowrap mt-4">
@@ -22,25 +22,29 @@ const Teaser = ({data}) => {
         </button></a>
         </Link>
       </div>
-      <div className='flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4'>
-    {data.map( (curElem)=>(
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">
+        {data.map((curElem) => (
+          <div className="" key={curElem.id}>
+            <Link href={`/content-original/preview-new/${curElem.id}`}>
+              <div className="w-32 py-2">
+                <Image
+                  className="aspect-square rounded-full ring-2 mt-2 py-2"
+                  loader={myLoader}
+                  src={curElem.cover}
+                  width={350}
+                  height={350}
+                  alt=""
+                />
+              </div>
+            </Link>
 
-     <div className='' key={curElem.id}>
-       <Link href={`/content-original/preview-new/${curElem.id}`}>   
-       <div className='w-32 py-2'>
-        <Image className='aspect-square rounded-full ring-2 mt-2 py-2' loader={myLoader}
-                  src={curElem.cover} width={350} height={350}  alt=''/> 
-       </div>
-       </Link>
-        
-              <div className='whitespace-nowrap text-white items-center text-center'>
-                <h1 className='text-white'>{curElem.title}</h1>
-                <h1 className='text-cyan-400'>{'catagory'}</h1>
-              </div>   
-    </div>
-    ))}
-
-    </div>
+            <div className="whitespace-nowrap text-white items-center text-center pb-24">
+              <h1 className="text-white">{curElem.title}</h1>
+              <h1 className="text-cyan-400">{"catagory"}</h1>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
