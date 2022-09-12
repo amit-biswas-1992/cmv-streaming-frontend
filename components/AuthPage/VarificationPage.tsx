@@ -4,8 +4,10 @@ import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
 import custom_axios from "../../axios/AxioSetup";
 import { ApiConstants } from "../../services/api.service";
-import Timer from "../Timer";
+
 import styles from "./Authpage.module.css";
+import Timer from "./Timer";
+// import CustomTimer from "./CustomTimer";
 
 
 import VarificationAnimation from "./VarificationAnimation";
@@ -150,7 +152,7 @@ function VarificationPage(props) {
               {" "}
               <p className=" ">Re-send code in :  </p>
               {/* <Timer timevalue={3} setTimeOut={setTimeOut} /> */}
-              <Timer />
+              <Timer setTimeOut={setTimeOut} />
             </div>
           ) : (
             <div>

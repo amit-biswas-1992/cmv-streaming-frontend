@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Timer = (props:any) => {
-    const {initialMinute = 0,initialSeconds = 180} = props;
+    const {initialMinute =1,initialSeconds = 0,setTimeOut} = props;
     const [ minutes, setMinutes ] = useState(initialMinute);
     const [seconds, setSeconds ] =  useState(initialSeconds);
 
@@ -28,8 +28,8 @@ const Timer = (props:any) => {
     return (
         <div className='text-red-500'>
             { minutes === 0 && seconds === 0
-            ? null
-            : <h1 className=''> Re-send code in : {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+            ? setTimeOut(true)
+            : <h1 className=''>  {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
         }
         </div>
     )
