@@ -4,22 +4,27 @@ import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
 import custom_axios from "../../axios/AxioSetup";
 import { ApiConstants } from "../../services/api.service";
+import Timer from "../Timer";
 import styles from "./Authpage.module.css";
-import Timer from "./Timer";
+
+
 import VarificationAnimation from "./VarificationAnimation";
 function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
   const [loginData, setLoginData] = useState("");
-  // console.log(loginData.notification_text,"notificationText");
-  console.log(otp,"otp");
+  const [otpData, setOtpData] = useState("");
+  
+  
+  console.log(typeof otpData,"notificationText");
+  console.log(typeof otp,"otp");
   
   const [timeOut, setTimeOut] = useState(false);
   useEffect(() => {
     const loginData = JSON.parse(localStorage.getItem('login_response'));
     // console.log(loginData.notification_text,"loginData");
-         setLoginData(loginData);
- 
+         setLoginData(loginData.receiver);
+         setOtpData(loginData.notification_text)
   }, []);
 
   const handleChange = (otp) => {
@@ -33,25 +38,18 @@ function VarificationPage(props) {
     }
  
     try {
-  
-      
-      // localStorage.setItem("token", response.data.token);
-      // dispatchEvent(new Event("storage"));
-      if (otp==loginData.notification_text) {
+      if (otp===otpData) {
         console.log("matched");
         const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {  
           sender: "8809612558888",   
-          receiver:loginData.receiver,
-          notification_text:loginData.notification_text,
+          receiver:loginData,
+          notification_text:otpData,
           notification_type:"otp",
         });
         if (response.data.profileScreen===true) {
-          console.log(response.data.otpData.receiver);
-          
+          // console.log(response.data.otpData.receiver);         
           localStorage.setItem("otp_response", JSON.stringify(response.data.otpData.receiver));
-          
           navigate.push("../auth/info");
-
           // toast.success("OTP varified");
         } else {
           console.log(response.data.token);
@@ -60,7 +58,7 @@ function VarificationPage(props) {
           navigate.push("../home");
           toast.success("OTP varified");
         }
-        console.log(response.data.profileScreen,"response");
+        // console.log(response.data.profileScreen,"response");
         // localStorage.setItem("otp_response", JSON.stringify(response.data));
         // navigate.push("../auth/info");
   
@@ -84,7 +82,7 @@ function VarificationPage(props) {
     try {
       const response = await custom_axios.post(ApiConstants.LOGIN, {
         sender: "8809612558888",
-        receiver:loginData.receiver,
+        receiver:loginData,
         notification_type:"otp",
         send_by:"sms"
      
@@ -151,7 +149,8 @@ function VarificationPage(props) {
             >
               {" "}
               <p className=" ">Re-send code in :  </p>
-              <Timer timevalue={3} setTimeOut={setTimeOut} />
+              {/* <Timer timevalue={3} setTimeOut={setTimeOut} /> */}
+              <Timer />
             </div>
           ) : (
             <div>
