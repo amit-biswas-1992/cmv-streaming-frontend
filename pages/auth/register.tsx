@@ -45,6 +45,7 @@ import { ApiConstants } from '../../services/api.service'
       
         navigate.push("../auth/verification");
       } catch (error: any) {
+        toast.error("An error ocured")
         // if (error.response.status == 401) toast.warn(error.response.data.message);
       }
 

@@ -37,10 +37,12 @@ const Register = () => {
     
       });
       // console.log(response.data,"responseinfo");
-      localStorage.setItem("user_info", JSON.stringify(response.data));
+      localStorage.setItem("user_token", JSON.stringify(response.data.token));
+      localStorage.setItem("user_info", JSON.stringify(response.data.user));
       navigate.push("../home");
       toast.success("Login Successfull");
     } catch (error: any) {
+      toast.error("An error ocured")
       // if (error.response.status == 401) toast.warn(error.response.data.message);
     }
 
