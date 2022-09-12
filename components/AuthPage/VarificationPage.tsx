@@ -15,19 +15,17 @@ function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
   const [loginData, setLoginData] = useState("");
-  const [otpData, setOtpData] = useState("");
-  
-  
-  console.log(typeof otpData,"notificationText");
-  console.log(typeof otp,"otp");
-  
+  const [otpData, setOtpData] = useState("");  
+  console.log(otpData,"otpData");
+  console.log( otp,"otp");
   const [timeOut, setTimeOut] = useState(false);
+
   useEffect(() => {
-    const loginData = JSON.parse(localStorage.getItem('login_response'));
-    // console.log(loginData.notification_text,"loginData");
-         setLoginData(loginData.receiver);
-         setOtpData(loginData.notification_text)
-  }, []);
+    const login_Data = JSON.parse(localStorage.getItem('login_response'));
+   
+         setLoginData(login_Data.receiver);
+         setOtpData(login_Data.notification_text)
+  }, [otpData]);
 
   const handleChange = (otp) => {
     setOtp(otp);
@@ -40,23 +38,26 @@ function VarificationPage(props) {
     }
  
     try {
-      if (otp===otpData) {
+      if (otp.length===4) {
         console.log("matched");
         const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {  
           sender: "8809612558888",   
           receiver:loginData,
-          notification_text:otpData,
+          notification_text:otp,
           notification_type:"otp",
         });
+        console.log(response.data,"response varify");
+        
         if (response.data.profileScreen===true) {
           // console.log(response.data.otpData.receiver);         
           localStorage.setItem("otp_response", JSON.stringify(response.data.otpData.receiver));
           navigate.push("../auth/info");
-          // toast.success("OTP varified");
+          toast.success("OTP varified");
         } else {
           console.log(response.data.token);
           
           localStorage.setItem("user_token", JSON.stringify(response.data.token));
+          localStorage.setItem("user_info", JSON.stringify(response.data.user));
           navigate.push("../home");
           toast.success("OTP varified");
         }
@@ -64,11 +65,12 @@ function VarificationPage(props) {
         // localStorage.setItem("otp_response", JSON.stringify(response.data));
         // navigate.push("../auth/info");
   
-      } else{
-        toast.warning("OTP Doesn't Match");
+      } 
+      else{
+        toast.warning("Invalid OTP");
       }
     } catch (error: any) {
-      console.log(error);
+      toast.warning("Invalid OTP")
       
       // toast.info(error);
       // if (error.response.status == 401) toast.warn(error.response.data.message);
@@ -91,6 +93,10 @@ function VarificationPage(props) {
       });
       // console.log(response,"response");
       localStorage.setItem("login_response", JSON.stringify(response.data));
+      const login_Data = JSON.parse(localStorage.getItem('login_response'));
+   
+      setLoginData(login_Data.receiver);
+         setOtpData(login_Data.notification_text)
       setOtp("")
       setTimeOut(false)
      

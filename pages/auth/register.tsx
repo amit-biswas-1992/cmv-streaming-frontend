@@ -2,9 +2,9 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import 'react-phone-number-input/style.css'
+import { toast } from "react-toastify"
 import custom_axios from '../../axios/AxioSetup'
 import { ApiConstants } from '../../services/api.service'
-  // import { toast } from "react-toastify";
   const Register = () => {
       const navigate = useRouter();
     const [num, setNum] = useState('');
@@ -45,6 +45,7 @@ import { ApiConstants } from '../../services/api.service'
       
         navigate.push("../auth/verification");
       } catch (error: any) {
+        toast.error("An error ocured")
         // if (error.response.status == 401) toast.warn(error.response.data.message);
       }
 
