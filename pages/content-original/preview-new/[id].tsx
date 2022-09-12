@@ -1,12 +1,12 @@
-import React,{useState} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import ModalSubscribe from '../../components/ModalSubscribe'
-import Link from 'next/link'
-import Natok from '../../components/assets/6.png'
+import { faArrowLeft, faCirclePlay, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import ShowMore from '../../components/showmore'
+import Link from 'next/link'
+import { useState } from 'react'
+import ModalSubscribe from '../../../components/ModalSubscribe'
 import { callApiGetWithoutToken } from '../../../services/api.service'
+import Natok from '../../../components/assets/6.png'
+import ShowMore from '../../../components/showmore'
 
 
 export const getServerSideProps = async (context) => {
