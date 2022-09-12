@@ -6,8 +6,8 @@ import { useState } from 'react'
 import ModalSubscribe from '../../../components/ModalSubscribe'
 import ShowMore from '../../../components/showmore'
 import { callApiGetWithoutToken } from '../../../services/api.service'
-import Natok from '../../../components/assets/6.png'
-import ShowMore from '../../../components/showmore'
+import { IMAGE_BASE_URL } from '../../../utils/constants'
+
 
 
 export const getServerSideProps = async (context) => {
