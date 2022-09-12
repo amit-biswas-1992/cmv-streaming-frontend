@@ -1,11 +1,11 @@
-import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image"
-import Link from 'next/link'
-import { IMAGE_BASE_URL } from '../utils/constants'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from 'next/link';
+import { IMAGE_BASE_URL } from '../utils/constants';
 
 const TrendingNow = ({data}) => {
+  const tag = 'Trending'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
   }
@@ -15,7 +15,7 @@ const TrendingNow = ({data}) => {
   <div className='pt-3'>
     <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
         <h1 className='text-xl font-bold text-white cursor-pointer'>Trending Now</h1>
-        <Link href='../demo-view'><a>
+        <Link href={`../tag-wise-media/${tag}`}><a>
         <button>
             <p className=' text-white font-thin mr-4'>View all</p>
             </button></a>

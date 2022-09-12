@@ -4,6 +4,7 @@ import { IMAGE_BASE_URL } from '../utils/constants'
 
 
 const NewRelease = ({data}) => {
+  const tag = 'NewRelease'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
   }
@@ -12,7 +13,7 @@ const NewRelease = ({data}) => {
         <div className='flex justify-between items-center ml-4 whitespace-nowrap mt-4'>
             <h1 className='text-xl font-bold text-white cursor-pointer'>New Release</h1>
             
-            <Link href='../demo-view'><button className=' text-white font-thin mr-4'>View all
+            <Link href={`../tag-wise-media/${tag}`} ><button className=' text-white font-thin mr-4'>View all
             </button></Link> 
            
         </div>
