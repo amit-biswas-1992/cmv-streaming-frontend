@@ -1,11 +1,11 @@
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { IMAGE_BASE_URL } from '../utils/constants'
 
 
 const NewRelease = ({data}) => {
   const myLoader = ({ src, width, quality }) => {
-    return `https://cmv.dvcoreapi.com/media/content/${src}?w=${width}&q=${quality || 75}`
+    return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
   }
   return (
     <div className='pt-4'>
@@ -22,7 +22,7 @@ const NewRelease = ({data}) => {
 
      <div className='' key={curElem.id}>
 
-            <Link href='../content-original/preview-new'><a>
+            <Link href={`/content-original/preview-new/${curElem.id}`}><a>
             <Image className='rounded-2xl'loader={myLoader}
                   src={curElem.cover} width={300} height={350}  alt=''/></a>
             </Link>

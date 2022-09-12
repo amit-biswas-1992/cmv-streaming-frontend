@@ -4,16 +4,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import ModalSubscribe from '../../../components/ModalSubscribe'
+<<<<<<< HEAD
+import ShowMore from '../../../components/showmore'
+=======
+>>>>>>> 252332303b390f1944bdd7825a905cef91894cba
 import { callApiGetWithoutToken } from '../../../services/api.service'
 import Natok from '../../../components/assets/6.png'
 import ShowMore from '../../../components/showmore'
 
 
 export const getServerSideProps = async (context) => {
-   const id = context.params.pageno;
+   const id = context.params.id;
+   
    const data = await callApiGetWithoutToken(`/core/media-content-preview/${id}`);
 
-    
+   
     return {
       props: {
         data,
@@ -25,6 +30,7 @@ export const getServerSideProps = async (context) => {
 
 
 const Preview = ({data}) => { 
+  console.log('id pacchi',data)
   const myLoader = ({ src, width, quality }) => {
   return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
 }
@@ -37,7 +43,7 @@ const Preview = ({data}) => {
       <div className=''> 
         <div className='grid grid-cols-2 ml-4 pt-2 mb-4 justify-items-stretch'>
             <div className='text-2xl font-thin text-white'>
-              <Link href='../home'>
+              <Link href='../../home'>
               <a>
                <FontAwesomeIcon icon={faArrowLeft}/>
               </a>
@@ -62,7 +68,7 @@ const Preview = ({data}) => {
             <p className='mt-2 font-thin'>2021  |  Romance  |  1h 35m</p>
         </div>
         <div className='grid place-items-center mt-4'>
-            <div className='text-cyan-400'>
+            <div className='text-red-400'>
                <button onClick={() => setShowModal(true)}><FontAwesomeIcon icon={faCirclePlay} className='text-5xl'/></button> 
                <ModalSubscribe onClose={handleOnClose} visible={showModal}/>   
             </div>

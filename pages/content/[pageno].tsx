@@ -1,7 +1,7 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart, faArrowLeft, faCirclePlay, faAngleUp} from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
-import { callApiGetWithoutToken, callApiWithoutToken } from '../../services/api.service';
+import { faArrowLeft, faCirclePlay, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { callApiGetWithoutToken } from '../../services/api.service';
 
 export const getServerSideProps = async (context) => {
   const id = context.params.pageno;
@@ -42,8 +42,8 @@ const myData = ({ data }) => {
       
                
       <div className='grid place-items-center text-white'>
-          <h1 className='font-bold mt-1'>{title}</h1>
-          <p className='mt-2 font-thin'>{id}  |  {id}  | {title}</p>
+          <h1 className='font-bold mt-1'>{data.title}</h1>
+          <p className='mt-2 font-thin'>{data.id}  |  {data.id}  | {title}</p>
       </div>
       <div className='grid place-items-center mt-4'>
           <div className='text-cyan-400'>
