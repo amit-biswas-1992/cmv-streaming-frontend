@@ -85,4 +85,5 @@ export const ApiConstants = {
             // },
             LOGIN: "/notification/generate-otp",
             VARIFY_OTP: "/notification/verify-otp",
+            CREATE_PROFILE: "/core/create-customer-profile",
 };
