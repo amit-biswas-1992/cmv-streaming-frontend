@@ -59,7 +59,7 @@ const ViewComp = ({data}) => {
                          data.map((curElem)=>{
                           return(                                                        
                                 <div className='' key={curElem.id}>
-                                  <Link href='../content-original/preview'><a>
+                                  <Link href={`/content-original/preview-new/${curElem.id}`}><a>
                                   <Image className='rounded-2xl'loader={myLoader}
                   src={curElem.cover} width={300} height={350}  alt=''/></a>
                                   </Link> 

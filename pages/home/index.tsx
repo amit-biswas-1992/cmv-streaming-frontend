@@ -2,6 +2,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Avatar from "../../components/assets/test.png";
 import {
   Explore,
@@ -9,7 +10,7 @@ import {
   MostRecent,
   NewRelease,
   Teaser,
-  TrendingNow,
+  TrendingNow
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
 import { callApiGetWithoutToken } from "../../services/api.service";
@@ -23,9 +24,17 @@ export const getStaticProps = async () => {
     },
   };
 };
-const content = ({ data }) => {
-  console.log("data is showing recent", data.mediaContentCategory);
+const Content = ({ data }) => {
+  // console.log("data is showing recent", data.mediaContentCategory);
+  const [userData, setUserData] = useState("")
+  console.log(userData, "userdata");
 
+  useEffect(() => {
+    const loginData = JSON.parse(localStorage.getItem('user_info'));
+    // console.log(loginData.notification_text,"loginData");
+    setUserData(loginData);
+
+  }, []);
   return (
     <div>
       <div className="bg-slate-900 font-body">
@@ -46,7 +55,7 @@ const content = ({ data }) => {
 
               <div className="text-white">
                 <p className="text-xl font-semibold whitespace-nowrap">
-                  Hi Ishtiaq!
+                  Hi {userData.name}!
                 </p>
               </div>
             </div>
@@ -75,4 +84,4 @@ const content = ({ data }) => {
   );
 };
 
-export default content;
+export default Content;
