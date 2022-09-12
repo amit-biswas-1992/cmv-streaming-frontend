@@ -9,8 +9,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Profile = () => {
+  const [customerinfo, setCustomerinfo] = useState("");
+  console.log(customerinfo, "info");
+  useEffect(() => {
+    const CustomerData = JSON.parse(localStorage.getItem("customer_info"));
+    // console.log(loginData.notification_text,"loginData");
+    setCustomerinfo(CustomerData);
+  }, []);
+
   return (
     <div className="bg-slate-900 min-h-screen font-body text-white">
       <div className="grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch">
@@ -33,20 +42,23 @@ const Profile = () => {
           <FontAwesomeIcon icon={faUserTie} />
         </div>
         <div className="mt-3 grid place-items-center">
-          <h1>Ishtiaq Ahmed</h1>
-          <p>01XX-XXX-XX</p>
+          <h1>{customerinfo ? customerinfo.name : ""}</h1>
+          <p>{customerinfo ? customerinfo.phone : ""}</p>
         </div>
       </div>
       <div className="flex justify-center mt-4">
         <h1>-------------</h1>
       </div>
 
-      <div className="flex justify-center mt-4">
-        <FontAwesomeIcon icon={faGift} className="bg-purple-600 p-4" />
-        <Link href="../../package/bonus">
-          <button className="bg-purple-600 pr-6">Collect Bonus</button>
-        </Link>
-      </div>
+      {customerinfo && customerinfo.is_subscribed && (
+        <div className="flex justify-center mt-4">
+          <FontAwesomeIcon icon={faGift} className="bg-purple-600 p-4" />
+          <Link href="../../package/bonus">
+            <button className="bg-purple-600 pr-6">Collect Bonus</button>
+          </Link>
+        </div>
+      )}
+
       <div>
         <div className="bg-slate-700 mx-6 mt-8 rounded-xl">
           <div className="flex text-white py-4 ml-4">
@@ -87,9 +99,18 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 pb-20 flex justify-center">
-        <h1 className=" bg-red-500 p-1 rounded-md px-2">Unsubscribe</h1>
-      </div>
+
+      {customerinfo && customerinfo.is_subscribed ? (
+        <h1 className="bg-red-500 p-1 rounded-md px-2">Unsubscribe</h1>
+      ) : (
+        <Link href="../package/purchase">
+          <a>
+            <h1 className="bg-cyan-500 p-1 rounded-md px-2">Subscribe</h1>
+          </a>
+        </Link>
+      )}
+
+      <div className="mt-6 pb-20 flex justify-center"></div>
     </div>
   );
 };

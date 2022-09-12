@@ -54,6 +54,23 @@ export const callApiGetWithoutToken = async (endpoint: string, options
     
         }
 
+export const callApiPostWithoutToken = async (endpoint: string, options
+            :any = {}) => {
+            
+                const baseUrl = BASE_URL || 'http://localhost:3000';
+                const url = `${baseUrl}${VERSION}${endpoint}`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    ...(options.headers || {}),
+                    },
+                });
+            
+                return response.json();
+            
+                }
+
       
 
 
