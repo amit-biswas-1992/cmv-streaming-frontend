@@ -4,13 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import ModalSubscribe from '../../../components/ModalSubscribe'
-<<<<<<< HEAD
 import ShowMore from '../../../components/showmore'
-=======
->>>>>>> 252332303b390f1944bdd7825a905cef91894cba
 import { callApiGetWithoutToken } from '../../../services/api.service'
-import Natok from '../../../components/assets/6.png'
-import ShowMore from '../../../components/showmore'
+import { IMAGE_BASE_URL } from '../../../utils/constants'
+
 
 
 export const getServerSideProps = async (context) => {
