@@ -3,7 +3,9 @@ import Link from "next/link";
 import style from "../components/release.module.css";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
-const NewRelease = ({ data }) => {
+
+const NewRelease = ({data}) => {
+  const tag = 'NewRelease'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
@@ -14,7 +16,7 @@ const NewRelease = ({ data }) => {
           New Release
         </h1>
 
-        <Link href="../demo-view">
+        <Link href={`../tag-wise-media/${tag}`}>
           <button className=" text-white font-thin mr-4">View all</button>
         </Link>
       </div>

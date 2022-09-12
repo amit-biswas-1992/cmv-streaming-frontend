@@ -2,24 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
-const Teaser = ({ data }) => {
+
+const Teaser = ({data}) => {
+  const tag = 'Teaser'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
   return (
-    <div className="pt-6">
+    <div className="pt-6 pb-28">
       <div className="flex justify-between items-center ml-4 whitespace-nowrap mt-4">
         <Link href="teaser">
           <h1 className="text-xl font-bold text-white cursor-pointer">
             Teaser
           </h1>
         </Link>
-        <Link href="../demo-view">
-          <a>
-            <button>
-              <p className=" text-white font-thin mr-4">View all</p>
-            </button>
-          </a>
+        <Link href={`../tag-wise-media/${tag}`}><a>
+        <button>
+          <p className=" text-white font-thin mr-4">View all</p>
+        </button></a>
         </Link>
       </div>
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">

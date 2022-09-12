@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
-const MostRecent = ({ data }) => {
+
+const MostRecent = ({data}) => {
+  const tag = 'MostPopular'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
@@ -12,7 +14,7 @@ const MostRecent = ({ data }) => {
         <h1 className="text-xl font-bold text-white cursor-pointer">
           Most Populer
         </h1>
-        <Link href="../demo-view">
+        <Link href={`../tag-wise-media/${tag}`}>
           <a>
             <button className=" text-white font-thin mr-4">View all</button>
           </a>
