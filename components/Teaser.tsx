@@ -3,7 +3,9 @@ import Link from "next/link";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
 
-const Teaser = ({data}) => {
+const Teaser = ({ data }) => {
+  // console.log(data, "treaser");
+
   const tag = 'Teaser'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
@@ -17,9 +19,9 @@ const Teaser = ({data}) => {
           </h1>
         </Link>
         <Link href={`../tag-wise-media/${tag}`}><a>
-        <button>
-          <p className=" text-white font-thin mr-4">View all</p>
-        </button></a>
+          <button>
+            <p className=" text-white font-thin mr-4">View all</p>
+          </button></a>
         </Link>
       </div>
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">
@@ -40,7 +42,7 @@ const Teaser = ({data}) => {
 
             <div className="whitespace-nowrap text-white items-center text-center pb-24">
               <h1 className="text-white">{curElem.title}</h1>
-              <h1 className="text-cyan-400">{"catagory"}</h1>
+              <h1 className="text-cyan-400">{curElem.category_name}</h1>
             </div>
           </div>
         ))}

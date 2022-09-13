@@ -55,7 +55,7 @@ const view = (data) => {
 
                 <div className='mx-4'>
                     <Image className='rounded-sm' loader={myLoader}
-                        src={catdata.categoryInfo.cover_photo} width={350} height={150} alt='' />
+                        src={catdata.categoryInfo.cover_photo} width={1000} height={300} alt='' />
                     {/* <p>{catdata.categoryInfo.cover_photo}</p> */}
                     {/* <Image className='rounded-lg' src={image} alt='' /> */}
                     <div className='text-xl flex items-center space-x-1 mt-1'>
@@ -88,7 +88,7 @@ const view = (data) => {
 
                                     <div className='text-lg'>
                                         <h1 className='font-bold whitespace-nowrap'>{value.title}</h1>
-                                        <p className='font-thin'>{value.year} | {value.release_date}</p>
+                                        <p className='font-thin'> {value.release_date}</p>
                                         <p className='font-thin text-cyan-400'>{catdata.categoryInfo.name}</p>
                                     </div>
 

@@ -34,18 +34,18 @@ const CatagoryTile = (data) => {
         </div>
       </div>
       <div className='mx-8 mt-8'>
-        <div className='grid grid-cols-2 gap-6'>
+        <div className='grid grid-cols-2 gap-6 2xl:grid-cols-4'>
 
           {data?.data.map((curElem) => (
 
             <div key={curElem.id}>
-              <div className=''>
-                <Link href={`category-wise-media/${curElem.id}`}><a>
-                  <Image className='rounded-sm' loader={myLoader}
-                    src={curElem.cover_photo} width={350} height={150} alt='' /></a>
-                </Link>
-                {/* <p className='mr-12'></p> */}
-              </div>
+
+              <Link href={`category-wise-media/${curElem.id}`}><a>
+                <Image className='rounded-sm' loader={myLoader}
+                  src={curElem.cover_photo} width={350} height={150} alt='' /></a>
+              </Link>
+              {/* <p className='mr-12'></p> */}
+
             </div>
 
 
