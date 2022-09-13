@@ -39,7 +39,7 @@ export const callApiWithoutToken = async (endpoint: string, options
 
 export const callApiGetWithoutToken = async (endpoint: string, options
     :any = {}) => {
-    
+        
         const baseUrl = BASE_URL || 'http://localhost:3000';
         const url = `${baseUrl}${VERSION}${endpoint}`;
         const response = await fetch(url, {
@@ -70,6 +70,24 @@ export const callApiPostWithoutToken = async (endpoint: string, options
                 return response.json();
             
                 }
+// export const callApifatchWithoutToken = async (endpoint: string, options
+//             :any = {}) => {
+//             console.log(options,"options");
+            
+//                 const baseUrl = BASE_URL || 'http://localhost:3000';
+//                 const url = `${baseUrl}${VERSION}${endpoint}`;
+//                 // const response = await fetch(url, {
+//                 //     method: 'POST',
+//                 //     body:
+//                 //     headers: {
+//                 //     'Content-Type': 'application/json',
+//                 //     ...(options.headers || {}),
+//                 //     },
+//                 // });
+            
+//                 return options;
+            
+//                 }
 
       
 
