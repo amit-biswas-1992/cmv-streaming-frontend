@@ -8,7 +8,7 @@ import { CATAGORY_IMAGE_BASE_URL } from '../utils/constants'
 
 
 function Explore({ data }) {
-  console.log('explore card', data)
+  // console.log('explore card', data)
 
 
   const myLoader = ({ src, width, quality }) => {
@@ -21,7 +21,7 @@ function Explore({ data }) {
       <div className='flex justify-between items-center ml-4 whitespace-nowrap'>
         <h1 className='text-xl font-bold text-white cursor-pointer'>Explore Catagory</h1>
 
-        <Link href='../category-wise-media'><a><button className=' text-white font-thin mr-4'>View all</button></a>
+        <Link href='../category-wise-media'><a><button className=' text-white font-thin mr-4'>View all </button></a>
         </Link>
 
 

@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
 const Content = ({ data }) => {
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState("")
-  console.log(userData, "userdata");
+  // console.log(userData, "userdata");
 
   useEffect(() => {
     const loginData = JSON.parse(localStorage.getItem('user_info'));
@@ -52,12 +52,14 @@ const Content = ({ data }) => {
                   </a>
                 </Link>
               </div>
-
-              <div className="text-white">
+              {userData ? (<div className="text-white">
                 <p className="text-xl font-semibold whitespace-nowrap">
                   Hi {userData.name}!
                 </p>
-              </div>
+              </div>) : (<>   <p className="text-xl font-semibold whitespace-nowrap">
+                Hi !
+              </p></>)}
+
             </div>
             <div className="text-white ml-auto mr-5 text-3xl mt-4">
               <button>
