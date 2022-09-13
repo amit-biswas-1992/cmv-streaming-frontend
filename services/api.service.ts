@@ -54,17 +54,17 @@ export const callApiGetWithoutToken = async (endpoint: string, options
     
         }
 
-export const callApiPostWithoutToken = async (endpoint: string, options
-            :any = {}) => {
+export const updateProfile = async (endpoint: string, options:any = {}) => {
             
                 const baseUrl = BASE_URL || 'http://localhost:3000';
                 const url = `${baseUrl}${VERSION}${endpoint}`;
                 const response = await fetch(url, {
-                    method: 'POST',
+                    method: 'PATCH',
                     headers: {
                     'Content-Type': 'application/json',
                     ...(options.headers || {}),
                     },
+                    body: JSON.stringify({ title: 'React POST Request Example' })
                 });
             
                 return response.json();

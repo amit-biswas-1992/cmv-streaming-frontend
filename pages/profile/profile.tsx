@@ -8,17 +8,29 @@ import {
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 const Profile = () => {
   const [customerinfo, setCustomerinfo] = useState("");
-  console.log(customerinfo, "info");
+  const [userinfo, setUserinfo] = useState("");
+  // console.log(userinfo, "info holo user er");
   useEffect(() => {
     const CustomerData = JSON.parse(localStorage.getItem("customer_info"));
-    // console.log(loginData.notification_text,"loginData");
     setCustomerinfo(CustomerData);
+
+    const UserData = JSON.parse(localStorage.getItem("user_info"));
+    setUserinfo(UserData);
+    // console.log(UserData, "data holo user er");
   }, []);
+
+  const myLoader = ({ src, width, quality }) => {
+    return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${
+      quality || 75
+    }`;
+  };
 
   return (
     <div className="bg-slate-900 min-h-screen font-body text-white">
@@ -39,16 +51,27 @@ const Profile = () => {
       </div>
       <div className="grid place-items-center">
         <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
-          <FontAwesomeIcon icon={faUserTie} />
+          {userinfo && userinfo.user_image ? (
+            <Image
+              className="rounded-2xl"
+              loader={myLoader}
+              src={userinfo.user_image}
+              width={300}
+              height={350}
+              alt=""
+            />
+          ) : (
+            <FontAwesomeIcon icon={faUserTie} />
+          )}
         </div>
         <div className="mt-3 grid place-items-center">
-          <h1>{customerinfo ? customerinfo.name : ""}</h1>
+          <h1>{customerinfo ? customerinfo.name : "Hello there!!"}</h1>
           <p>{customerinfo ? customerinfo.phone : ""}</p>
         </div>
       </div>
-      <div className="flex justify-center mt-4">
+      {/* <div className="flex justify-center mt-4">
         <h1>-------------</h1>
-      </div>
+      </div> */}
 
       {customerinfo && customerinfo.is_subscribed && (
         <div className="flex justify-center mt-4">
@@ -59,19 +82,21 @@ const Profile = () => {
         </div>
       )}
 
-      <div>
-        <div className="bg-slate-700 mx-6 mt-8 rounded-xl">
-          <div className="flex text-white py-4 ml-4">
-            <div className="text-sm">
-              <p>Premium package</p>
-              <p className=" text-slate-300">30 Days</p>
+      {customerinfo && customerinfo.is_subscribed && (
+        <div>
+          <div className="bg-slate-700 mx-6 mt-8 rounded-xl">
+            <div className="flex text-white py-4 ml-4">
+              <div className="text-sm">
+                <p>{customerinfo.package_name}</p>
+                <p className=" text-slate-300">{customerinfo.validity} Days</p>
+              </div>
+              <h1 className="font-bold ml-auto mr-12 text-center mt-2 text-xl">
+                {customerinfo.price} BDT
+              </h1>
             </div>
-            <h1 className="font-bold ml-auto mr-12 text-center mt-2 text-xl">
-              39 BDT
-            </h1>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="mx-6">
         <div className="flex items-center py-8">
@@ -99,16 +124,21 @@ const Profile = () => {
           </div>
         </div>
       </div>
-
-      {customerinfo && customerinfo.is_subscribed ? (
-        <h1 className="bg-red-500 p-1 rounded-md px-2">Unsubscribe</h1>
-      ) : (
-        <Link href="../package/purchase">
-          <a>
-            <h1 className="bg-cyan-500 p-1 rounded-md px-2">Subscribe</h1>
-          </a>
-        </Link>
-      )}
+      <div className="mt-6 text-center">
+        {customerinfo && customerinfo.is_subscribed ? (
+          <button className="bg-red-500 p-1 rounded-md px-2 text-center">
+            Unsubscribe
+          </button>
+        ) : (
+          <Link href="../package/purchase">
+            <a>
+              <button className="bg-cyan-500 p-1 rounded-md px-2">
+                Subscribe
+              </button>
+            </a>
+          </Link>
+        )}
+      </div>
 
       <div className="mt-6 pb-20 flex justify-center"></div>
     </div>

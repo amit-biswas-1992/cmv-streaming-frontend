@@ -1,62 +1,63 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { callApiPostWithoutToken } from "../../services/api.service";
-export const getStaticProps = async () => {
-  const data = await callApiPostWithoutToken(`/core/update-user-profile/`);
+// import { callApiPostWithoutToken } from "../../services/api.service";
+import { useState } from "react";
+// import { callApiGetWithoutToken } from "../../../services/api.service";
+const Edit = (props) => {
+  const [userinfo, setUserinfo] = useState("");
+  const [img, setImg] = useState();
+  console.log(userinfo, "username");
+  console.log(img, "image");
 
-  return {
-    props: {
-      data,
-    },
+  // export const getServerSideProps = async (context) => {
+  //   const id = context.params.id;
+
+  //   const data = await callApiGetWithoutToken(
+  //     `/core/media-content-preview/${id}`
+  //   );
+
+  //   return {
+  //     props: {
+  //       data,
+  //     },
+  //   };
+  // };
+
+  const onImageChange = (e) => {
+    const [file] = e.target.files;
+    setImg(URL.createObjectURL(file));
   };
-};
-
-const UpdateProfile = async (event: any) => {
-  console.log(event.target.dataset);
-};
-const Edit = () => {
-  const [customerinfo, setCustomerinfo] = useState("");
-  console.log(customerinfo, "info paisi");
-  useEffect(() => {
-    const CustomerData = JSON.parse(localStorage.getItem("customer_info"));
-    // console.log(loginData.notification_text,"loginData");
-    setCustomerinfo(CustomerData);
-  }, []);
   return (
     <div>
       <div className="m-2 p-2 mt-24 text-white">
         <div className="mx-4">
-          <form method="patch">
+          <form>
             <label>Enter your Name</label>
             <input
               className="w-full py-3 my-2 mb-4 bg-white text-xl text-black"
               type="text"
-              id="text"
-              name="text"
+              onChange={(e) => {
+                setUserinfo(e.target.value);
+              }}
             />
             <label>Enter Image</label>
             <input
               className="w-full py-3 my-2 text-xl text-black"
               type="file"
-              id="file-input"
-              name="ImageStyle"
+              onChange={onImageChange}
+            />
+            <input
+              className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
+              type="submit"
+              value="Submit"
             />
           </form>
         </div>
         <div className="mx-4">
-          <Link href="../profile/profile">
-            <button
-              onClick="updateProfile()"
-              type="submit"
-              className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
-            >
-              Submit
-            </button>
-          </Link>
+          {/* <Link href="">
+           
+          </Link> */}
         </div>
       </div>
     </div>
   );
 };
-
 export default Edit;
