@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-const Timer = (props:any) => {
-    const {initialMinute =3,initialSeconds =0,setTimeOut} = props;
-    const [ minutes, setMinutes ] = useState(initialMinute);
-    const [seconds, setSeconds ] =  useState(initialSeconds);
+const Timer = (props: any) => {
+    const { initialMinute = 3, initialSeconds = 0, setTimeOut } = props;
+    const [minutes, setMinutes] = useState(initialMinute);
+    const [seconds, setSeconds] = useState(initialSeconds);
 
-   
-    useEffect(()=>{
-    let myInterval = setInterval(() => {
+
+    useEffect(() => {
+        const myInterval = setInterval(() => {
             if (seconds > 0) {
                 setSeconds(seconds - 1);
             }
@@ -18,19 +18,19 @@ const Timer = (props:any) => {
                     setMinutes(minutes - 1);
                     setSeconds(59);
                 }
-            } 
+            }
         }, 1000)
-        return ()=> {
+        return () => {
             clearInterval(myInterval);
-          };
+        };
     });
 
     return (
         <div className='text-red-500'>
-            { minutes === 0 && seconds === 0
-            ? setTimeOut(true)
-            : <h1 className=''>  {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
-        }
+            {minutes === 0 && seconds === 0
+                ? setTimeOut(true)
+                : <h1 className=''>  {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+            }
         </div>
     )
 }

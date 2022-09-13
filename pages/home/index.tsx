@@ -10,14 +10,14 @@ import {
   MostRecent,
   NewRelease,
   Teaser,
-  TrendingNow,
+  TrendingNow
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
 import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getStaticProps = async () => {
   const data = await callApiGetWithoutToken("/core/home");
-
+  // const data2 = await callApifatchWithoutToken("/core/home", { data: { name: 'name' }, headers: { token: '123' } })
   return {
     props: {
       data,
@@ -72,12 +72,11 @@ const Content = ({ data }) => {
                   </p>
                 </div>
               ) : (
-                <>
-                  {" "}
+                <div className="text-white">
                   <p className="text-xl font-semibold whitespace-nowrap">
                     Hi !
                   </p>
-                </>
+                </div>
               )}
             </div>
             <div className="text-white ml-auto mr-5 text-3xl mt-4">

@@ -3,7 +3,9 @@ import Link from "next/link";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
 
-const MostRecent = ({data}) => {
+const MostRecent = ({ data }) => {
+  // console.log(data, "popular");
+
   const tag = 'MostPopular'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
@@ -45,7 +47,7 @@ const MostRecent = ({data}) => {
                   <div className="flex space-x-2 items-center">
                     <p>{curElem.duration}</p>
                     <p className="text-sm">•</p>
-                    <p className="mr-12">2022</p>
+                    <p className="mr-12">{curElem.release_date}</p>
                   </div>
                 </div>
               </div>

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { IMAGE_BASE_URL } from '../utils/constants';
 
 const TrendingNow = ({ data }) => {
+  // console.log(data, "trending");
+
   const tag = 'Trending'
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
@@ -32,9 +34,9 @@ const TrendingNow = ({ data }) => {
 
               <h1>{curElem.title}</h1>
               <p>
-                {'2022'} | {'duration'}
+                {curElem.duration}
               </p>
-              <h1 className="text-lg text-cyan-400">{'catagory'}</h1>
+              <h1 className="text-lg text-cyan-400">{curElem.category_name}</h1>
             </div>
             <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
               <Link href={`/content-original/preview-new/${curElem.id}`} >
