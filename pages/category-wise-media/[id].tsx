@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { callApiGetWithoutToken } from '../../services/api.service'
-import { CATAGORY_IMAGE_BASE_URL } from '../../utils/constants'
+import { CATAGORY_IMAGE_BASE_URL, IMAGE_BASE_URL } from '../../utils/constants'
 
 export const getServerSideProps = async (context) => {
 
     const id = context.params.id;
     // console.log(`context`);
-    console.log(id, "view");
+    // console.log(id, "view");
 
 
     // const tag = router.query.viewall;
@@ -30,6 +30,9 @@ const view = (data) => {
     console.log(catdata, "categorywisedata");
     const myLoader = ({ src, width, quality }) => {
         return `${CATAGORY_IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
+    }
+    const imageLoader = ({ src, width, quality }) => {
+        return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`
     }
     return (
 
@@ -53,7 +56,7 @@ const view = (data) => {
                 <div className='mx-4'>
                     <Image className='rounded-sm' loader={myLoader}
                         src={catdata.categoryInfo.cover_photo} width={350} height={150} alt='' />
-                    <p>{catdata.categoryInfo.cover_photo}</p>
+                    {/* <p>{catdata.categoryInfo.cover_photo}</p> */}
                     {/* <Image className='rounded-lg' src={image} alt='' /> */}
                     <div className='text-xl flex items-center space-x-1 mt-1'>
                         <Link href='../content-original/video'><a><FontAwesomeIcon icon={faCirclePlay} /></a></Link>
@@ -77,9 +80,9 @@ const view = (data) => {
                             <div className='pt-4 px-2'>
                                 <div className='grid grid-cols-3 gap-3 place-items-stretch items-center mx-3'>
                                     <div className='w-full'>
-                                        <Image className='rounded-sm' loader={myLoader}
+                                        <Image className='rounded-sm' loader={imageLoader}
                                             src={value.cover} width={350} height={150} alt='img' />
-                                        <p>{value.cover}</p>
+                                        {/* <p>{value.cover}</p> */}
                                         {/* <Image className='' src={value.img} alt='' /> */}
                                     </div>
 
