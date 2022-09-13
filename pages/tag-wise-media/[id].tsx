@@ -30,7 +30,7 @@ const ViewComp = ({ data }) => {
   console.log("paisi?", data);
   // console.log(`context`);
   // console.log(router.pathname);
-  // console.log(router.query.viewall,'viewall');
+  console.log(router.query.id, "viewall");
   // console.log(router.asPath.viewall ,"viewall");
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
@@ -44,7 +44,15 @@ const ViewComp = ({ data }) => {
             <FontAwesomeIcon icon={faArrowLeft} />
           </Link>
         </div>
-        <h1 className="text-xl grid place-items-center">View</h1>
+        {router.query.id === "NewRelease" ? (
+          <h1 className="text-xl grid place-items-center"> New Release</h1>
+        ) : router.query.id === "MostPopular" ? (
+          <h1 className="text-xl grid place-items-center">Most Popular</h1>
+        ) : router.query.id === "Trending" ? (
+          <h1 className="text-xl grid place-items-center">Trending Now</h1>
+        ) : (
+          <h1 className="text-xl grid place-items-center">Teaser</h1>
+        )}
       </div>
 
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
@@ -75,5 +83,3 @@ const ViewComp = ({ data }) => {
     </div>
   );
 };
-
-export default ViewComp;
