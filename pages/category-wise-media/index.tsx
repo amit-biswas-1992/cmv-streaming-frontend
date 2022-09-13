@@ -30,7 +30,7 @@ const CatagoryTile = (data) => {
             <FontAwesomeIcon icon={faArrowLeft} /></a>
           </Link>
 
-          <h1 className='font-light'>Catagory</h1>
+          <h1 className='font-light'>All Catagory</h1>
         </div>
       </div>
       <div className='mx-8 mt-8'>
