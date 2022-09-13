@@ -88,7 +88,7 @@ const Preview = ({ data }) => {
                 {data.category_name} | {data.duration}
               </p>
 
-              {data.details == null ? (
+              {data.details === null ? (
                 <p>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
                   sequi error, distinctio labo
