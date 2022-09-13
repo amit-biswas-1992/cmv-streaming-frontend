@@ -23,7 +23,7 @@ const Edit = (props) => {
 
   const onImageChange = (e) => {
     const [file] = e.target.files;
-    setImg(URL.createObjectURL(file));
+    // setImg(URL.createObjectURL(file));
   };
   return (
     <div>

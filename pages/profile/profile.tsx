@@ -14,8 +14,41 @@ import { useEffect, useState } from "react";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 const Profile = () => {
-  const [customerinfo, setCustomerinfo] = useState("");
-  const [userinfo, setUserinfo] = useState("");
+  type UserInfo = {
+    createdat?: Date;
+    customer_id?: string;
+    deletedat?: Date;
+    email?: string;
+    id?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    updatedAt?: Date;
+    userStatus?: string;
+    userType?: string;
+    user_image?: string;
+  };
+  type CustomerInfo = {
+    createdat?: Date;
+    customer_id?: string;
+    deletedat?: Date;
+    email?: string;
+    id?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    updatedAt?: Date;
+    userStatus?: string;
+    userType?: string;
+    userImage?: string;
+    cycle?: string;
+    package_name?: string;
+    price?: string;
+    validity?: string;
+    is_subscribed?: boolean;
+  };
+  const [customerinfo, setCustomerinfo] = useState<CustomerInfo>({});
+  const [userinfo, setUserinfo] = useState<UserInfo>({});
   // console.log(userinfo, "info holo user er");
   useEffect(() => {
     const CustomerData = JSON.parse(localStorage.getItem("customer_info"));
