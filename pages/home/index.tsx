@@ -10,7 +10,7 @@ import {
   MostRecent,
   NewRelease,
   Teaser,
-  TrendingNow
+  TrendingNow,
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
 import { callApiGetWithoutToken } from "../../services/api.service";
@@ -25,15 +25,28 @@ export const getStaticProps = async () => {
   };
 };
 const Content = ({ data }) => {
+  type UserInfo = {
+    createdat?: Date;
+    customer_id?: string;
+    deletedat?: Date;
+    email?: string;
+    id?: string;
+    name?: string;
+    password?: string;
+    phone?: string;
+    updatedAt?: Date;
+    userStatus?: string;
+    userType?: string;
+    userImage?: string;
+  };
   // console.log("data is showing recent", data.mediaContentCategory);
-  const [userData, setUserData] = useState("")
+  const [userData, setUserData] = useState<UserInfo>({});
   // console.log(userData, "userdata");
 
   useEffect(() => {
-    const loginData = JSON.parse(localStorage.getItem('user_info'));
+    const loginData = JSON.parse(localStorage.getItem("user_info"));
     // console.log(loginData.notification_text,"loginData");
     setUserData(loginData);
-
   }, []);
   return (
     <div>
@@ -52,14 +65,20 @@ const Content = ({ data }) => {
                   </a>
                 </Link>
               </div>
-              {userData ? (<div className="text-white">
-                <p className="text-xl font-semibold whitespace-nowrap">
-                  Hi {userData.name}!
-                </p>
-              </div>) : (<>   <p className="text-xl font-semibold whitespace-nowrap">
-                Hi !
-              </p></>)}
-
+              {userData ? (
+                <div className="text-white">
+                  <p className="text-xl font-semibold whitespace-nowrap">
+                    Hi {userData.name}!
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {" "}
+                  <p className="text-xl font-semibold whitespace-nowrap">
+                    Hi !
+                  </p>
+                </>
+              )}
             </div>
             <div className="text-white ml-auto mr-5 text-3xl mt-4">
               <button>
