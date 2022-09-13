@@ -46,7 +46,7 @@ const Edit = () => {
         <div className="mx-4">
           <Link href="../profile/profile">
             <button
-              onClick="updateProfile()"
+              onClick={UpdateProfile}
               type="submit"
               className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
             >
