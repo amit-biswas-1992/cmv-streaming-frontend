@@ -44,7 +44,6 @@ const ViewComp = ({ data }) => {
             <FontAwesomeIcon icon={faArrowLeft} />
           </Link>
         </div>
-<<<<<<< HEAD
          
                         
                       
@@ -72,10 +71,6 @@ const ViewComp = ({ data }) => {
           <div className='pb-24'>
           </div>           
                         
-=======
-        <h1 className="text-xl grid place-items-center">View</h1>
-      </div>
->>>>>>> 65105d09e17aeda51535ae0ab228b16c339d7fb3
 
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
         {data.map((curElem) => {
