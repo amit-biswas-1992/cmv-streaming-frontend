@@ -15,7 +15,7 @@ import {
 import Navigation from "../../components/Navigation";
 import { callApiGetWithoutToken } from "../../services/api.service";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await callApiGetWithoutToken("/core/home");
   // const data2 = await callApifatchWithoutToken("/core/home", { data: { name: 'name' }, headers: { token: '123' } })
   return {

@@ -6,7 +6,7 @@ import style from '../../components/package.module.css'
 import Link from 'next/link'
 import { callApiGetWithoutToken } from "../../services/api.service";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
       const data = await callApiGetWithoutToken("/package");
     return {
       props: {

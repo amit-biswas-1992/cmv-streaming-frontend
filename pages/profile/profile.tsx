@@ -5,15 +5,17 @@ import {
   faPenToSquare,
   faRightFromBracket,
   faStar,
-  faUserTie,
+  faUserTie
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 const Profile = () => {
+  const router = useRouter()
   type UserInfo = {
     createdat?: Date;
     customer_id?: string;
@@ -60,11 +62,14 @@ const Profile = () => {
   }, []);
 
   const myLoader = ({ src, width, quality }) => {
-    return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${
-      quality || 75
-    }`;
+    return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75
+      }`;
   };
+  const handleLogOut = () => {
+    localStorage.clear();
+    router.push('../')
 
+  }
   return (
     <div className="bg-slate-900 min-h-screen font-body text-white">
       <div className="grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch">
@@ -148,12 +153,12 @@ const Profile = () => {
           </Link>
         </div>
         <div className="flex items-center">
-          <div className="flex items-center space-x-3">
+          <div onClick={handleLogOut} className="flex items-center space-x-3">
             <FontAwesomeIcon
               icon={faRightFromBracket}
               className="bg-white text-slate-500 p-2 rounded-xl"
             />
-            <h1>Log Out</h1>
+            <h1 >Log Out</h1>
           </div>
         </div>
       </div>
