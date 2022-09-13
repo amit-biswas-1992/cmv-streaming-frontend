@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
 const Content = ({ data }) => {
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState("")
-  console.log(userData, "userdata");
+  // console.log(userData, "userdata");
 
   useEffect(() => {
     const loginData = JSON.parse(localStorage.getItem('user_info'));

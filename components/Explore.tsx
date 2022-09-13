@@ -8,7 +8,7 @@ import { CATAGORY_IMAGE_BASE_URL } from '../utils/constants'
 
 
 function Explore({ data }) {
-  console.log('explore card', data)
+  // console.log('explore card', data)
 
 
   const myLoader = ({ src, width, quality }) => {

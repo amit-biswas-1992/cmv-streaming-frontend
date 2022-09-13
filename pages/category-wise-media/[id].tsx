@@ -93,7 +93,7 @@ const view = (data) => {
                                     </div>
 
                                     <div className='text-3xl ml-auto'>
-                                        <Link href='../content-original/video'><a><FontAwesomeIcon icon={faCirclePlay} /></a></Link>
+                                        <Link href={`/content-original/preview-new/${value.id}`}><a><FontAwesomeIcon icon={faCirclePlay} /></a></Link>
                                     </div>
                                 </div>
                             </div>
