@@ -1,79 +1,84 @@
 import { BASE_URL, VERSION } from "../utils/constants";
 
-export const callApi = async (endpoint: string, options: any = {} ) => {
+export const callApi = async (endpoint: string, options: any = {}) => {
+  const baseUrl = BASE_URL || "http://localhost:3000";
+  const url = `${baseUrl}${VERSION}${endpoint}`;
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
 
-    
-    const baseUrl = BASE_URL || 'http://localhost:3000';
-    const url = `${baseUrl}${VERSION}${endpoint}`;
-    const response = await fetch(url, {
-        ...options,
-        headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
-        ...(options.headers || {}),
-        },
-    });
+  return response.json();
+};
 
-    return response.json();
+export const callApiWithoutToken = async (
+  endpoint: string,
+  options: any = {}
+) => {
+  const baseUrl = BASE_URL || "http://localhost:3000";
+  const url = `${baseUrl}${VERSION}${endpoint}`;
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
 
-    }
+  return response.json();
+};
 
-export const callApiWithoutToken = async (endpoint: string, options
-    :any = {}) => {
-    
-        const baseUrl = BASE_URL || 'http://localhost:3000';
-        const url = `${baseUrl}${VERSION}${endpoint}`;
-        const response = await fetch(url, {
-            ...options,
-            headers: {
-            'Content-Type': 'application/json',
-            ...(options.headers || {}),
-            },
-        });
-    
-        return response.json();
-    
-        }
+export const callApiGetWithoutToken = async (
+  endpoint: string,
+  options: any = {}
+) => {
+  const baseUrl = BASE_URL || "http://localhost:3000";
+  const url = `${baseUrl}${VERSION}${endpoint}`;
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
 
-        
+  return response.json();
+};
 
-export const callApiGetWithoutToken = async (endpoint: string, options
-    :any = {}) => {
-        
-        const baseUrl = BASE_URL || 'http://localhost:3000';
-        const url = `${baseUrl}${VERSION}${endpoint}`;
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-            'Content-Type': 'application/json',
-            ...(options.headers || {}),
-            },
-        });
-    
-        return response.json();
-    
-        }
+export const updateProfileApi = async (endpoint: string, options: any = {}) => {
+  //   console.log(endpoint, options);
+  const formdata = new FormData();
+  formdata.append("name", options.userinfo);
+  formdata.append("user_image", options.img);
+  const UserData = JSON.parse(localStorage.getItem("user_info"));
 
-export const updateProfile = async (endpoint: string, options:any = {}) => {
-            
-                const baseUrl = BASE_URL || 'http://localhost:3000';
-                const url = `${baseUrl}${VERSION}${endpoint}`;
-                const response = await fetch(url, {
-                    method: 'PATCH',
-                    headers: {
-                    'Content-Type': 'application/json',
-                    ...(options.headers || {}),
-                    },
-                    body: JSON.stringify({ title: 'React POST Request Example' })
-                });
-            
-                return response.json();
-            
-                }
+  const id = UserData.id;
+
+  const requestOptions = {
+    method: "PATCH",
+    body: formdata,
+  };
+
+  await fetch(`${BASE_URL}${VERSION}${endpoint}${id}`, requestOptions)
+    .then((response) => response.text())
+    .then((result) => {
+      console.log(result);
+      UserData.name = options.userinfo;
+
+      UserData.user_image = options.img;
+      console.log(UserData);
+      localStorage.setItem("user_info", JSON.stringify(UserData));
+    })
+    .catch((error) => console.log("error", error));
+};
 // export const callApifatchWithoutToken = async (endpoint: string, options
 //             :any = {}) => {
 //             console.log(options,"options");
-            
+
 //                 const baseUrl = BASE_URL || 'http://localhost:3000';
 //                 const url = `${baseUrl}${VERSION}${endpoint}`;
 //                 // const response = await fetch(url, {
@@ -84,9 +89,9 @@ export const updateProfile = async (endpoint: string, options:any = {}) => {
 //                 //     ...(options.headers || {}),
 //                 //     },
 //                 // });
-            
+
 //                 return options;
-            
+
 //                 }
 
 export const searchApi = async (endpoint: string, options: any = {}) => {
@@ -142,31 +147,31 @@ export const MediaViewCount = async (endpoint: string, options: any = {}) => {
 
 
 export const ApiConstants = {
-            // TODO: {
-            //   ADD: (userId: number) => {
-            //     return "/todo/" + userId;
-            //   },
-            //   FIND_NOT_COMPLETED: (userId: number) => {
-            //     return "/todo/findAllNotCompleted/" + userId;
-            //   },
-            //   FIND_COMPLETED: (userId: number) => {
-            //     return "/todo/findAllCompleted/" + userId;
-            //   },
-            //   MARK_COMPLETE: (todoId: number) => {
-            //     return "/todo/" + todoId;
-            //   },
-            //   DELETE: (todoId: number) => {
-            //     return "/todo/" + todoId;
-            //   },
-            // },
-            // USER: {
-            //   SIGN_UP: "/user/signUp",
-            //   FIND_ALL: "/user",
-            //   DELETE: (userId: number) => {
-            //     return "/user/" + userId;
-            //   },
-            // },
-            LOGIN: "/notification/generate-otp",
-            VARIFY_OTP: "/notification/verify-otp",
-            CREATE_PROFILE: "/core/create-customer-profile",
+  // TODO: {
+  //   ADD: (userId: number) => {
+  //     return "/todo/" + userId;
+  //   },
+  //   FIND_NOT_COMPLETED: (userId: number) => {
+  //     return "/todo/findAllNotCompleted/" + userId;
+  //   },
+  //   FIND_COMPLETED: (userId: number) => {
+  //     return "/todo/findAllCompleted/" + userId;
+  //   },
+  //   MARK_COMPLETE: (todoId: number) => {
+  //     return "/todo/" + todoId;
+  //   },
+  //   DELETE: (todoId: number) => {
+  //     return "/todo/" + todoId;
+  //   },
+  // },
+  // USER: {
+  //   SIGN_UP: "/user/signUp",
+  //   FIND_ALL: "/user",
+  //   DELETE: (userId: number) => {
+  //     return "/user/" + userId;
+  //   },
+  // },
+  LOGIN: "/notification/generate-otp",
+  VARIFY_OTP: "/notification/verify-otp",
+  CREATE_PROFILE: "/core/create-customer-profile",
 };

@@ -3,9 +3,8 @@ import Link from "next/link";
 import style from "../components/release.module.css";
 import { IMAGE_BASE_URL } from "../utils/constants";
 
-
-const NewRelease = ({data}) => {
-  const tag = 'NewRelease'
+const NewRelease = ({ data }) => {
+  const tag = "NewRelease";
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
