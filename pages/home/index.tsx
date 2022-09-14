@@ -10,7 +10,7 @@ import {
   MostRecent,
   NewRelease,
   Teaser,
-  TrendingNow
+  TrendingNow,
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
 import { callApiGetWithoutToken } from "../../services/api.service";

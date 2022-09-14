@@ -83,23 +83,24 @@ const Profile = () => {
         </div>
       </div>
       <div className="grid place-items-center">
-        <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
-          {userinfo && userinfo.user_image ? (
-            <Image
-              className="rounded-2xl"
-              loader={myLoader}
-              src={userinfo.user_image}
-              width={300}
-              height={350}
-              alt=""
-            />
-          ) : (
+        {userinfo && userinfo.user_image ? (
+          <Image
+            className="rounded-full"
+            loader={myLoader}
+            src={userinfo.user_image}
+            width={100}
+            height={100}
+            alt=""
+          />
+        ) : (
+          <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
             <FontAwesomeIcon icon={faUserTie} />
-          )}
-        </div>
+          </div>
+        )}
+
         <div className="mt-3 grid place-items-center">
-          <h1>{customerinfo ? customerinfo.name : "Hello there!!"}</h1>
-          <p>{customerinfo ? customerinfo.phone : ""}</p>
+          <h1>{userinfo ? userinfo.name : "Hello there!!"}</h1>
+          <p>{userinfo ? userinfo.phone : ""}</p>
         </div>
       </div>
       {/* <div className="flex justify-center mt-4">

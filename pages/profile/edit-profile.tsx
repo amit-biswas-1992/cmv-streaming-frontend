@@ -1,34 +1,31 @@
-// import { callApiPostWithoutToken } from "../../services/api.service";
+import { useRouter } from "next/router";
 import { useState } from "react";
-// import { callApiGetWithoutToken } from "../../../services/api.service";
+import { updateProfileApi } from "../../services/api.service";
 const Edit = (props) => {
   const [userinfo, setUserinfo] = useState("");
-  const [img, setImg] = useState();
-  console.log(userinfo, "username");
-  console.log(img, "image");
+  const [img, setImg] = useState("");
 
-  // export const getServerSideProps = async (context) => {
-  //   const id = context.params.id;
-
-  //   const data = await callApiGetWithoutToken(
-  //     `/core/media-content-preview/${id}`
-  //   );
-
-  //   return {
-  //     props: {
-  //       data,
-  //     },
-  //   };
-  // };
-
+  const updateProfile = async () => {
+    const data = { userinfo, img };
+    const url = "/core/update-user-profile/";
+    try {
+      const ApiCall = await updateProfileApi(url, data);
+      navigate.push("../profile/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const navigate = useRouter();
   const onImageChange = (e) => {
     const [file] = e.target.files;
-    // setImg(URL.createObjectURL(file));
+    setImg(URL.createObjectURL(file));
   };
   return (
     <div>
       <div className="m-2 p-2 mt-24 text-white">
         <div className="mx-4">
+          {/* <Link href="../profile/profile">
+            <a> */}
           <form>
             <label>Enter your Name</label>
             <input
@@ -44,18 +41,20 @@ const Edit = (props) => {
               type="file"
               onChange={onImageChange}
             />
+            {/* <Link href="../profile/profile">
+              <a> */}
             <input
-              className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
-              type="submit"
+              onClick={updateProfile}
               value="Submit"
+              className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
             />
+            {/* </a>
+            </Link> */}
           </form>
-        </div>
-        <div className="mx-4">
-          {/* <Link href="">
-           
+          {/* </a>
           </Link> */}
         </div>
+        <div className="mx-4"></div>
       </div>
     </div>
   );
