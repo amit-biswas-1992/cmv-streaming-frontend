@@ -10,9 +10,10 @@ import {
   MostRecent,
   NewRelease,
   Teaser,
-  TrendingNow
+  TrendingNow,
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
+import { UserInfo } from "../../models";
 import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getServerSideProps = async () => {
@@ -25,20 +26,6 @@ export const getServerSideProps = async () => {
   };
 };
 const Content = ({ data }) => {
-  type UserInfo = {
-    createdat?: Date;
-    customer_id?: string;
-    deletedat?: Date;
-    email?: string;
-    id?: string;
-    name?: string;
-    password?: string;
-    phone?: string;
-    updatedAt?: Date;
-    userStatus?: string;
-    userType?: string;
-    userImage?: string;
-  };
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState<UserInfo>({});
   // console.log(userData, "userdata");
