@@ -7,7 +7,7 @@ import { IMAGE_BASE_URL } from '../../utils/constants'
 
 
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await callApiGetWithoutToken("/core/upcoming-content");
   console.log('image', data)
   return {

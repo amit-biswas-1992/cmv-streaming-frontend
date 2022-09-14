@@ -10,43 +10,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { CustomerInfo, UserInfo } from "../../models";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 const Profile = () => {
-  type UserInfo = {
-    createdat?: Date;
-    customer_id?: string;
-    deletedat?: Date;
-    email?: string;
-    id?: string;
-    name?: string;
-    password?: string;
-    phone?: string;
-    updatedAt?: Date;
-    userStatus?: string;
-    userType?: string;
-    user_image?: string;
-  };
-  type CustomerInfo = {
-    createdat?: Date;
-    customer_id?: string;
-    deletedat?: Date;
-    email?: string;
-    id?: string;
-    name?: string;
-    password?: string;
-    phone?: string;
-    updatedAt?: Date;
-    userStatus?: string;
-    userType?: string;
-    userImage?: string;
-    cycle?: string;
-    package_name?: string;
-    price?: string;
-    validity?: string;
-    is_subscribed?: boolean;
-  };
+  const router = useRouter();
   const [customerinfo, setCustomerinfo] = useState<CustomerInfo>({});
   const [userinfo, setUserinfo] = useState<UserInfo>({});
   // console.log(userinfo, "info holo user er");
@@ -64,7 +34,10 @@ const Profile = () => {
       quality || 75
     }`;
   };
-
+  const handleLogOut = () => {
+    localStorage.clear();
+    router.push("../");
+  };
   return (
     <div className="bg-slate-900 min-h-screen font-body text-white">
       <div className="grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch">
@@ -149,7 +122,7 @@ const Profile = () => {
           </Link>
         </div>
         <div className="flex items-center">
-          <div className="flex items-center space-x-3">
+          <div onClick={handleLogOut} className="flex items-center space-x-3">
             <FontAwesomeIcon
               icon={faRightFromBracket}
               className="bg-white text-slate-500 p-2 rounded-xl"

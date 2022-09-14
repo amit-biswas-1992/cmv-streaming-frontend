@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await res.json();
   
