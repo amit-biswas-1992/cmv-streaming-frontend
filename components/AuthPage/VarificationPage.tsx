@@ -15,16 +15,16 @@ function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
   const [loginData, setLoginData] = useState("");
-  const [otpData, setOtpData] = useState("");  
-  console.log(otpData,"otpData");
-  console.log( otp,"otp");
+  const [otpData, setOtpData] = useState("");
+  console.log(otpData, "otpData");
+  console.log(otp, "otp");
   const [timeOut, setTimeOut] = useState(false);
 
   useEffect(() => {
     const login_Data = JSON.parse(localStorage.getItem('login_response'));
-   
-         setLoginData(login_Data.receiver);
-         setOtpData(login_Data.notification_text)
+
+    setLoginData(login_Data.receiver);
+    setOtpData(login_Data.notification_text)
   }, [otpData]);
 
   const handleChange = (otp) => {
@@ -32,30 +32,30 @@ function VarificationPage(props) {
   };
 
   const handleOTP = async () => {
-    if (otp== "" ) {
+    if (otp == "") {
       toast.info("Please fill the otp");
       return;
     }
- 
+
     try {
-      if (otp.length===4) {
+      if (otp.length === 4) {
         console.log("matched");
-        const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {  
-          sender: "8809612558888",   
-          receiver:loginData,
-          notification_text:otp,
-          notification_type:"otp",
+        const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {
+          sender: "8809612558888",
+          receiver: loginData,
+          notification_text: otp,
+          notification_type: "otp",
         });
-        console.log(response.data,"response varify");
-        
-        if (response.data.profileScreen===true) {
+        console.log(response.data, "response varify");
+
+        if (response.data.profileScreen === true) {
           // console.log(response.data.otpData.receiver);         
           localStorage.setItem("otp_response", JSON.stringify(response.data.otpData.receiver));
           navigate.push("../auth/info");
           toast.success("OTP varified");
         } else {
           console.log(response.data.token);
-          
+
           localStorage.setItem("user_token", JSON.stringify(response.data.token));
           localStorage.setItem("user_info", JSON.stringify(response.data.user));
           localStorage.setItem("customer_info", JSON.stringify(response.data.customer));
@@ -65,14 +65,14 @@ function VarificationPage(props) {
         // console.log(response.data.profileScreen,"response");
         // localStorage.setItem("otp_response", JSON.stringify(response.data));
         // navigate.push("../auth/info");
-  
-      } 
-      else{
+
+      }
+      else {
         toast.warning("Invalid OTP");
       }
     } catch (error: any) {
       toast.warning("Invalid OTP")
-      
+
       // toast.info(error);
       // if (error.response.status == 401) toast.warn(error.response.data.message);
     }
@@ -87,24 +87,24 @@ function VarificationPage(props) {
     try {
       const response = await custom_axios.post(ApiConstants.LOGIN, {
         sender: "8809612558888",
-        receiver:loginData,
-        notification_type:"otp",
-        send_by:"sms"
-     
+        receiver: loginData,
+        notification_type: "otp",
+        send_by: "sms"
+
       });
       // console.log(response,"response");
       localStorage.setItem("login_response", JSON.stringify(response.data));
       const login_Data = JSON.parse(localStorage.getItem('login_response'));
-   
+
       setLoginData(login_Data.receiver);
-         setOtpData(login_Data.notification_text)
+      setOtpData(login_Data.notification_text)
       setOtp("")
       setTimeOut(false)
-     
+
     } catch (error: any) {
       // if (error.response.status == 401) toast.warn(error.response.data.message);
     }
-    
+
     // navigate("/");
   };
   return (
@@ -116,11 +116,11 @@ function VarificationPage(props) {
         </div>{" "}
         <div className=" text-center">
           <p className="block text-gray-900  mb-3 2xl:mb-4 pr-4 text-2xl 2xl:text-3xl font-bold">
-          Verification
+            Verification
           </p>
           <p className="text-sm 2xl:text-xl font-normal text-gray-500 mb-6 ">
-          Enter 4 digit number that sent <br />  to The email on your device
-       
+            Enter 4 digit number that sent <br />  to The email on your device
+
           </p>
         </div>
         <div
@@ -128,26 +128,27 @@ function VarificationPage(props) {
           style={{ boxShadow: " 0px 14px 48px #F0F2FA" }}
         >
           <OtpInput
+            shouldAutoFocus
             value={otp}
             onChange={handleChange}
             numInputs={4}
             className="px-3 sm:px-4  2xl:px-5 py-3 2xl:py-4 mx-2 sm:mx-3 2xl:mx-3 text-xl rounded-lg border-2"
-            // placeholder="-"
+          // placeholder="-"
           />
           <div
             style={{
               width: "100%",
             }}
           >
-   
-                <button
-                onClick={handleOTP}
-                  className=" shadow mt-8 bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-sm 2xl:text-lg text-white font-semibold py-2 px-4 rounded-xl w-full"
-                  type="button"
-                >
-                Continue
-                </button>
-         
+
+            <button
+              onClick={handleOTP}
+              className=" shadow mt-8 bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-sm 2xl:text-lg text-white font-semibold py-2 px-4 rounded-xl w-full"
+              type="button"
+            >
+              Continue
+            </button>
+
           </div>
         </div>
         <div>
@@ -163,7 +164,7 @@ function VarificationPage(props) {
             </div>
           ) : (
             <div>
-              <p onClick={resendotp}  className=" text-blue-800 cursor-pointer font-normal text-sm 2xl:text-lg text-center mt-8 flex justify-center items-center">
+              <p onClick={resendotp} className=" text-blue-800 cursor-pointer font-normal text-sm 2xl:text-lg text-center mt-8 flex justify-center items-center">
                 Re-send code again
               </p>
             </div>

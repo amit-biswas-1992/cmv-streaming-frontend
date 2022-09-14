@@ -1,5 +1,3 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -13,6 +11,7 @@ import {
   TrendingNow
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
+import Search from "../../components/Searchcom";
 import { callApiGetWithoutToken } from "../../services/api.service";
 
 export const getServerSideProps = async () => {
@@ -51,40 +50,45 @@ const Content = ({ data }) => {
   return (
     <div>
       <div className="bg-slate-900 font-body">
-        <div className="pt-3 mb-4">
-          <div className="flex items-center">
-            <div className="ml-4 mt-4 flex space-x-3 items-center">
-              <div className="w-12 pt-2">
-                <Link href="../profile/profile">
-                  <a>
-                    <Image
-                      className="rounded-full ring-cyan-400 cursor-pointer"
-                      src={Avatar}
-                      alt=""
-                    />
-                  </a>
-                </Link>
+        <div className="pt-3 mb-6">
+          <div className=" grid grid-cols-2 ">
+            <div className=" col-span-1">
+              <div className="ml-4 mt-4 flex space-x-3 items-center">
+                <div className="w-12 pt-2">
+                  <Link href="../profile/profile">
+                    <a>
+                      <Image
+                        className="rounded-full ring-cyan-400 cursor-pointer"
+                        src={Avatar}
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </div>
+                {userData ? (
+                  <div className="text-white">
+                    <p className="text-xl font-semibold whitespace-nowrap">
+                      Hi {userData.name}!
+                    </p>
+                  </div>
+                ) : (
+                  <div className="text-white">
+                    <p className="text-xl font-semibold whitespace-nowrap">
+                      Hi !
+                    </p>
+                  </div>
+                )}
               </div>
-              {userData ? (
-                <div className="text-white">
-                  <p className="text-xl font-semibold whitespace-nowrap">
-                    Hi {userData.name}!
-                  </p>
-                </div>
-              ) : (
-                <div className="text-white">
-                  <p className="text-xl font-semibold whitespace-nowrap">
-                    Hi !
-                  </p>
-                </div>
-              )}
             </div>
-            <div className="text-white ml-auto mr-5 text-3xl mt-4">
-              <button>
-                <Link href="search">
+            {/* <div></div> */}
+            <div className=" text-white  col-span-1 mr-5 text-3xl mt-4">
+
+
+              <Search ></Search>
+              {/* <Link href="search">
                   <FontAwesomeIcon icon={faSearch} />
-                </Link>
-              </button>
+                </Link> */}
+
             </div>
           </div>
         </div>

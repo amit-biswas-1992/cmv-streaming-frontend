@@ -89,7 +89,55 @@ export const updateProfile = async (endpoint: string, options:any = {}) => {
             
 //                 }
 
+export const searchApi = async (endpoint: string, options: any = {}) => {
+    //   console.log(endpoint, options);
+    // const formdata = new FormData();
+    // formdata.append("name", options.searchKey);
+    var raw = JSON.stringify({
+        search_keyword: options.searchValue
+      });
       
+    // const UserData = JSON.parse(localStorage.getItem("user_info"));
+  
+    // const id = UserData.id;
+  
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        ...(options.headers || {}),
+        },
+      body: raw,
+    };
+
+    const response = await fetch(`${BASE_URL}${VERSION}${endpoint}`, requestOptions);
+    return response.json()
+  };    
+export const MediaViewCount = async (endpoint: string, options: any = {}) => {
+    //   console.log(endpoint, options);
+    // const formdata = new FormData();
+    // formdata.append("name", options.searchKey);
+    var raw = JSON.stringify({
+        media_content_id: options.mediaId
+      });
+      
+    // const UserData = JSON.parse(localStorage.getItem("user_info"));
+  
+    // const id = UserData.id;
+  
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        ...(options.headers || {}),
+        },
+      body: raw,
+    };
+
+    const response = await fetch(`${BASE_URL}${VERSION}${endpoint}`, requestOptions);
+    return response.json()
+  };    
+  
 
 
 

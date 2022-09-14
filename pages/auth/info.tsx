@@ -56,7 +56,7 @@ const Register = () => {
         <div className='mx-4'>
           <form action="/send-data-here" method="post">
             <label>Enter your Name</label>
-            <input className='w-full py-3 px-3 my-2 bg-white text-xl text-black' type="text" id="text" name="text"
+            <input autoFocus className='w-full py-3 px-3 my-2 bg-white text-xl text-black' type="text" id="text" name="text"
               placeholder='Please Input your name '
               required
               onChange={handleValueChange}
