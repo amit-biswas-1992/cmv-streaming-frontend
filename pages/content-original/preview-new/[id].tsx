@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { callApiGetWithoutToken, MediaViewCount } from "../../../services/api.service";
+import { callApiGetWithoutToken, mediaViewCountApi } from "../../../services/api.service";
 import { IMAGE_BASE_URL } from "../../../utils/constants";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -26,16 +26,23 @@ const Preview = ({ data }) => {
   const router = useRouter()
   console.log(router.query.id, "mediaid");
   const mediaId = router.query.id;
-  const SearchApiCall = async () => {
+
+
+  const mediaViewCount = async () => {
+    console.log("function run");
+
     const datakey = { mediaId };
-    const url = "/core/media-content-view-count/";
+    const url = "/core/media-content-view-count";
     try {
-      const data = await MediaViewCount(url, datakey);
+      const data = await mediaViewCountApi(url, datakey);
 
     } catch (err) {
       console.log(err);
     }
   };
+
+
+
   // console.log("id pacchi", data);
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
@@ -77,7 +84,7 @@ const Preview = ({ data }) => {
         <div className="test-player">
           <div className=" bg-slate-900 pt-4">
             <div className="min-w-full min-h-full w-auto h-auto bg-cover rounded-2xl">
-              <ReactPlayer url={data.media_source} controls />
+              <ReactPlayer onStart={mediaViewCount} url={data.media_source} controls />
             </div>
           </div>
         </div>

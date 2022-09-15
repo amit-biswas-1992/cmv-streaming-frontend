@@ -1,5 +1,11 @@
 import { BASE_URL, VERSION } from "../utils/constants";
 
+export const userToken = async()=>{
+  const UserData = localStorage.getItem("user_token");
+  return `Bearer ${UserData}`;
+}
+
+
 export const callApi = async (endpoint: string, options: any = {}) => {
   const baseUrl = BASE_URL || "http://localhost:3000";
   const url = `${baseUrl}${VERSION}${endpoint}`;
@@ -118,24 +124,27 @@ export const searchApi = async (endpoint: string, options: any = {}) => {
     const response = await fetch(`${BASE_URL}${VERSION}${endpoint}`, requestOptions);
     return response.json()
   };    
-export const MediaViewCount = async (endpoint: string, options: any = {}) => {
-    //   console.log(endpoint, options);
+export const mediaViewCountApi = async (endpoint: string, options: any = {}) => {
+       console.log(options.mediaId,"options.mediaId");
     // const formdata = new FormData();
     // formdata.append("name", options.searchKey);
     var raw = JSON.stringify({
         media_content_id: options.mediaId
       });
       
-    // const UserData = JSON.parse(localStorage.getItem("user_info"));
+    const UserData = localStorage.getItem("user_token");
+    console.log(UserData,"token");
+    
   
     // const id = UserData.id;
   
     const requestOptions = {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${UserData}`,
+        "Content-Type": "application/json",
         ...(options.headers || {}),
-        },
+      },
       body: raw,
     };
 
