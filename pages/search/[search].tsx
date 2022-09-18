@@ -14,6 +14,7 @@ const Search = () => {
   console.log(searchData, "searchDatainpage");
 
   const searchValue = router.query.search;
+  console.log(searchValue, "searchValue");
 
   const SearchApiCall = async () => {
     // console.log("useeffectheat");
@@ -37,7 +38,7 @@ const Search = () => {
     SearchApiCall()
       // make sure to catch any error
       .catch(console.error);
-  }, [])
+  }, [searchValue])
 
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
