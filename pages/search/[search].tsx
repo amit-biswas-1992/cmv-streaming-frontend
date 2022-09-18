@@ -15,15 +15,6 @@ const Search = () => {
 
   const searchValue = router.query.search;
 
-
-  useEffect(() => {
-    // declare the data fetching function
-
-    // call the function
-    SearchApiCall()
-      // make sure to catch any error
-      .catch(console.error);
-  }, [])
   const SearchApiCall = async () => {
     // console.log("useeffectheat");
 
@@ -39,6 +30,15 @@ const Search = () => {
       console.log(err);
     }
   };
+  useEffect(() => {
+    // declare the data fetching function
+
+    // call the function
+    SearchApiCall()
+      // make sure to catch any error
+      .catch(console.error);
+  }, [])
+
   const myLoader = ({ src, width, quality }) => {
     return `${IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
