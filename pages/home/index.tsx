@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Avatar from "../../components/assets/test.png";
 import {
   Explore,
   HomeCorasoul,
@@ -15,6 +14,7 @@ import {
 import Navigation from "../../components/Navigation";
 import { UserInfo } from "../../models";
 import { callApiGetWithoutToken } from "../../services/api.service";
+import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 export const getServerSideProps = async () => {
   const data = await callApiGetWithoutToken("/core/home");
@@ -25,6 +25,10 @@ export const getServerSideProps = async () => {
     },
   };
 };
+const myLoader = ({ src, width, quality }) => {
+  return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
+};
+
 const Content = ({ data }) => {
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState<UserInfo>({});
@@ -45,8 +49,11 @@ const Content = ({ data }) => {
                 <Link href="../profile/profile">
                   <a>
                     <Image
-                      className="rounded-full ring-cyan-400 cursor-pointer"
-                      src={Avatar}
+                      className="rounded-full"
+                      loader={myLoader}
+                      src={userData.user_image}
+                      width={100}
+                      height={100}
                       alt=""
                     />
                   </a>

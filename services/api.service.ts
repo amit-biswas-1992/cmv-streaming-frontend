@@ -3,10 +3,14 @@ import { BASE_URL, VERSION } from "../utils/constants";
 export const callApi = async (endpoint: string, options: any = {}) => {
   const baseUrl = BASE_URL || "http://localhost:3000";
   const url = `${baseUrl}${VERSION}${endpoint}`;
+  const UserData = localStorage.getItem("user_token");
+  console.log(UserData, "user data token");
+
   const response = await fetch(url, {
     ...options,
+    method: "GET",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${UserData}`,
       "Content-Type": "application/json",
       ...(options.headers || {}),
     },

@@ -4,6 +4,7 @@ import {
   faGift,
   faPenToSquare,
   faRightFromBracket,
+  faRightToBracket,
   faStar,
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
@@ -13,31 +14,43 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CustomerInfo, UserInfo } from "../../models";
+import { callApi } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 const Profile = () => {
   const router = useRouter();
-  const [customerinfo, setCustomerinfo] = useState<CustomerInfo>({});
-  const [userinfo, setUserinfo] = useState<UserInfo>({});
-  // console.log(userinfo, "info holo user er");
-  useEffect(() => {
-    const CustomerData = JSON.parse(localStorage.getItem("customer_info"));
-    setCustomerinfo(CustomerData);
-
-    const UserData = JSON.parse(localStorage.getItem("user_info"));
-    setUserinfo(UserData);
-    // console.log(UserData, "data holo user er");
-  }, []);
 
   const myLoader = ({ src, width, quality }) => {
     return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${
       quality || 75
     }`;
   };
+
   const handleLogOut = () => {
     localStorage.clear();
     router.push("../");
   };
+
+  const [customerinfo, setCustomerinfo] = useState<CustomerInfo>({});
+  const [userinfo, setUserinfo] = useState<UserInfo>({});
+  // console.log(userinfo, customerinfo, "both ingo");
+  // console.log(userinfo, "info holo user er");
+  const apiCall = async () => {
+    const data = { userinfo };
+    const url = "/core/get-user-profile/";
+    try {
+      const ApiCall = await callApi(url, data);
+      setUserinfo(ApiCall.user);
+      setCustomerinfo(ApiCall.customer);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    apiCall();
+  }, []);
+
+  // console.log(UserData, "data holo user er");
   return (
     <div className="bg-slate-900 min-h-screen font-body text-white">
       <div className="grid grid-cols-2 ml-4 pt-4 mb-4 justify-items-stretch">
@@ -47,13 +60,17 @@ const Profile = () => {
           </Link>
           <h1 className="font-light">Back</h1>
         </div>
-        <div className=" text-white font-thin mr-4 ml-auto text-2xl relative">
-          <Link href="../profile/edit-profile">
-            <button>
-              <FontAwesomeIcon icon={faPenToSquare} />
-            </button>
-          </Link>
-        </div>
+        {userinfo ? (
+          <div className=" text-white font-thin mr-4 ml-auto text-2xl relative">
+            <Link href="../profile/edit-profile">
+              <button>
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="grid place-items-center">
         {userinfo && userinfo.user_image ? (
@@ -77,8 +94,8 @@ const Profile = () => {
         </div>
       </div>
       {/* <div className="flex justify-center mt-4">
-        <h1>-------------</h1>
-      </div> */}
+          <h1>-------------</h1>
+        </div> */}
 
       {customerinfo && customerinfo.is_subscribed && (
         <div className="flex justify-center mt-4">
@@ -122,13 +139,30 @@ const Profile = () => {
           </Link>
         </div>
         <div className="flex items-center">
-          <div onClick={handleLogOut} className="flex items-center space-x-3">
-            <FontAwesomeIcon
-              icon={faRightFromBracket}
-              className="bg-white text-slate-500 p-2 rounded-xl"
-            />
-            <h1>Log Out</h1>
-          </div>
+          {userinfo ? (
+            <div
+              onClick={handleLogOut}
+              className="flex items-center space-x-3 cursor-pointer"
+            >
+              <FontAwesomeIcon
+                icon={faRightFromBracket}
+                className="bg-white text-slate-500 p-2 rounded-xl"
+              />
+              <h1>Log Out</h1>
+            </div>
+          ) : (
+            <Link href="../../auth/register">
+              <a>
+                <div className="flex items-center space-x-3 cursor-pointer">
+                  <FontAwesomeIcon
+                    icon={faRightToBracket}
+                    className="bg-white text-slate-500 p-2 rounded-xl"
+                  />
+                  <h1>Log In</h1>
+                </div>
+              </a>
+            </Link>
+          )}
         </div>
       </div>
       <div className="mt-6 text-center">

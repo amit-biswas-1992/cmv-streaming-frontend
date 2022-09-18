@@ -62,7 +62,7 @@ const Preview = ({ data }) => {
         </div> */}
         <div className="test-player">
           <div className=" bg-slate-900 pt-4">
-            <div className="min-w-full min-h-full w-auto h-auto bg-cover rounded-2xl">
+            <div className="pl-4">
               <ReactPlayer url={data.media_source} controls />
             </div>
           </div>
