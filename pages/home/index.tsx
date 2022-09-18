@@ -1,4 +1,4 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,20 +45,26 @@ const Content = ({ data }) => {
         <div className="pt-3 mb-4">
           <div className="flex items-center">
             <div className="ml-4 mt-4 flex space-x-3 items-center">
-              <div className="w-12 pt-2">
-                <Link href="../profile/profile">
-                  <a>
-                    <Image
-                      className="rounded-full"
-                      loader={myLoader}
-                      src={userData.user_image}
-                      width={100}
-                      height={100}
-                      alt=""
-                    />
-                  </a>
-                </Link>
-              </div>
+              <Link href="../profile/profile">
+                <a>
+                  {userData && userData.user_image ? (
+                    <div className="w-12 pt-2">
+                      <Image
+                        className="rounded-full"
+                        loader={myLoader}
+                        src={userData.user_image}
+                        width={100}
+                        height={100}
+                        alt=""
+                      />
+                    </div>
+                  ) : (
+                    <div className="bg-cyan-400 rounded-full p-4 px-5 ring-2 text-white ring-white">
+                      <FontAwesomeIcon icon={faUserTie} />
+                    </div>
+                  )}
+                </a>
+              </Link>
               {userData ? (
                 <div className="text-white">
                   <p className="text-xl font-semibold whitespace-nowrap">
