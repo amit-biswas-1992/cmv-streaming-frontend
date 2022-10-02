@@ -128,6 +128,7 @@ function VarificationPage(props) {
           style={{ boxShadow: " 0px 14px 48px #F0F2FA" }}
         >
           <OtpInput
+            shouldAutoFocus
             value={otp}
             onChange={handleChange}
             numInputs={4}

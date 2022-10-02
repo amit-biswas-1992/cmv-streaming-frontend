@@ -1,4 +1,4 @@
-import { faSearch, faUserTie } from "@fortawesome/free-solid-svg-icons";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,7 @@ import {
   TrendingNow,
 } from "../../components/index";
 import Navigation from "../../components/Navigation";
+import Search from "../../components/Searchcom";
 import { UserInfo } from "../../models";
 import { callApiGetWithoutToken } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
@@ -42,49 +43,51 @@ const Content = ({ data }) => {
   return (
     <div>
       <div className="bg-slate-900 font-body">
-        <div className="pt-3 mb-4">
-          <div className="flex items-center">
-            <div className="ml-4 mt-4 flex space-x-3 items-center">
-              <Link href="../profile/profile">
-                <a>
-                  {userData && userData.user_image ? (
-                    <div className="w-12 pt-2">
-                      <Image
-                        className="rounded-full"
-                        loader={myLoader}
-                        src={userData.user_image}
-                        width={100}
-                        height={100}
-                        alt=""
-                      />
-                    </div>
-                  ) : (
-                    <div className="bg-cyan-400 rounded-full p-4 px-5 ring-2 text-white ring-white">
-                      <FontAwesomeIcon icon={faUserTie} />
-                    </div>
-                  )}
-                </a>
-              </Link>
-              {userData ? (
-                <div className="text-white">
-                  <p className="text-xl font-semibold whitespace-nowrap">
-                    Hi {userData.name}!
-                  </p>
-                </div>
-              ) : (
-                <div className="text-white">
-                  <p className="text-xl font-semibold whitespace-nowrap">
-                    Hi !
-                  </p>
-                </div>
-              )}
-            </div>
-            <div className="text-white ml-auto mr-5 text-3xl mt-4">
-              <button>
-                <Link href="search">
-                  <FontAwesomeIcon icon={faSearch} />
+        <div className="pt-3 mb-6">
+          <div className=" grid grid-cols-2 ">
+            <div className=" col-span-1">
+              <div className="ml-4 mt-4 flex space-x-3 items-center">
+                <Link href="../profile/profile">
+                  <a>
+                    {userData && userData.user_image ? (
+                      <div className="w-12 pt-2">
+                        <Image
+                          className="rounded-full"
+                          loader={myLoader}
+                          src={userData.user_image}
+                          width={100}
+                          height={100}
+                          alt=""
+                        />
+                      </div>
+                    ) : (
+                      <div className="bg-cyan-400 rounded-full p-4 px-5 ring-2 text-white ring-white">
+                        <FontAwesomeIcon icon={faUserTie} />
+                      </div>
+                    )}
+                  </a>
                 </Link>
-              </button>
+                {userData ? (
+                  <div className="text-white">
+                    <p className="text-xl font-semibold whitespace-nowrap">
+                      Hi {userData.name}!
+                    </p>
+                  </div>
+                ) : (
+                  <div className="text-white">
+                    <p className="text-xl font-semibold whitespace-nowrap">
+                      Hi !
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+            {/* <div></div> */}
+            <div className=" text-white  col-span-1 mr-5 text-3xl mt-4">
+              <Search></Search>
+              {/* <Link href="search">
+                  <FontAwesomeIcon icon={faSearch} />
+                </Link> */}
             </div>
           </div>
         </div>

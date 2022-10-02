@@ -62,6 +62,7 @@ const Register = () => {
             name="num"
             error={isError}
             value={num}
+            autoFocus
             // ref={number}
             onChange={handleNumChange}
             placeholder="Please Enter a Valid Number "
