@@ -1,9 +1,10 @@
+import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { updateProfileApi } from "../../services/api.service";
 const Edit = (props) => {
   const [userinfo, setUserinfo] = useState("");
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(null);
 
   const updateProfile = async () => {
     const data = { userinfo, img };
@@ -16,9 +17,9 @@ const Edit = (props) => {
     }
   };
   const navigate = useRouter();
-  const onImageChange = (e) => {
-    const [file] = e.target.files;
-    setImg(URL.createObjectURL(file));
+  const onImageChange = (e:any) => {
+    const file = e.target.files[0];
+    setImg(file);
   };
   return (
     <div>
@@ -26,31 +27,54 @@ const Edit = (props) => {
         <div className="mx-4">
           {/* <Link href="../profile/profile">
             <a> */}
-          <form>
-            <label>Enter your Name</label>
-            <input
-              className="w-full py-3 my-2 mb-4 bg-white text-xl text-black"
-              type="text"
-              onChange={(e) => {
-                setUserinfo(e.target.value);
-              }}
-            />
-            <label>Enter Image</label>
-            <input
+
+          <label>Enter your Name</label>
+          <input
+            className="w-full py-3 my-2 mb-4 bg-white text-xl text-black"
+            type="text"
+            onChange={(e) => {
+              setUserinfo(e.target.value);
+            }}
+          />
+          <label>Enter Image</label>
+          {/* <input
               className="w-full py-3 my-2 text-xl text-black"
               type="file"
               onChange={onImageChange}
-            />
-            {/* <Link href="../profile/profile">
-              <a> */}
+            /> */}
+          <br />
+          <label htmlFor="profileimg">
             <input
+              style={{ display: "none" }}
+              id="profileimg"
+              name="profileimg"
+              onChange={onImageChange}
+              type="file"
+            />
+            <Button
+              color="secondary"
+              variant="contained"
+              component="span"
+              className=" my-5"
+            >
+              Upload Your Profile Image
+            </Button>
+          </label>
+          {/* <input
               onClick={updateProfile}
               value="Submit"
               className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
-            />
-            {/* </a>
+            /> */}
+          <button
+
+            onClick={updateProfile}
+            className="w-full py-4 my-4 mt-8 px-10 bg-sky-600 hover:bg-sky-700 text-white text-center"
+          >
+            Submit
+          </button>
+          {/* </a>
             </Link> */}
-          </form>
+
           {/* </a>
           </Link> */}
         </div>

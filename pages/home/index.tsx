@@ -33,7 +33,7 @@ const myLoader = ({ src, width, quality }) => {
 const Content = ({ data }) => {
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState<UserInfo>({});
-  // console.log(userData, "userdata");
+  console.log(userData, "userdatauser_image");
 
   useEffect(() => {
     const loginData = JSON.parse(localStorage.getItem("user_info"));

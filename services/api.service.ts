@@ -1,10 +1,9 @@
 import { BASE_URL, VERSION } from "../utils/constants";
 
-export const userToken = async()=>{
+export const userToken = async () => {
   const UserData = localStorage.getItem("user_token");
   return `Bearer ${UserData}`;
-}
-
+};
 
 export const callApi = async (endpoint: string, options: any = {}) => {
   const baseUrl = BASE_URL || "http://localhost:3000";
@@ -105,86 +104,134 @@ export const updateProfileApi = async (endpoint: string, options: any = {}) => {
 //                 }
 
 export const searchApi = async (endpoint: string, options: any = {}) => {
-    //   console.log(endpoint, options);
-    // const formdata = new FormData();
-    // formdata.append("name", options.searchKey);
-    var raw = JSON.stringify({
-        search_keyword: options.searchValue
-      });
-      
-    // const UserData = JSON.parse(localStorage.getItem("user_info"));
-  
-    // const id = UserData.id;
-  
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        ...(options.headers || {}),
-        },
-      body: raw,
-    };
+  //   console.log(endpoint, options);
+  // const formdata = new FormData();
+  // formdata.append("name", options.searchKey);
+  var raw = JSON.stringify({
+    search_keyword: options.searchValue,
+  });
 
-    const response = await fetch(`${BASE_URL}${VERSION}${endpoint}`, requestOptions);
-    return response.json()
-  };    
-export const mediaViewCountApi = async (endpoint: string, options: any = {}) => {
-       console.log(options.mediaId,"options.mediaId");
-    // const formdata = new FormData();
-    // formdata.append("name", options.searchKey);
-    var raw = JSON.stringify({
-        media_content_id: options.mediaId
-      });
-      
-    const UserData = localStorage.getItem("user_token");
-    console.log(UserData,"token");
-    
-  
-    // const id = UserData.id;
-  
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${UserData}`,
-        "Content-Type": "application/json",
-        ...(options.headers || {}),
-      },
-      body: raw,
-    };
+  // const UserData = JSON.parse(localStorage.getItem("user_info"));
 
-    const response = await fetch(`${BASE_URL}${VERSION}${endpoint}`, requestOptions);
-    return response.json()
-  };    
-  
+  // const id = UserData.id;
 
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+    body: raw,
+  };
 
+  const response = await fetch(
+    `${BASE_URL}${VERSION}${endpoint}`,
+    requestOptions
+  );
+  return response.json();
+};
+export const mediaViewCountApi = async (
+  endpoint: string,
+  options: any = {}
+) => {
+  console.log(options.mediaId, "options.mediaId");
+  // const formdata = new FormData();
+  // formdata.append("name", options.searchKey);
+  var raw = JSON.stringify({
+    media_content_id: options.mediaId,
+  });
 
-export const ApiConstants = {
-  // TODO: {
-  //   ADD: (userId: number) => {
-  //     return "/todo/" + userId;
-  //   },
-  //   FIND_NOT_COMPLETED: (userId: number) => {
-  //     return "/todo/findAllNotCompleted/" + userId;
-  //   },
-  //   FIND_COMPLETED: (userId: number) => {
-  //     return "/todo/findAllCompleted/" + userId;
-  //   },
-  //   MARK_COMPLETE: (todoId: number) => {
-  //     return "/todo/" + todoId;
-  //   },
-  //   DELETE: (todoId: number) => {
-  //     return "/todo/" + todoId;
-  //   },
-  // },
-  // USER: {
-  //   SIGN_UP: "/user/signUp",
-  //   FIND_ALL: "/user",
-  //   DELETE: (userId: number) => {
-  //     return "/user/" + userId;
-  //   },
-  // },
-  LOGIN: "/notification/generate-otp",
-  VARIFY_OTP: "/notification/verify-otp",
-  CREATE_PROFILE: "/core/create-customer-profile",
+  const UserData = localStorage.getItem("user_token");
+  console.log(UserData, "token");
+
+  // const id = UserData.id;
+
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${UserData}`,
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+    body: raw,
+  };
+
+  const response = await fetch(
+    `${BASE_URL}${VERSION}${endpoint}`,
+    requestOptions
+  );
+  return response.json();
+};
+export const generateotp = async (endpoint: string, options: any = {}) => {
+  console.log(options.mediaId, "options.mediaId");
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    sender: "8809612558888",
+    receiver: options.num,
+    notification_type: "otp",
+    send_by: "sms",
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+  };
+
+  const response = await fetch(
+    `${BASE_URL}${VERSION}${endpoint}`,
+    requestOptions
+  );
+  return response.json();
+};
+export const varifyotp = async (endpoint: string, options: any = {}) => {
+  console.log(options, "options");
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    sender: "8809612558888",
+    receiver: options.loginData,
+    notification_text: options.otp,
+    notification_type: "otp",
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+  };
+
+  const response = await fetch(
+    `${BASE_URL}${VERSION}${endpoint}`,
+    requestOptions
+  );
+  return response.json();
+};
+export const createUserProfile = async (
+  endpoint: string,
+  options: any = {}
+) => {
+  console.log(options, "options api heat");
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    phone: options.userNum,
+    name: options.userName,
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+  };
+
+  const response = await fetch(
+    `${BASE_URL}${VERSION}${endpoint}`,
+    requestOptions
+  );
+  return response.json();
 };

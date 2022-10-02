@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import { toast } from "react-toastify";
-import custom_axios from "../../axios/AxioSetup";
-import { ApiConstants } from "../../services/api.service";
+
+import { generateotp } from './../../services/api.service';
 const Register = () => {
   const navigate = useRouter();
   const [num, setNum] = useState("");
@@ -26,25 +26,32 @@ const Register = () => {
   };
 
   const loginApp = async () => {
-    // if (email.current.value == "" || password.current.value == "") {
-    //   toast.info("Please fill the information");
-    //   return;
-    // }
+    const datakey = { num };
+    const url = "/notification/generate-otp";
     try {
-      const response = await custom_axios.post(ApiConstants.LOGIN, {
-        sender: "8809612558888",
-        receiver: num,
-        notification_type: "otp",
-        send_by: "sms",
-      });
-      console.log(response, "response");
-      localStorage.setItem("login_response", JSON.stringify(response.data));
+      const data = await generateotp(url, datakey);
+      console.log("dataforotp", data);
+      localStorage.setItem("login_response", JSON.stringify(data));
 
       navigate.push("../auth/verification");
-    } catch (error: any) {
+    } catch (err) {
       toast.warning("Please Input a correct Number");
-      // if (error.response.status == 401) toast.warn(error.response.data.message);
     }
+    // try {
+    //   const response = await custom_axios.post(ApiConstants.LOGIN, {
+    //     sender: "8809612558888",
+    //     receiver: num,
+    //     notification_type: "otp",
+    //     send_by: "sms",
+    //   });
+    //   console.log(response, "response");
+    //   localStorage.setItem("login_response", JSON.stringify(response.data));
+
+    //   navigate.push("../auth/verification");
+    // } catch (error: any) {
+    //   toast.warning("Please Input a correct Number");
+    //   // if (error.response.status == 401) toast.warn(error.response.data.message);
+    // }
 
     // navigate("/");
   };
