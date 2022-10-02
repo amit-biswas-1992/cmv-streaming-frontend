@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import 'react-phone-number-input/style.css';
 
 import { toast } from "react-toastify";
-import custom_axios from '../../axios/AxioSetup';
-import { ApiConstants } from '../../services/api.service';
+
+import { createUserProfile } from './../../services/api.service';
 const Register = () => {
   const navigate = useRouter();
   const [userName, setUserName] = useState('');
@@ -29,22 +29,28 @@ const Register = () => {
     //   toast.info("Please fill the information");
     //   return;
     // }
+    const datakey = { userNum, userName };
+    console.log(datakey, "datakey");
+
+    const url = "/core/create-customer-profile";
     try {
-      const response = await custom_axios.post(ApiConstants.CREATE_PROFILE, {
-        phone: userNum,
-        name: userName,
+      const data = await createUserProfile(url, datakey);
+      console.log("dataforotp", data);
+      // const response = await custom_axios.post(ApiConstants.CREATE_PROFILE, {
+      //   phone: userNum,
+      //   name: userName,
 
 
-      });
-      // console.log(response.data,"responseinfo");
-      localStorage.setItem("user_token", response.data.token);
-      localStorage.setItem("user_info", JSON.stringify(response.data.user));
-      localStorage.setItem("customer_info", JSON.stringify(response.data.customer));
+      // });
+      // console.log(data,"responseinfo");
+      localStorage.setItem("user_token", data.token);
+      localStorage.setItem("user_info", JSON.stringify(data.user));
+      localStorage.setItem("customer_info", JSON.stringify(data.customer));
       navigate.push("../home");
       toast.success("Login Successfull");
     } catch (error: any) {
       toast.warning("Please Input Your Name")
-      // if (error.response.status == 401) toast.warn(error.response.data.message);
+      // if (error.status == 401) toast.warn(error.data.message);
     }
 
     // navigate("/");

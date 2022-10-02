@@ -2,14 +2,15 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
-import custom_axios from "../../axios/AxioSetup";
-import { ApiConstants } from "../../services/api.service";
+
+import {  varifyotp } from "../../services/api.service";
 
 import styles from "./Authpage.module.css";
 import Timer from "./Timer";
 // import CustomTimer from "./CustomTimer";
 
 import VarificationAnimation from "./VarificationAnimation";
+import { generateotp } from './../../services/api.service';
 function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
@@ -35,40 +36,43 @@ function VarificationPage(props) {
       toast.info("Please fill the otp");
       return;
     }
-
+    const datakey = { loginData, otp };
+    const url = "/notification/verify-otp";
     try {
       if (otp.length === 4) {
         console.log("matched");
-        const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {
-          sender: "8809612558888",
-          receiver: loginData,
-          notification_text: otp,
-          notification_type: "otp",
-        });
-        console.log(response.data, "response varify");
+        // const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {
+        //   sender: "8809612558888",
+        //   receiver: loginData,
+        //   notification_text: otp,
+        //   notification_type: "otp",
+        // });
+        const data = await varifyotp(url, datakey);
+        console.log("dataforotp", data);
+        console.log(data, "response varify");
 
-        if (response.data.profileScreen === true) {
-          // console.log(response.data.otpData.receiver);
+        if (data.profileScreen === true) {
+          // console.log(data.otpData.receiver);
           localStorage.setItem(
             "otp_response",
-            JSON.stringify(response.data.otpData.receiver)
+            JSON.stringify(data.otpData.receiver)
           );
           navigate.push("../auth/info");
           toast.success("OTP varified");
         } else {
-          console.log(response.data.token);
+          console.log(data.token);
 
-          localStorage.setItem("user_token", response.data.token);
-          localStorage.setItem("user_info", JSON.stringify(response.data.user));
+          localStorage.setItem("user_token", data.token);
+          localStorage.setItem("user_info", JSON.stringify(data.user));
           localStorage.setItem(
             "customer_info",
-            JSON.stringify(response.data.customer)
+            JSON.stringify(data.customer)
           );
           navigate.push("../home");
           toast.success("OTP verified");
         }
-        // console.log(response.data.profileScreen,"response");
-        // localStorage.setItem("otp_response", JSON.stringify(response.data));
+        // console.log(data.profileScreen,"response");
+        // localStorage.setItem("otp_response", JSON.stringify(data));
         // navigate.push("../auth/info");
       } else {
         toast.warning("Invalid OTP");
@@ -77,7 +81,7 @@ function VarificationPage(props) {
       toast.warning("Invalid OTP");
 
       // toast.info(error);
-      // if (error.response.status == 401) toast.warn(error.response.data.message);
+      // if (error.status == 401) toast.warn(error.data.message);
     }
 
     // navigate("/");
@@ -87,15 +91,19 @@ function VarificationPage(props) {
     //   toast.info("Please fill the information");
     //   return;
     // }
+    const datakey = { loginData };
+    const url = "/notification/generate-otp";
     try {
-      const response = await custom_axios.post(ApiConstants.LOGIN, {
-        sender: "8809612558888",
-        receiver: loginData,
-        notification_type: "otp",
-        send_by: "sms",
-      });
+      const data = await generateotp(url, datakey);
+      console.log("dataforotp", data);
+      // const response = await custom_axios.post(ApiConstants.LOGIN, {
+      //   sender: "8809612558888",
+      //   receiver: loginData,
+      //   notification_type: "otp",
+      //   send_by: "sms",
+      // });
       // console.log(response,"response");
-      localStorage.setItem("login_response", JSON.stringify(response.data));
+      localStorage.setItem("login_response", JSON.stringify(data));
       const login_Data = JSON.parse(localStorage.getItem("login_response"));
 
       setLoginData(login_Data.receiver);
@@ -103,7 +111,7 @@ function VarificationPage(props) {
       setOtp("");
       setTimeOut(false);
     } catch (error: any) {
-      // if (error.response.status == 401) toast.warn(error.response.data.message);
+      // if (error.status == 401) toast.warn(error.data.message);
     }
 
     // navigate("/");
@@ -133,7 +141,7 @@ function VarificationPage(props) {
             onChange={handleChange}
             numInputs={4}
             className="px-3 sm:px-4  2xl:px-5 py-3 2xl:py-4 mx-2 sm:mx-3 2xl:mx-3 text-xl rounded-lg border-2"
-            // placeholder="-"
+          // placeholder="-"
           />
           <div
             style={{
