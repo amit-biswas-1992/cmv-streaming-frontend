@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { CustomerInfo, UserInfo } from "../../models";
+import { subscribeinfo, UserInfo } from "../../models";
 import { callApi } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
@@ -30,17 +30,19 @@ const Profile = () => {
     router.push("../");
   };
 
-  const [customerinfo, setCustomerinfo] = useState<CustomerInfo>({});
+  const [subscribeinfo, setSubscribeinfo] = useState<subscribeinfo>({});
   const [userinfo, setUserinfo] = useState<UserInfo>({});
-  // console.log(userinfo, customerinfo, "both ingo");
+  // console.log(userinfo, subscribeinfo, "both ingo");
   // console.log(userinfo, "info holo user er");
   const apiCall = async () => {
     const data = { userinfo };
     const url = "/core/get-user-profile/";
     try {
-      const ApiCall = await callApi(url, data);
+      const ApiCall = await callApi(url);
+      // console.log(ApiCall.user, "ApiCall.user");
+
       setUserinfo(ApiCall.user);
-      setCustomerinfo(ApiCall.customer);
+      setSubscribeinfo(ApiCall.subscribe_info);
     } catch (err) {
       console.log(err);
     }
@@ -71,24 +73,29 @@ const Profile = () => {
           ""
         )}
       </div>
-      <div className="grid place-items-center">
-        {userinfo && userinfo.user_image ? (
-          <Image
-            className="rounded-full"
-            loader={myLoader}
-            src={userinfo.user_image}
-            width={100}
-            height={100}
-            alt=""
-          />
-        ) : (
-          <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
-            <FontAwesomeIcon icon={faUserTie} />
-          </div>
-        )}
+      <div className="grid  place-items-center ">
+        <div className="w-24 h-24 overflow-hidden  rounded-full border-2 border-white">
+          {userinfo && userinfo.user_image ? (
+            <Image
+              className="rounded-full"
+              loader={myLoader}
+              src={userinfo.user_image}
+              width={500}
+              height={500}
+              layout="responsive"
+              quality={100}
+              alt="userImage"
+            />
+          ) : (
+            <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
+              <FontAwesomeIcon icon={faUserTie} />
+            </div>
+          )}
+        </div>
+
 
         <div className="mt-3 grid place-items-center">
-          <h1>{userinfo ? userinfo.name : "Hello there!!"}</h1>
+          <h1 className=" " >{userinfo ? userinfo.name : "Hello there!!"}</h1>
           <p>{userinfo ? userinfo.phone : ""}</p>
         </div>
       </div>
@@ -96,30 +103,35 @@ const Profile = () => {
           <h1>-------------</h1>
         </div> */}
 
-      {customerinfo && customerinfo.is_subscribed && (
-        <div className="flex justify-center mt-4">
-          <FontAwesomeIcon icon={faGift} className="bg-purple-600 p-4" />
-          <Link href="../../package/bonus">
-            <button className="bg-purple-600 pr-6">Collect Bonus</button>
-          </Link>
-        </div>
-      )}
-
-      {customerinfo && customerinfo.is_subscribed && (
+      {subscribeinfo ? (
         <div>
-          <div className="bg-slate-700 mx-6 mt-8 rounded-xl">
-            <div className="flex text-white py-4 ml-4">
-              <div className="text-sm">
-                <p>{customerinfo.package_name}</p>
-                <p className=" text-slate-300">{customerinfo.validity} Days</p>
+          <div className="flex justify-center mt-4">
+            <FontAwesomeIcon icon={faGift} className="bg-purple-600 p-4" />
+            <Link href="../../package/bonus">
+              <button className="bg-purple-600 pr-6">Collect Bonus</button>
+            </Link>
+          </div>
+          <div>
+            <div className="bg-slate-700 mx-6 mt-8 rounded-xl">
+              <div className="flex text-white py-4 ml-4">
+                <div className="text-sm">
+                  <p>{subscribeinfo?.package?.name}</p>
+                  <p className=" text-slate-300">{subscribeinfo?.package?.validity} Days</p>
+                </div>
+                <h1 className="font-bold ml-auto mr-12 text-center mt-2 text-xl">
+                  {subscribeinfo?.package?.price} BDT
+                </h1>
               </div>
-              <h1 className="font-bold ml-auto mr-12 text-center mt-2 text-xl">
-                {customerinfo.price} BDT
-              </h1>
             </div>
           </div>
-        </div>
-      )}
+        </div>) : (
+        <div></div>
+      )
+
+
+      }
+
+
 
       <div className="mx-6">
         <div className="flex items-center py-8">
@@ -165,7 +177,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="mt-6 text-center">
-        {customerinfo && customerinfo.is_subscribed ? (
+        {subscribeinfo ? (
           <button className="bg-red-500 p-1 rounded-md px-2 text-center">
             Unsubscribe
           </button>

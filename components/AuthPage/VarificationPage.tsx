@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
 
-import {  varifyotp } from "../../services/api.service";
+import { varifyotp } from "../../services/api.service";
 
 import styles from "./Authpage.module.css";
 import Timer from "./Timer";
@@ -14,18 +14,19 @@ import { generateotp } from './../../services/api.service';
 function VarificationPage(props) {
   const navigate = useRouter();
   const [otp, setOtp] = useState("");
-  const [loginData, setLoginData] = useState("");
-  const [otpData, setOtpData] = useState("");
-  console.log(otpData, "otpData");
+  const [num, setNum] = useState("");
+  console.log(num, "number from register");
+
+
   console.log(otp, "otp");
   const [timeOut, setTimeOut] = useState(false);
 
   useEffect(() => {
     const login_Data = JSON.parse(localStorage.getItem("login_response"));
 
-    setLoginData(login_Data.receiver);
-    setOtpData(login_Data.notification_text);
-  }, [otpData]);
+    setNum(login_Data);
+
+  }, []);
 
   const handleChange = (otp) => {
     setOtp(otp);
@@ -36,78 +37,74 @@ function VarificationPage(props) {
       toast.info("Please fill the otp");
       return;
     }
-    const datakey = { loginData, otp };
+    const datakey = { num, otp };
     const url = "/notification/verify-otp";
+
     try {
+
       if (otp.length === 4) {
         console.log("matched");
-        // const response = await custom_axios.post(ApiConstants.VARIFY_OTP, {
-        //   sender: "8809612558888",
-        //   receiver: loginData,
-        //   notification_text: otp,
-        //   notification_type: "otp",
-        // });
-        const data = await varifyotp(url, datakey);
-        console.log("dataforotp", data);
-        console.log(data, "response varify");
 
+
+        const data = await varifyotp(url, datakey);
+        console.log("varifyotp", data)
+        if (data.statusCode) {
+          // console.log('this block')
+          toast.warning("Invalid OTP");
+          return;
+        }
         if (data.profileScreen === true) {
-          // console.log(data.otpData.receiver);
-          localStorage.setItem(
-            "otp_response",
-            JSON.stringify(data.otpData.receiver)
-          );
+
+          // localStorage.setItem(
+          //   "otp_response",
+          //   JSON.stringify(data.otpData.receiver)
+          // );
           navigate.push("../auth/info");
           toast.success("OTP varified");
         } else {
           console.log(data.token);
 
           localStorage.setItem("user_token", data.token);
-          localStorage.setItem("user_info", JSON.stringify(data.user));
-          localStorage.setItem(
-            "customer_info",
-            JSON.stringify(data.customer)
-          );
+          // localStorage.setItem("user_info", JSON.stringify(data.user));
+          // localStorage.setItem(
+          //   "customer_info",
+          //   JSON.stringify(data.customer)
+          // );
           navigate.push("../home");
           toast.success("OTP verified");
         }
-        // console.log(data.profileScreen,"response");
-        // localStorage.setItem("otp_response", JSON.stringify(data));
-        // navigate.push("../auth/info");
+
       } else {
         toast.warning("Invalid OTP");
       }
     } catch (error: any) {
       toast.warning("Invalid OTP");
-
-      // toast.info(error);
-      // if (error.status == 401) toast.warn(error.data.message);
     }
 
     // navigate("/");
   };
   const resendotp = async () => {
-    // if (email.current.value == "" || password.current.value == "") {
-    //   toast.info("Please fill the information");
-    //   return;
-    // }
-    const datakey = { loginData };
+    console.log("entered");
+
+
+    const datakey = { num };
     const url = "/notification/generate-otp";
     try {
       const data = await generateotp(url, datakey);
-      console.log("dataforotp", data);
-      // const response = await custom_axios.post(ApiConstants.LOGIN, {
-      //   sender: "8809612558888",
-      //   receiver: loginData,
-      //   notification_type: "otp",
-      //   send_by: "sms",
-      // });
-      // console.log(response,"response");
-      localStorage.setItem("login_response", JSON.stringify(data));
-      const login_Data = JSON.parse(localStorage.getItem("login_response"));
+      if (data.statusCode) {
+        // console.log('this block')
+        // toast.warning("Invalid OTP");
+        return;
+      }
+      // console.log("dataforotp", data);
 
-      setLoginData(login_Data.receiver);
-      setOtpData(login_Data.notification_text);
+      localStorage.setItem("login_response", JSON.stringify(data.receiver));
+      const login_Data = JSON.parse(localStorage.getItem("login_response"));
+      console.log(login_Data, "login_Data resend");
+
+
+      setNum(login_Data);
+
       setOtp("");
       setTimeOut(false);
     } catch (error: any) {

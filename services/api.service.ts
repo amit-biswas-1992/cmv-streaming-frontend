@@ -1,15 +1,15 @@
 import { BASE_URL, VERSION } from "../utils/constants";
-
-export const userToken = async () => {
-  const UserData = localStorage.getItem("user_token");
-  return `Bearer ${UserData}`;
-};
+import { toast } from "react-toastify";
+// export const userToken = async () => {
+//   const UserData = localStorage.getItem("user_token");
+//   return `Bearer ${UserData}`;
+// };
 
 export const callApi = async (endpoint: string, options: any = {}) => {
   const baseUrl = BASE_URL || "http://localhost:3000";
   const url = `${baseUrl}${VERSION}${endpoint}`;
   const UserData = localStorage.getItem("user_token");
-  console.log(UserData, "user data token");
+  // console.log(UserData, "user data token");
 
   const response = await fetch(url, {
     ...options,
@@ -61,11 +61,10 @@ export const callApiGetWithoutToken = async (
 export const updateProfileApi = async (endpoint: string, options: any = {}) => {
   //   console.log(endpoint, options);
   const formdata = new FormData();
-  formdata.append("name", options.userinfo);
-  formdata.append("user_image", options.img);
-  const UserData = JSON.parse(localStorage.getItem("user_info"));
+  formdata.append("name", options.name);
+  formdata.append("user_image", options.userimg);
 
-  const id = UserData.id;
+  const id = options.userid;
 
   const requestOptions = {
     method: "PATCH",
@@ -76,11 +75,6 @@ export const updateProfileApi = async (endpoint: string, options: any = {}) => {
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
-      UserData.name = options.userinfo;
-
-      UserData.user_image = options.img;
-      console.log(UserData);
-      localStorage.setItem("user_info", JSON.stringify(UserData));
     })
     .catch((error) => console.log("error", error));
 };
@@ -107,7 +101,7 @@ export const searchApi = async (endpoint: string, options: any = {}) => {
   //   console.log(endpoint, options);
   // const formdata = new FormData();
   // formdata.append("name", options.searchKey);
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     search_keyword: options.searchValue,
   });
 
@@ -134,10 +128,9 @@ export const mediaViewCountApi = async (
   endpoint: string,
   options: any = {}
 ) => {
-  console.log(options.mediaId, "options.mediaId");
   // const formdata = new FormData();
   // formdata.append("name", options.searchKey);
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     media_content_id: options.mediaId,
   });
 
@@ -163,11 +156,10 @@ export const mediaViewCountApi = async (
   return response.json();
 };
 export const generateotp = async (endpoint: string, options: any = {}) => {
-  console.log(options.mediaId, "options.mediaId");
-  var myHeaders = new Headers();
+  const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     sender: "8809612558888",
     receiver: options.num,
     notification_type: "otp",
@@ -180,20 +172,25 @@ export const generateotp = async (endpoint: string, options: any = {}) => {
     body: raw,
   };
 
-  const response = await fetch(
-    `${BASE_URL}${VERSION}${endpoint}`,
-    requestOptions
-  );
-  return response.json();
+  try {
+    const fetchResponse = await fetch(
+      `${BASE_URL}${VERSION}${endpoint}`,
+      requestOptions
+    );
+    const data = await fetchResponse.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
 };
 export const varifyotp = async (endpoint: string, options: any = {}) => {
-  console.log(options, "options");
-  var myHeaders = new Headers();
+  // console.log(options, "options");
+  const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     sender: "8809612558888",
-    receiver: options.loginData,
+    receiver: options.num,
     notification_text: options.otp,
     notification_type: "otp",
   });
@@ -203,22 +200,42 @@ export const varifyotp = async (endpoint: string, options: any = {}) => {
     headers: myHeaders,
     body: raw,
   };
+  try {
+    const fetchResponse = await fetch(
+      `${BASE_URL}${VERSION}${endpoint}`,
+      requestOptions
+    );
+    const data = await fetchResponse.json();
+    return data;
+  } catch (e) {
+    console.log(e,"catching")
+    return e;
+  }
+  // const response = await fetch(
+  //   `${BASE_URL}${VERSION}${endpoint}`,
+  //   requestOptions
+  // );
+  // .then((result) => console.log(result))
+  // .catch((error) => console.log("error", error));
 
-  const response = await fetch(
-    `${BASE_URL}${VERSION}${endpoint}`,
-    requestOptions
-  );
-  return response.json();
+  // const response = await fetch(
+  //   `${BASE_URL}${VERSION}${endpoint}`,
+  //   requestOptions
+  // );
+  // .then(response => response.text())
+  // .then(result => console.log(result))
+  // .catch(error => console.log('error', error));
+  // return response.json();
 };
 export const createUserProfile = async (
   endpoint: string,
   options: any = {}
 ) => {
-  console.log(options, "options api heat");
-  var myHeaders = new Headers();
+  // console.log(options, "options api heat");
+  const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({
+  const raw = JSON.stringify({
     phone: options.userNum,
     name: options.userName,
   });
@@ -229,9 +246,14 @@ export const createUserProfile = async (
     body: raw,
   };
 
-  const response = await fetch(
-    `${BASE_URL}${VERSION}${endpoint}`,
-    requestOptions
-  );
-  return response.json();
+  try {
+    const fetchResponse = await fetch(
+      `${BASE_URL}${VERSION}${endpoint}`,
+      requestOptions
+    );
+    const data = await fetchResponse.json();
+    return data;
+  } catch (e) {
+    return e;
+  }
 };

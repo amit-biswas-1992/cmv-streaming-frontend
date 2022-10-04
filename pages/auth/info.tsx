@@ -14,7 +14,7 @@ const Register = () => {
   console.log(userNum);
 
   useEffect(() => {
-    const loginData = JSON.parse(localStorage.getItem('otp_response'));
+    const loginData = JSON.parse(localStorage.getItem('login_response'));
     // console.log(loginData.notification_text,"loginData");
     setUserNum(loginData);
 
@@ -32,10 +32,15 @@ const Register = () => {
     const datakey = { userNum, userName };
     console.log(datakey, "datakey");
 
-    const url = "/core/create-customer-profile";
+    const url = "/core/create-user-profile";
     try {
       const data = await createUserProfile(url, datakey);
-      console.log("dataforotp", data);
+      if (data.statusCode) {
+        console.log('this block')
+        toast.warning("Please Input Your Name")
+        return;
+      }
+      // console.log("dataforotp", data);
       // const response = await custom_axios.post(ApiConstants.CREATE_PROFILE, {
       //   phone: userNum,
       //   name: userName,
@@ -44,8 +49,8 @@ const Register = () => {
       // });
       // console.log(data,"responseinfo");
       localStorage.setItem("user_token", data.token);
-      localStorage.setItem("user_info", JSON.stringify(data.user));
-      localStorage.setItem("customer_info", JSON.stringify(data.customer));
+      // localStorage.setItem("user_info", JSON.stringify(data.user));
+      // localStorage.setItem("customer_info", JSON.stringify(data.customer));
       navigate.push("../home");
       toast.success("Login Successfull");
     } catch (error: any) {
