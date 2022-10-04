@@ -14,7 +14,7 @@ import {
 import Navigation from "../../components/Navigation";
 import Search from "../../components/Searchcom";
 import { UserInfo } from "../../models";
-import { callApiGetWithoutToken } from "../../services/api.service";
+import { callApi, callApiGetWithoutToken } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
 
 export const getServerSideProps = async () => {
@@ -27,37 +27,63 @@ export const getServerSideProps = async () => {
   };
 };
 const myLoader = ({ src, width, quality }) => {
+  // console.log(width, "width user");
+
   return `${USER_PROFILE_IMAGE_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
 };
 
 const Content = ({ data }) => {
   // console.log("data is showing recent", data.mediaContentCategory);
   const [userData, setUserData] = useState<UserInfo>({});
-  console.log(userData, "userdatauser_image");
+  // console.log(userData, "userdatauser_image");
 
+  const apiCall = async () => {
+    const data = { userData };
+    const url = "/core/get-user-profile/";
+    try {
+      const ApiCall = await callApi(url, data);
+      // console.log(ApiCall.user, "ApiCall.user");
+
+      setUserData(ApiCall.user);
+      // setCustomerinfo(ApiCall.customer);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    const loginData = JSON.parse(localStorage.getItem("user_info"));
-    // console.log(loginData.notification_text,"loginData");
-    setUserData(loginData);
+    apiCall();
   }, []);
+
+  // const capitalizeFirstLetter = (string) => {
+  //   return string.charAt(0).toUpperCase() + string.slice(1);
+  // }
+
+  // useEffect(() => {
+  //   const loginData = JSON.parse(localStorage.getItem("user_info"));
+  //   // console.log(loginData.notification_text,"loginData");
+  //   setUserData(loginData);
+  // }, []);
   return (
     <div>
       <div className="bg-slate-900 font-body">
         <div className="pt-3 mb-6">
-          <div className=" grid grid-cols-2 ">
+          <div className=" grid grid-cols-2  items-center gap-x-2 ">
             <div className=" col-span-1">
-              <div className="ml-4 mt-4 flex space-x-3 items-center">
+              <div className="ml-4 mt-4 flex  space-x-3  items-center">
                 <Link href="../profile/profile">
                   <a>
                     {userData && userData.user_image ? (
-                      <div className="w-12 pt-2">
+                      <div className="w-10 h-10 xl:w-12 xl:h-12 overflow-hidden  rounded-full border-2 border-white">
                         <Image
-                          className="rounded-full"
+                          className=""
                           loader={myLoader}
                           src={userData.user_image}
-                          width={100}
-                          height={100}
-                          alt=""
+                          width={500}
+                          height={500}
+                          layout="responsive"
+                          quality={100}
+                          // unoptimized
+                          alt=" userImage"
                         />
                       </div>
                     ) : (
@@ -67,23 +93,26 @@ const Content = ({ data }) => {
                     )}
                   </a>
                 </Link>
-                {userData ? (
-                  <div className="text-white">
-                    <p className="text-xl font-semibold whitespace-nowrap">
-                      Hi {userData.name}!
-                    </p>
-                  </div>
-                ) : (
-                  <div className="text-white">
-                    <p className="text-xl font-semibold whitespace-nowrap">
-                      Hi !
-                    </p>
-                  </div>
-                )}
+                <div >
+                  {userData ? (
+                    <div className="text-white">
+                      <p className="text-sm xl:text-lg  font-semibold whitespace-nowrap">
+                        Hi <span className="capitalize">{userData.name}</span>
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="text-white">
+                      <p className="text-xl font-semibold whitespace-nowrap">
+                        Hi !
+                      </p>
+                    </div>
+                  )}
+                </div>
+
               </div>
             </div>
-            {/* <div></div> */}
-            <div className=" text-white  col-span-1 mr-5 text-3xl mt-4">
+
+            <div className=" text-white   col-span-1 mr-5 text-3xl mt-4">
               <Search></Search>
               {/* <Link href="search">
                   <FontAwesomeIcon icon={faSearch} />

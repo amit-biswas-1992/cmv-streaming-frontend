@@ -29,9 +29,15 @@ const Register = () => {
     const datakey = { num };
     const url = "/notification/generate-otp";
     try {
+
       const data = await generateotp(url, datakey);
-      console.log("dataforotp", data);
-      localStorage.setItem("login_response", JSON.stringify(data));
+      if (data.statusCode) {
+        console.log('this block')
+        toast.warning("Please Input a correct Number");
+        return;
+      }
+      // console.log("dataforotp", data);
+      localStorage.setItem("login_response", JSON.stringify(data.receiver));
 
       navigate.push("../auth/verification");
     } catch (err) {
