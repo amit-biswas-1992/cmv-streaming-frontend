@@ -27,12 +27,12 @@ const Teaser = ({ data }) => {
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide overscroll-x-contain ml-4 cursor-pointer mt-4">
         {data.map((curElem) => (
           <div className="" key={curElem.id}>
-            <Link href={`/content-original/preview-new/${curElem.id}`}>
+            <Link href={`/content-original/preview-new/${curElem?.media?.id}`}>
               <div className="w-32 py-2">
                 <Image
                   className="aspect-square rounded-full ring-2 mt-2 py-2"
                   loader={myLoader}
-                  src={curElem.cover}
+                  src={curElem?.media?.cover}
                   width={350}
                   height={350}
                   alt=""
@@ -41,8 +41,8 @@ const Teaser = ({ data }) => {
             </Link>
 
             <div className="whitespace-nowrap text-white items-center text-center pb-24">
-              <h1 className="text-white">{curElem.title}</h1>
-              <h1 className="text-cyan-400">{curElem.category_name}</h1>
+              <h1 className="text-white">{curElem?.media?.title}</h1>
+              <h1 className="text-cyan-400">{curElem?.category?.name}</h1>
             </div>
           </div>
         ))}

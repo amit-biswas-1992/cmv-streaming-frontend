@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { subscribeinfo, UserInfo } from "../../models";
 import { callApi } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
+import profileimg from "../../components/assets/profile-picture.png"
 
 const Profile = () => {
   const router = useRouter();
@@ -87,8 +88,9 @@ const Profile = () => {
               alt="userImage"
             />
           ) : (
-            <div className="bg-cyan-400 rounded-full p-6 px-7 ring-2 ring-white">
-              <FontAwesomeIcon icon={faUserTie} />
+            <div className=" rounded-full w-full ring-2 ring-white">
+              {/* <FontAwesomeIcon icon={faUserTie} /> */}
+              <Image src={profileimg} alt="userImage " />
             </div>
           )}
         </div>
@@ -134,21 +136,23 @@ const Profile = () => {
 
 
       <div className="mx-6">
-        <div className="flex items-center py-8">
-          <div className="flex items-center space-x-3">
-            <FontAwesomeIcon
-              icon={faStar}
-              className="bg-white text-slate-500 p-2 rounded-xl"
-            />
-            <h1>FAQ</h1>
-          </div>
-          <Link href="../faq/faq">
+        <Link href="../faq/faq">
+          <div className="flex items-center py-8 cursor-pointer">
+            <div className="flex items-center space-x-3">
+              <FontAwesomeIcon
+                icon={faStar}
+                className="bg-white text-slate-500 p-2 rounded-xl"
+              />
+              <h1>FAQ</h1>
+            </div>
+
             <FontAwesomeIcon
               icon={faAngleRight}
-              className="text-white ml-auto cursor-pointer"
+              className="text-white ml-auto "
             />
-          </Link>
-        </div>
+
+          </div>
+        </Link>
         <div className="flex items-center">
           {userinfo ? (
             <div

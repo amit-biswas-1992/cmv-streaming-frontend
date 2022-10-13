@@ -16,6 +16,8 @@ import Search from "../../components/Searchcom";
 import { UserInfo } from "../../models";
 import { callApi, callApiGetWithoutToken } from "../../services/api.service";
 import { USER_PROFILE_IMAGE_BASE_URL } from "../../utils/constants";
+import OnlyMade from './../../components/OnlyMade';
+import HomeInfo from './../../models/HomeInfo';
 
 export const getServerSideProps = async () => {
   const data = await callApiGetWithoutToken("/core/home");
@@ -33,10 +35,29 @@ const myLoader = ({ src, width, quality }) => {
 };
 
 const Content = ({ data }) => {
-  // console.log("data is showing recent", data.mediaContentCategory);
+  console.log("data is showing in home page with token", data);
   const [userData, setUserData] = useState<UserInfo>({});
   // console.log(userData, "userdatauser_image");
+  // const [homeMediaData, setHomeMediaData] = useState<HomeInfo>();
+  // console.log("homeMediaData", homeMediaData);
 
+  // useEffect(() => {
+
+  //   const getApiCall = async () => {
+
+  //     try {
+  //       const data: any = await callApi("/core/home");
+  //       // console.log("dataforcategory", data);
+  //       setHomeMediaData(data)
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   const callApi = async () => {
+  //     await getApiCall();
+  //   }
+  //   callApi();
+  // }, [])
   const apiCall = async () => {
     const data = { userData };
     const url = "/core/get-user-profile/";
@@ -128,7 +149,7 @@ const Content = ({ data }) => {
         <TrendingNow data={data.trendingVideos} />
         {/* <ContinueWatching data={data.newReleaseVideos} />  */}
         <Teaser data={data.teaserVideos} />
-        {/* <OnlyMade /> */}
+        <OnlyMade />
 
         <Navigation />
       </div>

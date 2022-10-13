@@ -18,12 +18,12 @@ const HomeCorasoul = ({ data }) => {
             <div className='' key={curElem.id}>
 
 
-              <Link href={`/content-original/preview-new/${curElem.id}`}>
+              <Link href={`/content-original/preview-new/${curElem?.media.id}`}>
                 <a>
                   <Image
                     className='rounded-sm'
                     loader={myLoader}
-                    src={curElem.thumb}
+                    src={curElem.media.thumb}
                     width={700}
                     height={450}
                     // layout="responsive"

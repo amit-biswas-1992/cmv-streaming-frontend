@@ -28,18 +28,18 @@ const TrendingNow = ({ data }) => {
 
           <div className='bg-slate-800 rounded-lg p-2 flex text-justify min-w-[300px]' key={curElem.id}>
             <Image className='rounded-xl' loader={myLoader}
-              src={curElem.cover} width={100} height={100} alt='' />
+              src={curElem?.media?.cover} width={100} height={100} alt='' />
 
             <div className="whitespace-nowrap p-6 break-words ml-1 text-white items-center align-middle py-10">
 
-              <h1>{curElem.title}</h1>
+              <h1>{curElem.media?.title}</h1>
               <p>
-                {curElem.duration}
+                {curElem.media?.duration}
               </p>
-              <h1 className="text-lg text-cyan-400">{curElem.category_name}</h1>
+              <h1 className="text-lg text-cyan-400">{curElem?.category?.name}</h1>
             </div>
             <div className="text-cyan-400 py-14 pr-2 pl-auto text-4xl hover:text-white">
-              <Link href={`/content-original/preview-new/${curElem.id}`} >
+              <Link href={`/content-original/preview-new/${curElem?.media?.id}`} >
                 <button>
                   <FontAwesomeIcon icon={faCirclePlay} />
                 </button>

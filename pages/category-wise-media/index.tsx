@@ -7,7 +7,7 @@ import { CATAGORY_IMAGE_BASE_URL } from '../../utils/constants';
 
 export const getServerSideProps = async () => {
 
-  const data = await callApiGetWithoutToken("/media-category");
+  const data = await callApiGetWithoutToken("/core/findall-media-category");
 
   return {
     props: {

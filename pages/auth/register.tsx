@@ -1,7 +1,7 @@
 import { Input } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import "react-phone-number-input/style.css";
+// import "react-phone-number-input/style.css";
 import { toast } from "react-toastify";
 
 import { generateotp } from './../../services/api.service';

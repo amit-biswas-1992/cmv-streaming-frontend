@@ -154,10 +154,10 @@ function VarificationPage(props) {
             </button>
           </div>
         </div>
-        <div>
+        <div className="pb-10 md:py-10">
           {!timeOut ? (
             <div
-              className="font-normal text-sm 2xl:text-lg text-center mt-8 flex justify-center items-center"
+              className="font-normal text-sm 2xl:text-lg text-center mt-3 flex justify-center items-center"
               style={{ color: "#F1775C" }}
             >
               {" "}
@@ -169,7 +169,7 @@ function VarificationPage(props) {
             <div>
               <p
                 onClick={resendotp}
-                className=" text-blue-800 cursor-pointer font-normal text-sm 2xl:text-lg text-center mt-8 flex justify-center items-center"
+                className=" text-blue-800 cursor-pointer font-normal text-sm 2xl:text-lg text-center mt-3 flex justify-center items-center"
               >
                 Re-send code again
               </p>

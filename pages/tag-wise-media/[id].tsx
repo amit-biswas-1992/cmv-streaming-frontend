@@ -54,31 +54,61 @@ const ViewComp = ({ data }) => {
           <h1 className="text-xl grid place-items-center">Teaser</h1>
         )}
       </div>
+      {router.query.id === "NewRelease" || router.query.id === "MostPopular" || router.query.id === "OnlyForYou" || router.query.id === "Teaser" ? (
 
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
-        {data.map((curElem) => {
-          return (
-            <div className="" key={curElem.id}>
-              <Link href={`/content-original/preview-new/${curElem.id}`}>
-                <a>
-                  <Image
-                    className="rounded-2xl"
-                    loader={myLoader}
-                    src={curElem.cover}
-                    width={300}
-                    height={350}
-                    alt=""
-                  />
-                </a>
-              </Link>
-              <div className="whitespace-nowrap text-white items-center align-middle">
-                <h1 className="text-white">{curElem.title}</h1>
-                {/* <p className='text-cyan-400'>{curElem.category}</p> */}
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
+          {data.map((curElem) => {
+            return (
+              <div className="" key={curElem.id}>
+                <Link href={`/content-original/preview-new/${curElem.id}`}>
+                  <a>
+                    <Image
+                      className="rounded-2xl"
+                      loader={myLoader}
+                      src={curElem.cover}
+                      width={300}
+                      height={350}
+                      alt=""
+                    />
+                  </a>
+                </Link>
+                <div className="whitespace-nowrap text-white items-center align-middle">
+                  <h1 className="text-white">{curElem.title}</h1>
+                  <p className='text-cyan-400'>{curElem?.category?.name}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+
+      ) : (
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
+          {data.map((curElem) => {
+            return (
+              <div className="" key={curElem.id}>
+                <Link href={`/content-original/preview-new/${curElem?.media?.id}`}>
+                  <a>
+                    <Image
+                      className="rounded-2xl"
+                      loader={myLoader}
+                      src={curElem?.media?.cover}
+                      width={300}
+                      height={350}
+                      alt=""
+                    />
+                  </a>
+                </Link>
+                <div className="whitespace-nowrap text-white items-center align-middle">
+                  <h1 className="text-white">{curElem?.media?.title}</h1>
+                  <p className='text-cyan-400'>{curElem?.media?.category?.name}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+
       <div className="pb-24"></div>
     </div>
   );

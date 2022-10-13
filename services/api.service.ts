@@ -208,7 +208,7 @@ export const varifyotp = async (endpoint: string, options: any = {}) => {
     const data = await fetchResponse.json();
     return data;
   } catch (e) {
-    console.log(e,"catching")
+    console.log(e, "catching");
     return e;
   }
   // const response = await fetch(
